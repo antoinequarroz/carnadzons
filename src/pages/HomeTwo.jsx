@@ -26,35 +26,34 @@ import CTA from '../components/cta';
 import Affiche from "../components/cta";
 
 
-
 function HomeTwo(props) {
     return (
         <div className='header-fixed main home2 counter-scroll'>
-       
+            <Banner data={dataBanner} />
 
-           {<Banner data={dataBanner} />}
+            <Featured data={dataFeatured} />
 
-           
-            {<Featured data={dataFeatured} />}
-
-            {<Technology data={dataPartner} />}
-
+            <Technology data={dataPartner} />
 
             <div className="bg_body">
                 <div className="bg_h2">
-                    <img src={require ("../assets/images/backgroup/bg_home2.png")} alt="" />
+                    <img src={require("../assets/images/backgroup/bg_home2.png")} alt="" />
                 </div>
 
-                {<Roadmap data={dataRoadmap} />}
+                <Roadmap data={dataRoadmap} />
 
-                {<Team data={dataTeam} />}
+                <div id="equipe"> {/* L'identifiant est ajouté ici */}
+                    <Team data={dataTeam} />
+                </div>
+
+                <div id="partenaires">
+                    <Partner2 data={dataPartner} />
+                </div>
+
+                <div id="faq">
+                    <Faqs data={dataFaq} />
+                </div>
             </div>
-
-            {<Partner2 data={dataPartner} />}
-
-
-            {<Faqs data={dataFaq} />}
-
         </div>
     );
 }

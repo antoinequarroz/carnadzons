@@ -13,7 +13,7 @@ function Featured(props) {
     const {data} = props;
 
     return (
-        <section className="tf-section fueture">
+        <section className="tf-section fueture " id="featured">
                 <div className="container w_1320">
                     <div className="row">
                         <div className="col-md-12">

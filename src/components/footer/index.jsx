@@ -37,64 +37,64 @@ function Footer(props) {
                 <div className="row">
                     <div className="footer-logo">
                         <div className="logo_footer">
-                            <img src={require ("../../assets/images/logo/logo2.png")} alt="" />
+                            <img src={require ("../../assets/images/logo/logo_carnadzons_grand.png")} alt="" />
                         </div>
-                        <p>A one-stop destination for web3 gaming.</p>
+                        <p>Carnaval de Saint-Martin</p>
                     </div>
                     <div className="widget">
                         <h5 className="widget-title">
-                            Contact us
+                            Contactez-nous
                         </h5>
                         <ul className="widget-link contact">
                             <li>
-                                <p>Address</p>
-                                <Link to="#">1901 Thornridge Cir. Shiloh, Hawaii 81063</Link>
+                                <p>Adresse</p>
+                                <Link to="#">Rue de l'Evouette 5, 1969 Saint-Martin</Link>
                             </li>
                             <li>
                                 <p>Phone</p>
-                                <Link to="#">+33 7 00 55 57 60</Link>
+                                <Link to="#">+0791576450</Link>
                             </li>
                             <li className="email">
                                 <p>Email</p>
-                                <Link to="#">risebot@support.com</Link>
+                                <Link to="#">contact@carnadzons.ch</Link>
                             </li>
                         </ul>
                     </div>
-                    <div className="widget support">
+                    <div className="widget">
                         <h5 className="widget-title">
-                            Support
+                            Liens utiles
                         </h5>
                         <ul className="widget-link">
                             <li>
-                                <Link to="/connect">Connect Wallet</Link>
+                                <Link to="/">Accueil</Link>
                             </li>
                             <li>
-                                <Link to="/forgetPass">Forget Password</Link>
-                            </li>
-                            <li>
-                                <Link to="/faqs">FAQs</Link>
+                                <Link to="/#feature">Thème</Link>
                             </li>
                             <li>
                                 <Link to="/contact">Contact</Link>
                             </li>
+                            <li>
+                                <Link to="/team_details">Comité</Link>
+                            </li>
                         </ul>
                     </div>
-                    <div className="widget link">
+                    <div className="widget">
                         <h5 className="widget-title">
-                            Quick link
+                            Développer par :
                         </h5>
-                        <ul className="widget-link">
+                        <ul className="widget-link contact">
                             <li>
-                                <Link to="/">Home</Link>
+                                <p>Web</p>
+                                <Link to="https://www.antoinequarroz.ch">www.antoinequarroz.ch</Link>
                             </li>
                             <li>
-                                <Link to="/project_list">Project</Link>
+                                <p>Téléphone</p>
+                                <Link to="#">+0791576450</Link>
                             </li>
-                            <li>
-                                <Link to="/blog_grid">Blog</Link>
-                            </li>
-                            <li>
-                                <Link to="/team_details">Our Team</Link>
+                            <li className="email">
+                                <p>Email</p>
+                                <Link to="#">info@antoinequarroz.ch</Link>
                             </li>
                         </ul>
                     </div>

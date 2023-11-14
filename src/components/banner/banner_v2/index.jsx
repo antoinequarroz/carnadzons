@@ -58,7 +58,7 @@ function Banner (props) {
                                                                 </div>
                                                                 <div className="wrap-btn">
                                                                     <Link to="/faqs" className="tf-button style2">
-                                                                        En savoir plus
+                                                                        Plus d'infos
                                                                     </Link>
                                                                 </div>
                                                             </div>

@@ -17,7 +17,7 @@ function Team(props) {
 
     const [dataTitle] = useState(
         {
-            title: 'Meet the team',
+            title: 'Le comité',
         }
     )
     return (
