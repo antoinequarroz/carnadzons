@@ -14,19 +14,14 @@ function CTA(props) {
                         <div className="col-md-6">
                             <div className="tf-title left mt66" data-aos="fade-up" data-aos-duration="800">
                                 <h2 className="title">
-                                    Launch on Risebot
+                                    Les Modzons sur la Lune
                                 </h2>
-                                <p className="sub">Full support in project incubation</p>
-                                <div className="wrap-btn">
-                                    <Link to="/submit_igo" className="tf-button style3">
-                                        Apply Now
-                                    </Link>
-                                </div>
+
                             </div>
                         </div>
                         <div className="col-md-6">
                         <div className="image_cta" data-aos="fade-left" data-aos-duration="1200">
-                            <img className="move4" src={require ("../../../assets/images/common/img_cta_1.png")} alt="" />
+                            <img className="move4" src={require ("../../../assets/images/planet/blueAnneaux.png")} alt="" />
                         </div>
                         </div>
                     </div>

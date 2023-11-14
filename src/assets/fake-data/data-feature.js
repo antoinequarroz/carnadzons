@@ -1,12 +1,8 @@
-import img1 from '../images/common/icon_1.png';
-import img2 from '../images/common/icon_2.png';
-import img3 from '../images/common/icon_3.png';
-import img4 from '../images/common/icon_1.png';
-import img5 from '../images/common/icon_4.png';
-import img6 from '../images/common/icon_5.png';
-import img7 from '../images/common/icon_6.png';
-import img8 from '../images/common/icon_7.png';
-import img9 from '../images/common/icon_8.png';
+import img1 from '../images/planet/bleu.png';
+import img2 from '../images/planet/orange.png';
+import img3 from '../images/planet/red.png';
+import img4 from '../images/planet/brune.png';
+
 
 const dataFeatured = [
     {

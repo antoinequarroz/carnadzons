@@ -15,7 +15,7 @@ function Banner (props) {
 
         <div className="page-title">
             <div className="icon_bg">
-                <img src={require ('../../../assets/images/backgroup/bg_inner_slider.png')} alt="Risebot" />
+                <img src={require ('../../../assets/images/backgroup/bg_inner_slider.png')} alt="Carna" />
             </div>
 
             <Swiper>
@@ -33,13 +33,13 @@ function Banner (props) {
                                             <div className="box-slider">
                                                 <div className="content-box">
                                                     <h1 className="title" >Le Carna'dzons</h1>
-                                                    <h3 className="sub-title">Les Modzons sur la lune</h3>
+                                                    <h3 className="sub-title">Les Modzons sur la Lune</h3>
                                                     <section className="tf-section project">
                                                         <div className="container w_1280">
                                                             <div className="row">
                                                                 <div className="col-md-12">
                                                                     <div className="tf-title" data-aos="fade-up" data-aos-duration="800">
-                                                                        <h4 className="title">
+                                                                        <h4 className="title mt-5">
                                                                             Décollage prévu dans :
                                                                         </h4>
                                                                         <div className="featured-countdown style2">

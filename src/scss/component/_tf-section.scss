@@ -216,6 +216,13 @@
                     animation: move4 5s infinite linear;
                     -webkit-animation: move4 5s infinite linear;
                 }
+                &.icon_4 {
+                    right: 10%;
+                    bottom: 20%;
+                    animation: move4 5s infinite linear;
+                    -webkit-animation: move4 5s infinite linear;
+                    height: 10%;
+                }
             }
         }
     }
@@ -269,7 +276,7 @@
                     right: -115px;
                 }
             }
-            .move4 { 
+            .move4 {
                 position: absolute;
                 top: -25px;
                 right: -30px;

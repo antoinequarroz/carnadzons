@@ -15,7 +15,7 @@ function Contact(props) {
                         <div className="col-md-12">
                             <div className="tf-title mb40" data-aos="fade-up" data-aos-duration="800">
                                 <h2 className="title">
-                                    Get in touch
+                                    Contact
                                 </h2>
                             </div>
                         </div> 
@@ -30,8 +30,8 @@ function Contact(props) {
                                                                             
                                     </div>
                                     <div className="content">
-                                        <p>Address</p>
-                                        <p className="white">1901 Thornridge Cir. Shiloh, Hawaii 81063</p>
+                                        <p>Adresse</p>
+                                        <p className="white">Rue de l'Evouette 5, 1969 Saint-Martin</p>
                                     </div>
                                 </li>
                                 <li>
@@ -42,8 +42,8 @@ function Contact(props) {
                                                                     
                                     </div>
                                     <div className="content">
-                                        <p>Phone</p>
-                                        <p className="white">+33 7 00 55 57 60</p>
+                                        <p>Téléphone</p>
+                                        <p className="white">079 157 64 50</p>
                                     </div>
                                 </li>
                                 <li>
@@ -55,7 +55,7 @@ function Contact(props) {
                                     </div>
                                     <div className="content">
                                         <p>Email</p>
-                                        <p className="color-hover">risebot@support.com</p>
+                                        <p className="color-hover">contact@carnadzons.ch</p>
                                     </div>
                                 </li>
                             </ul>
@@ -70,38 +70,38 @@ function Contact(props) {
                         <div className="col-md-12">
                             <form action="contact/contact-process.php" className="form-contact">
                                 <div className="project-info-form">
-                                    <h6 className="title">Leave a message</h6>
+                                    <h6 className="title">Écrire un message</h6>
                                     <div className="form-inner">
                                         <fieldset>
                                             <label >
-                                                Full name
+                                                Nom complet
                                             </label>
-                                            <input type="text" id="name" placeholder="Enter the name of your project" required />
+                                            <input type="text" id="name" placeholder="Nom / Prénom" required />
                                         </fieldset>
                                         <fieldset>
                                             <label >
-                                                Email address
+                                                Email
                                             </label>
-                                            <input type="email" id="email" placeholder="Your email" required />
+                                            <input type="email" id="email" placeholder="Email" required />
                                         </fieldset>
                                         <fieldset>
                                             <label >
-                                                Phone
+                                                Téléphone
                                             </label>
-                                            <input type="number" id="phone" placeholder="Your phone" required />
+                                            <input type="number" id="phone" placeholder="Téléphone" required />
                                         </fieldset>
                                         <fieldset>
                                             <label htmlFor="message">
-                                                Mesage
+                                                Message
                                             </label>
-                                            <textarea id="message" placeholder="Tell us about the project you wan to launch" rows="5" tabIndex="4" name="message" className="message"  required></textarea>
+                                            <textarea id="message" placeholder="Message" rows="5" tabIndex="4" name="message" className="message"  required></textarea>
                                         </fieldset> 
                                     </div>
                                 </div> 
 
                                 <div className="wrap-btn">
                                     <button type="submit" className="tf-button style1">
-                                        Send mesage
+                                        Envoyer un message
                                     </button>
                                 </div>
                             </form>

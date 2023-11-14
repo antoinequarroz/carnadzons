@@ -48,7 +48,7 @@ function Featured(props) {
                                             <div className="icon-box">
                                                 <div className="top">
                                                     <div className="icon">
-                                                        <img src={item.img} alt="" />
+                                                        <img src={item.img} alt="" className="IconImg"/>
                                                     </div>
                                                     <div className="content">
                                                         <h5><Link to="/project_list">{item.title}</Link></h5>

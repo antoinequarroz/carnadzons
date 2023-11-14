@@ -28,12 +28,12 @@ const menus = [
     {
         id: 6,
         name: 'FAQ',
-        links: '#faq',
+        links: 'faqs',
     },
     {
         id: 7,
         name: 'Contact',
-        links: 'contact', 
+        links: 'contact',
     },
     
 ]
