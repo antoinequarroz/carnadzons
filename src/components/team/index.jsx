@@ -46,7 +46,7 @@ function Team(props) {
                                                 <img src={item.img} alt="" />
                                             </div>
                                             <div className="content">
-                                                <h5 className="name"><Link to="/team_details">{item.name}</Link></h5>
+                                                <h5 className="name">{item.name}</h5>
                                                 <p className="position">{item.unit}</p>
                                                 <h6 className="position">{item.societe}</h6>
                                             </div>

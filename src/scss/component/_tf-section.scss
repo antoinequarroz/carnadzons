@@ -181,6 +181,20 @@
         }
     }
 
+    /* Styles par défaut pour les écrans plus larges */
+    .technology .coin {
+        display: block; /* Assurez-vous que les images des planètes sont visibles par défaut */
+    }
+
+    /* Styles pour les écrans jusqu'à 768px de large */
+    @media (max-width: 768px) {
+        .technology .coin {
+            display: none; /* Masquez les images des planètes sur les petits écrans */
+        }
+
+        /* Autres styles adaptatifs ici */
+    }
+
     .partner_CTA {
         .overlay {
             img {
