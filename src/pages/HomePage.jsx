@@ -47,7 +47,7 @@ function HomePage(props) {
                     <Team data={dataTeam} />
                 </div>
 
-                <div>
+                <div className="partner-container">
                     <Partner2 data={dataPartner} />
                 </div>
 
