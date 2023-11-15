@@ -8,22 +8,22 @@ const menus = [
     {
         id: 2,
         name: 'Qui sommes-nous',
-        links: '#features',
+        links: '#nous',
     },
     {
         id: 3,
         name: 'Thème',
-        links: '#technology',
+        links: '#theme',
     },
     {
         id: 4,
         name: 'Char',
-        links: '#roadmap',
+        links: '#char',
     },
     {
         id: 5,
         name: 'Comité',
-        links: '#equipe',
+        links: '#comite',
     },
     {
         id: 6,

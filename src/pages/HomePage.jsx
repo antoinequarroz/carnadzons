@@ -26,11 +26,11 @@ function HomePage(props) {
         <div className='header-fixed main home2 counter-scroll'>
             <Banner data={dataBanner} />
 
-            <div id="features"> {/* Identifiant pour 'Qui sommes-nous' */}
+            <div id="nous"> {/* Identifiant pour 'Qui sommes-nous' */}
                 <Featured data={dataFeatured} />
             </div>
 
-            <div id="technology"> {/* Identifiant pour 'Thème' */}
+            <div id="theme"> {/* Identifiant pour 'Thème' */}
                 <Technology data={dataPartner} />
             </div>
 
@@ -39,11 +39,11 @@ function HomePage(props) {
                     <img src={require("../assets/images/backgroup/bg_home2.png")} alt="" />
                 </div>
 
-                <div id="roadmap"> {/* Identifiant pour 'Char' */}
+                <div id="char"> {/* Identifiant pour 'Char' */}
                     <Roadmap data={dataRoadmap} />
                 </div>
 
-                <div id="equipe"> {/* Identifiant pour 'Comité' */}
+                <div id="comite"> {/* Identifiant pour 'Comité' */}
                     <Team data={dataTeam} />
                 </div>
 
