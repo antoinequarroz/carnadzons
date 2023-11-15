@@ -22,7 +22,7 @@ function Edition(props) {
                                 <p>En fin de compte, les pirates restent une figure emblématique de l’histoire maritime et continuent de captiver l’imagination populaire avec leur esprit indomptable et leur soif de liberté.</p>
                                 <p>Être ensemble, écouter de la bonne musique, venez nous rejoindre moussaillons à Saint-Martin le 11 février !</p>
                                 <div className="image mb30 text-center">
-                                    <img className="boder-20" src={require ("../assets/images/common/details_1.jpg")} alt="" />
+                                    <img className="boder-20" src={require ("../assets/images/carna/afficheFinal2023.png")} alt="" />
                                 </div>
                                 <div className="spacing"></div>
                                 <h4 className="heading mb10">Édition 2020</h4>
@@ -31,9 +31,6 @@ function Edition(props) {
                                 <p>Grâce à un comité jeune et dynamique, les sociétés membres du Carna’dzons sont fières de vous convier au Carna’dzons 2024!</p>
                                 <p>Nous nous réjouissons de vous accueillir à Saint-Martin et de vivre avec vous cette journée placée sous le signe de la convivialité et de la franche rigolade!</p>
 
-                                <div className="image mb30 text-center">
-                                    <img className="boder-20" src={require ("../assets/images/common/details_1.jpg")} alt="" />
-                                </div>
                             </div>
                         </div>
                     </div>

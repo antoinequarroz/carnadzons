@@ -24,6 +24,7 @@ function Banner (props) {
                                 <img className="icon icon_1" src={require ("../../../assets/images/common/icon1_slider_2.png")} alt="" />
                                 <img className="icon icon_2" src={require ("../../../assets/images/common/icon2_slider_2.png")} alt="" />
                                 <img className="icon icon_3" src={require ("../../../assets/images/common/icon3_slider_2.png")} alt="" />
+                                <img className="icon icon_4" src={require ("../../../assets/images/planet/cuteCow.png")} alt="" />
                                 <div className="overlay">
                                     <img src={require ("../../../assets/images//backgroup/bg-slider2.png")} alt="" />
                                 </div>

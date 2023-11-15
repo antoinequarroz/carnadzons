@@ -91,6 +91,26 @@
                     animation: move4 5s infinite linear;
                     -webkit-animation: move4 5s infinite linear;
                 }
+                &.icon_4 {
+                    top: 55%;
+                    left: 25%;
+                    animation: move3 5s infinite linear;
+                    -webkit-animation: move3 5s infinite linear;
+                }
+            }
+            @media (max-width: 768px) {
+                .icon_1, .icon_3, .icon_4 {
+                    display: none; /* Masquer ces éléments sur les petits écrans */
+                }
+                .icon_2 {
+                    top: 15%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    animation: move3 5s infinite linear;
+                    -webkit-animation: move3 5s infinite linear;
+                    width: 200px;
+                    height: auto;
+                }
             }
          
             .overlay {

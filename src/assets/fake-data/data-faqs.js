@@ -9,26 +9,11 @@ const dataFaq = [
     {
         id: 2,
         title: 'Heures des lunbabus ?',
-        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus eleifend egestas. Duis eget dictum purus. Fusce est mi, imperdiet porta neque malesuada, blandit scelerisque lectus. Maecenas vel lobortis risus. Donec ornare urna quis libero euismod, ac fermentum diam blandit. Nunc dapibus tempor lacus, vel lacinia enim efficitur eu'
+        content: '00h15: Départ du LUNBABUS devant la place de fête jusqu’à la gare de Sion, en passant par les localités suivantes: Saint-Martin, Evolène Hérémence, Vex, Sion. 3h00: Départ du LUNBABUS devant la place de fête. Saint-Martin, Evolène, Hérémence, Vex, Sion.'
     },
     {
         id: 3,
         title: 'Entrée est-elle libre ?',
-        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus eleifend egestas. Duis eget dictum purus. Fusce est mi, imperdiet porta neque malesuada, blandit scelerisque lectus. Maecenas vel lobortis risus. Donec ornare urna quis libero euismod, ac fermentum diam blandit. Nunc dapibus tempor lacus, vel lacinia enim efficitur eu'
-    },
-    {
-        id: 4,
-        title: 'Is the metaverse fun ?',
-        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus eleifend egestas. Duis eget dictum purus. Fusce est mi, imperdiet porta neque malesuada, blandit scelerisque lectus. Maecenas vel lobortis risus. Donec ornare urna quis libero euismod, ac fermentum diam blandit. Nunc dapibus tempor lacus, vel lacinia enim efficitur eu'
-    },
-    {
-        id: 5,
-        title: 'How do I find things to actually do in the metaverse?',
-        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus eleifend egestas. Duis eget dictum purus. Fusce est mi, imperdiet porta neque malesuada, blandit scelerisque lectus. Maecenas vel lobortis risus. Donec ornare urna quis libero euismod, ac fermentum diam blandit. Nunc dapibus tempor lacus, vel lacinia enim efficitur eu'
-    },
-    {
-        id: 6,
-        title: 'What is ownership in the metaverse?',
         content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus eleifend egestas. Duis eget dictum purus. Fusce est mi, imperdiet porta neque malesuada, blandit scelerisque lectus. Maecenas vel lobortis risus. Donec ornare urna quis libero euismod, ac fermentum diam blandit. Nunc dapibus tempor lacus, vel lacinia enim efficitur eu'
     },
     

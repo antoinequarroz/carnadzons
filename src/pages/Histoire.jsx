@@ -19,9 +19,19 @@ function Histoire(props) {
                         <p>Ainsi est né le Carnaval nouvelle mouture sous l’appellation CARNA’DZONS. Depuis, ce nouveau concept a insufflé une belle énergie et a remporté un vif succès auprès de la population et des sociétés membres et invitées.</p>
                         <p>Grâce à un comité jeune et dynamique, les sociétés membres du Carna’dzons sont fières de vous convier au Carna’dzons 2024!</p>
                         <p>Nous nous réjouissons de vous accueillir à Saint-Martin et de vivre avec vous cette journée placée sous le signe de la convivialité et de la franche rigolade!</p>
+                        <div className="col-6">
+                            <h6 className="heading mb10">Les sociétés membres</h6>
+                            <ul>
+                                <li>La Jeunesse de Saint-Martin</li>
+                                <li>Les fifres et tambours de la Maya</li>
+                                <li>La fanfare la Perce-Neige</li>
+                                <li>Les Chenegaudes</li>
+                                <li>La gymnastique La Coccinelle</li>
+                            </ul>
+                        </div>
                         <div className="spacing"></div>
                         <div className="image mb30 text-center">
-                            <img className="boder-20" src={require ("../assets/images/common/details_1.jpg")} alt="" />
+                            <img className="boder-20" src={require ("../assets/images/carna/histoire.jpg")} alt="" />
                         </div>
                     </div>
                 </div>
