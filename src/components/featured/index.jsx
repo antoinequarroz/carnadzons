@@ -51,7 +51,7 @@ function Featured(props) {
                                                         <img src={item.img} alt="" className="IconImg"/>
                                                     </div>
                                                     <div className="content">
-                                                        <h5><Link to="/project_list">{item.title}</Link></h5>
+                                                        <h5><Link to={item.link}>{item.title}</Link></h5>
                                                         <p>{item.text}.</p>
                                                     </div>
                                                 </div>

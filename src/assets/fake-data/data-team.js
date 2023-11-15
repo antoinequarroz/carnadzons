@@ -18,46 +18,81 @@ const dataTeam = [
     }, 
     {
         id: 2,
-        img : img2,
-        name: 'Kristin Watson',
-        unit: 'Senior Designer'
+        img : img1,
+        name: 'Florian Gaspoz',
+        unit: 'Caissier',
+        societe: "Carna'dzons",
     }, 
     {
         id: 3,
         img : img3,
-        name: 'Jacob Jones',
-        unit: 'Senior Designer'
+        name: 'Célia Laveaux',
+        unit: 'Secrétaire',
+        societe: "Carna'dzons",
     }, 
     {
         id: 4,
-        img : img4,
-        name: 'Jane Cooper',
-        unit: 'Senior Designer'
+        img : img8,
+        name: 'Océane Rey',
+        unit: 'Décoration ',
+        societe: "La Perce-Neige",
     }, 
     {
         id: 5,
-        img : img5,
-        name: 'Jenny Wilson',
-        unit: 'Senior Designer'
+        img : img6,
+        name: 'Léa Rossier',
+        unit: 'Décoration',
+        societe: "La Perce-Neige",
     }, 
     {
         id: 6,
-        img : img6,
-        name: 'Dianne Russell',
-        unit: 'Senior Designer'
+        img : img2,
+        name: 'Swen Quarroz',
+        unit: 'Sécurité',
+        societe: "La Coccinelle",
     }, 
     {
         id: 7,
-        img : img7,
-        name: 'Devon Lane',
-        unit: 'Senior Designer'
-    }, 
+        img : img1,
+        name: 'Gilles Zermatten',
+        unit: 'Subsistance ',
+        societe: "Fifres et Tambours La Maya",
+    },
     {
         id: 8,
-        img : img8,
-        name: 'Robert Fox',
-        unit: 'Senior Designer'
-    }, 
+        img : img1,
+        name: 'Maxime Zermatten',
+        unit: 'Subsistance ',
+        societe: "Fifres et Tambours La Maya",
+    },
+    {
+        id: 9,
+        img : img5,
+        name: 'Antoine Quarroz',
+        unit: 'Média sociaux',
+        societe: "La Jeunesse de Saint-Martin",
+    },
+    {
+        id: 9,
+        img : img2,
+        name: "Denis Beytrison",
+        unit: 'Média sociaux, confettis ',
+        societe: "La Jeunesse de Saint-Martin",
+    },
+    {
+        id: 9,
+        img : img7,
+        name: 'Lionel Mayor',
+        unit: 'Guggen, animation',
+        societe: "Les Chenegaudes",
+    },
+    {
+        id: 9,
+        img : img7,
+        name: 'Mathieu Dayer',
+        unit: 'Construction',
+        societe: "Les Chenegaudes",
+    },
 ]
 
 export default dataTeam;

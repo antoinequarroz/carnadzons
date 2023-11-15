@@ -10,18 +10,21 @@ const dataFeatured = [
         img: img1,
         title: 'Histoire',
         text: "Plongez dans l'univers fascinant de notre carnaval, une célébration riche en couleurs et en émotions. Apprenez-en plus sur son histoire captivante",
+        link: '/histoire'
     },
     {
         id: 2,
         img: img2,
         title: 'Dernières éditions',
         text: "Revivez en images les dernières éditions du Carna'dzons. Découvrez les plus beaux costumes et les plus belles photos de notre carnaval",
+        link: '/edition'
     }, 
     {
         id: 3,
         img: img3,
         title: 'Carnaval des enfants',
         text: 'Retrouvez toutes les informations sur le Carnaval des enfants, une journée dédiée aux plus petits et à leurs familles',
+        link: '/carna_enfant'
     }, 
     {
         id: 4,

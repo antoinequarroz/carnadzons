@@ -26,7 +26,7 @@ import CTA from '../components/cta';
 import Affiche from "../components/cta";
 
 
-function HomeTwo(props) {
+function HomePage(props) {
     return (
         <div className='header-fixed main home2 counter-scroll'>
             <Banner data={dataBanner} />
@@ -58,4 +58,4 @@ function HomeTwo(props) {
     );
 }
 
-export default HomeTwo;
+export default HomePage;
