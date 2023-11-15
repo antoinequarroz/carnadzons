@@ -40,7 +40,7 @@ function Banner (props) {
                                                                 <div className="col-md-12">
                                                                     <div className="tf-title" data-aos="fade-up" data-aos-duration="800">
                                                                         <h4 className="title mt-5">
-                                                                            Décollage prévu dans :
+                                                                            Décollage prévu le 03 : 02 : 2024
                                                                         </h4>
                                                                         <div className="featured-countdown style2">
                                                                             <span className="slogan"></span>
@@ -48,8 +48,8 @@ function Banner (props) {
                                                                                 {<Countdown />}
                                                                             </span>
                                                                             <ul className="desc">
-                                                                                <li>Days</li>
-                                                                                <li>Hour</li>
+                                                                                <li>Jou</li>
+                                                                                <li>Heu</li>
                                                                                 <li>Min</li>
                                                                                 <li>Sec</li>
                                                                             </ul>

@@ -21,7 +21,7 @@ function PageFaqs(props) {
                 <div className="col-md-12">
                     <div className="tf-title center mb40" data-aos="fade-up" data-aos-duration="800">
                         <h2 className="title mb-5">
-                            hi we're here to help you
+                            Texte à trouver
                         </h2>
                         <h6>Plus d'information sur la fête</h6>
                     </div>
