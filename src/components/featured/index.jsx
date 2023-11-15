@@ -18,7 +18,7 @@ function Featured(props) {
                     <div className="row">
                         <div className="col-md-12">
                             <div className="container_inner">
-                                <h1 className="mb-5 text-center">Qui nous sommes ?</h1>
+                                <h2 className="mb-5 text-center">Qui sommes-nous ?</h2>
                                  <Swiper
                                     modules={[Navigation]}
                                     spaceBetween={30}
@@ -43,7 +43,7 @@ function Featured(props) {
                                 
                                 >
                                 {
-                                    data.slice(0,4).map(item => (
+                                    data.slice(0,3).map(item => (
                                         <SwiperSlide className='pb-30' key={item.id}>
                                             <div className="icon-box">
                                                 <div className="top">

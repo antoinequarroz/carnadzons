@@ -1,9 +1,5 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import Modal from 'react-modal';
-
-// Assurez-vous de définir l'élément racine de l'application pour la modale
-Modal.setAppElement('#root');
 
 Technology.propTypes = {
     data: PropTypes.array
@@ -17,10 +13,6 @@ function Technology(props) {
         text: ' Les Modzons sur la Lune'
     });
 
-    const [modalIsOpen, setModalIsOpen] = useState(false);
-
-    const openModal = () => setModalIsOpen(true);
-    const closeModal = () => setModalIsOpen(false);
 
     return (
         <section className="tf-section technology">
@@ -28,7 +20,7 @@ function Technology(props) {
                 <div className="row">
                     <div className="col-lg-6 col-md-12">
                         <div className="tf-title" data-aos="fade-right" data-aos-duration="800">
-                            <div className="img_technology afficheImg" onClick={openModal}>
+                            <div className="img_technology afficheImg">
                                 <img src={require("../../assets/images/common/AfficheCarna2024.png")} alt="" />
                                 <img className="coin coin_1" src={require("../../assets/images/planet/bleu.png")} alt="" />
                                 <img className="coin coin_2" src={require("../../assets/images/planet/brune.png")} alt="" />
@@ -48,16 +40,6 @@ function Technology(props) {
                 </div>
             </div>
 
-            <Modal
-                isOpen={modalIsOpen}
-                onRequestClose={closeModal}
-                contentLabel="Affiche Agrandie"
-                className="VotreClasseDeModale"
-                overlayClassName="VotreClasseDeOverlay"
-            >
-                <img src={require("../../assets/images/common/AfficheCarna2024.png")} alt="Affiche Agrandie" />
-                <button onClick={closeModal}>Fermer</button>
-            </Modal>
         </section>
     );
 }

@@ -1,77 +1,72 @@
-import React , { useState , useEffect } from 'react';
-
-import { Link , NavLink } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 import menus from '../../pages/menu';
-import Button from '../button/index'; 
 import './styles.scss';
-import logo from '../../assets/images/logo/logo_carnadzons_grand.png'
-
-
+import logo from '../../assets/images/logo/logo_carnadzons_grand.png';
 
 const Header = () => {
-
     const [scroll, setScroll] = useState(false);
-        useEffect(() => {
+    useEffect(() => {
         window.addEventListener("scroll", () => {
             setScroll(window.scrollY > 300);
         });
-        return () => {
-            setScroll({});
-        }
     }, []);
 
     const [menuActive, setMenuActive] = useState(null);
-
     const handleMenuActive = () => {
         setMenuActive(!menuActive);
-      };
+    };
 
-    
     const [activeIndex, setActiveIndex] = useState(null);
     const handleDropdown = index => {
-        setActiveIndex(index); 
+        setActiveIndex(index);
+    };
+
+    const scrollToSection = (sectionId) => {
+        // Suppression du '#' pour le selecteur CSS
+        const section = document.querySelector(sectionId.substring(1));
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
     };
 
     return (
         <header id="header_main" className={`header ${scroll ? 'is-fixed' : ''}`}>
-             <div className="container">
-            <div id="site-header-inner">
-                <div className="header__logo">
-                    <NavLink to="/"><img src={logo} alt="carnadzons" /></NavLink>
-                </div>
-                <nav id="main-nav" className={`main-nav ${menuActive ? 'active' : ''}`} >
-                    <ul id="menu-primary-menu" className="menu">
-
-                        {
-                            menus.map((data,idx) => (
-                                <li key={idx} onClick={()=> handleDropdown(idx)} className={`menu-item ${data.namesub ? 'menu-item-has-children' : ''} ${activeIndex === idx ? 'active' : ''}`} 
-                                
-                                >
-                                    <Link to={data.links}>{data.name}</Link>
+            <div className="container">
+                <div id="site-header-inner">
+                    <div className="header__logo">
+                        <NavLink to="/"><img src={logo} alt="carnadzons" /></NavLink>
+                    </div>
+                    <nav id="main-nav" className={`main-nav ${menuActive ? 'active' : ''}`}>
+                        <ul id="menu-primary-menu" className="menu">
+                            {menus.map((data, idx) => (
+                                <li key={idx} onClick={() => handleDropdown(idx)}
+                                    className={`menu-item ${data.namesub ? 'menu-item-has-children' : ''} 
+                                    ${activeIndex === idx ? 'active' : ''}`}>
+                                    <a href={data.links} onClick={() => scrollToSection(data.links)}>
+                                        {data.name}
+                                    </a>
                                     {
                                         data.namesub &&
                                         <ul className="sub-menu">
-                                            {
-                                                data.namesub.map((submenu) => (
-                                                    <li key={submenu.id} className="menu-item"><NavLink to={submenu.links} onClick={handleDropdown}>{submenu.sub}</NavLink></li>
-                                                ))
-                                            }
+                                            {data.namesub.map((submenu) => (
+                                                <li key={submenu.id} className="menu-item">
+                                                    <NavLink to={submenu.links} onClick={handleDropdown}>
+                                                        {submenu.sub}
+                                                    </NavLink>
+                                                </li>
+                                            ))}
                                         </ul>
                                     }
-                                    
                                 </li>
-                            ))
-                        }
-                    </ul>
-                </nav>
-
-                <div className={`mobile-button ${menuActive ? 'active' : ''}`} onClick={handleMenuActive}><span></span></div>
+                            ))}
+                        </ul>
+                    </nav>
+                    <div className={`mobile-button ${menuActive ? 'active' : ''}`} onClick={handleMenuActive}><span></span></div>
+                </div>
             </div>
-        </div> 
-        </header> 
- 
-        
+        </header>
     );
-}
+};
 
 export default Header;

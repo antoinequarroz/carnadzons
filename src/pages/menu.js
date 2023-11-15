@@ -8,7 +8,7 @@ const menus = [
     {
         id: 2,
         name: 'Qui sommes-nous',
-        links: '/#features',
+        links: '#features',
     },
     {
         id: 3,
@@ -23,12 +23,12 @@ const menus = [
     {
         id: 5,
         name: 'Comité',
-        links: '#team',
+        links: '#equipe',
     },
     {
         id: 6,
         name: 'FAQ',
-        links: 'faqs',
+        links: '#faq',
     },
     {
         id: 7,
