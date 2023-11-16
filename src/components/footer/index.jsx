@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
+
 import './styles.scss'
 
 import { Link } from 'react-router-dom';
@@ -52,7 +53,7 @@ function Footer(props) {
                             </li>
                             <li>
                                 <p>Phone</p>
-                                <Link to="#">+0791576450</Link>
+                                <Link to="#">079 157 64 50</Link>
                             </li>
                             <li className="email">
                                 <p>Email</p>

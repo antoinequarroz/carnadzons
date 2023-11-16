@@ -50,7 +50,14 @@ const dataTeam = [
         name: 'Swen Quarroz',
         unit: 'Sécurité',
         societe: "La Coccinelle",
-    }, 
+    },
+    {
+        id: 10,
+        img : img2,
+        name: 'Alexix Zermatten',
+        unit: 'Sécurité',
+        societe: "La Coccinelle",
+    },
     {
         id: 7,
         img : img1,

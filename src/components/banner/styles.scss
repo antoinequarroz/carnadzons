@@ -98,8 +98,13 @@
                     -webkit-animation: move3 5s infinite linear;
                 }
             }
-            @media (max-width: 768px) {
-                .icon_3, .icon_4 {
+            @media (max-width: 1500px) {
+                .icon_4 {
+                    display: none; /* Masquer ces éléments sur les petits écrans */
+                }
+            }
+            @media (max-width: 756px) {
+                .icon_3 {
                     display: none; /* Masquer ces éléments sur les petits écrans */
                 }
             }
