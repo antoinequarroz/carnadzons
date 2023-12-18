@@ -1,13 +1,11 @@
 import React from 'react';
 
-import PageTitle from '../components/pagetitle';
 import CTA from '../components/cta/cta_v2';
 
 
 function Contact(props) {
     return (
         <div className='inner-page'>
-            {<PageTitle title='Contact' />}
 
             <section className="tf-section tf-contact pt60">
                 <div className="container">
@@ -31,7 +29,7 @@ function Contact(props) {
                                     </div>
                                     <div className="content">
                                         <p>Adresse</p>
-                                        <p className="white">Rue de l'Evouette 5, 1969 Saint-Martin</p>
+                                        <p className="white">1969 Saint-Martin</p>
                                     </div>
                                 </li>
                                 <li>

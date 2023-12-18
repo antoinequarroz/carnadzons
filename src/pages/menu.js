@@ -15,25 +15,33 @@ const menus = [
         name: 'Thème',
         links: '#theme',
     },
+    /*
     {
         id: 4,
+        name: 'Horaires',
+        links: '#horaires',
+    },
+*/
+    {
+        id: 5,
         name: 'Char',
         links: '#char',
     },
+
     {
-        id: 5,
+        id: 6,
         name: 'Comité',
         links: '#comite',
     },
     {
-        id: 6,
+        id: 7,
         name: 'FAQ',
         links: '#faq',
     },
     {
-        id: 7,
+        id: 8,
         name: 'Contact',
-        links: 'contact',
+        links: '#contact',
     },
     
 ]

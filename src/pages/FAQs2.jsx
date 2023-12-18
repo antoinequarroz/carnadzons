@@ -32,7 +32,7 @@ function FAQs2(props) {
                         <p>1er départ à 00:30</p>
                         <p>Départ du LUNBABUS devant la place de fête jusqu’à la gare de Sion,
                             en passant par les localités suivantes : Saint-Martin, Evolène Hérémence, Vex, Sion.</p>
-                        <p>2ème départ à 03h30</p>
+                        <p>2ème départ à 03h00</p>
                         <p>Départ du LUNBABUS devant la place de fête. Ce bus dessert les localités suivantes : Saint-Martin, Evolène, Hérémence, Vex, Sion.</p>
 
                     </div>

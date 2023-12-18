@@ -28,6 +28,13 @@ const dataRoadmap = [
         text2: 'Saint-Léonard',
         status: 'active'
     },
+    {
+        id: 5,
+        time: 'Février 12, 2024',
+        text1: 'Carnval de Chamoson',
+        text2: 'Chamoson',
+        status: 'active'
+    },
 
 
 ]

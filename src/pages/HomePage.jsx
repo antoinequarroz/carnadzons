@@ -11,6 +11,8 @@ import Partner2 from '../components/partner/index2';
 import Team from '../components/team';
 import dataTeam from '../assets/fake-data/data-team';
 import FAQs2 from "./FAQs2";
+import Planning from "../components/technology/index2";
+import Contact from "./Contact";
 
 
 function HomePage(props) {
@@ -34,25 +36,37 @@ function HomePage(props) {
                 <Technology data={dataPartner} />
             </div>
 
+            {/*
+            <div id="horaires">
+                <Planning data={dataPartner} />
+            </div>
+            */}
+
+
             <div className="bg_body">
                 <div className="bg_h2">
                     <img src={require("../assets/images/backgroup/bg_home2.png")} alt="" />
                 </div>
 
-                <div id="char"> {/* Identifiant pour 'Char' */}
+
+                <div id="char">
                     <Roadmap data={dataRoadmap} />
                 </div>
 
-                <div id="comite"> {/* Identifiant pour 'Comité' */}
+                <div id="comite">
                     <Team data={dataTeam} />
                 </div>
-
+                {/*
                 <div className="partner-container">
                     <Partner2 data={dataPartner} />
                 </div>
-
+                */}
                 <div id="faq"> {/* Identifiant pour 'Histoire' */}
                     <FAQs2 />
+                </div>
+
+                <div id="contact"> {/* Identifiant pour 'Contact' */}
+                    <Contact />
                 </div>
 
             </div>

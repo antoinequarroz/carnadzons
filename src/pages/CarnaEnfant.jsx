@@ -21,7 +21,7 @@ function CarnaEnfant(props) {
                                 <h6>Mardi gras</h6>
                                 <p>Amis pirates bienvenue ! L’espace d’un jour nous vous invitons à vous transformer en pirate ! Les pirates ont longtemps fasciné l’imagination populaire avec leurs aventures audacieuses et leur goût pour la liberté. Ces aventuriers des mers étaient connus pour leur vie dissolue et leur soif de trésors, et leur légende a inspiré de nombreux films, livres et jeux vidéo.</p>
                                 <div className="image mb30 text-center">
-                                    <img className="boder-20 afficheImg" src={require ("../assets/images/carna/carnaEnfant2023.png")} alt="" />
+                                    <img className="boder-20 afficheImg" src={require ("../assets/images/carna/CarnaEnfant2024.png")} alt="" />
                                 </div>
                                 <div className="spacing"></div>
                             </div>
