@@ -1,8 +1,7 @@
-import React , { useState , useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function Countdown(props) {
-
-    const [countdownDate] = useState(new Date('02/07/2024').getTime());
+    const [countdownDate] = useState(new Date(2024, 1, 3, 14, 0, 0).getTime());
     const [state, setState] = useState({
         days: 0,
         hours: 0,
@@ -11,51 +10,45 @@ function Countdown(props) {
     });
 
     useEffect(() => {
-        setInterval(() => setNewTime(), 1000);
-    },);
+        const interval = setInterval(() => setNewTime(), 1000);
+
+        return () => clearInterval(interval);
+    }, [countdownDate]);
 
     const setNewTime = () => {
         if (countdownDate) {
-        const currentTime = new Date().getTime();
+            const currentTime = new Date().getTime();
+            const distanceToDate = countdownDate - currentTime;
 
-        const distanceToDate = countdownDate - currentTime;
+            let days = Math.floor(distanceToDate / (1000 * 60 * 60 * 24));
+            let hours = Math.floor((distanceToDate % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            let minutes = Math.floor((distanceToDate % (1000 * 60 * 60)) / (1000 * 60));
+            let seconds = Math.floor((distanceToDate % (1000 * 60)) / 1000);
 
-        let days = Math.floor(distanceToDate / (1000 * 60 * 60 * 24));
-        let hours = Math.floor(
-            (distanceToDate % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
-        );
-        let minutes = Math.floor(
-            (distanceToDate % (1000 * 60 * 60)) / (1000 * 60),
-        );
-        let seconds = Math.floor((distanceToDate % (1000 * 60)) / 1000);
+            const numbersToAddZeroTo = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-        const numbersToAddZeroTo = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+            days = `${days}`;
+            hours = numbersToAddZeroTo.includes(hours) ? `0${hours}` : `${hours}`;
+            minutes = numbersToAddZeroTo.includes(minutes) ? `0${minutes}` : `${minutes}`;
+            seconds = numbersToAddZeroTo.includes(seconds) ? `0${seconds}` : `${seconds}`;
 
-        days = `${days}`;
-        if (numbersToAddZeroTo.includes(hours)) {
-            hours = `0${hours}`;
-        } else if (numbersToAddZeroTo.includes(minutes)) {
-            minutes = `0${minutes}`;
-        } else if (numbersToAddZeroTo.includes(seconds)) {
-            seconds = `0${seconds}`;
-        }
-
-        setState({ days: days, hours: hours, minutes, seconds });
+            setState({ days: days, hours: hours, minutes: minutes, seconds: seconds });
         }
     };
+
     return (
         <div className="countdown__timer">
             <div className="countdown__item">
-                {state.days || '0'}
+                {state.days || '00'}
             </div>
             <div className="countdown__item countdownhours">
-            {state.hours || '00'}
+                {state.hours || '00'}
             </div>
             <div className="countdown__item countdownminutes">
-            {state.minutes || '00'}
+                {state.minutes || '00'}
             </div>
             <div className="countdown__item countdownseconds">
-            {state.seconds || '00'}
+                {state.seconds || '00'}
             </div>
         </div>
     );

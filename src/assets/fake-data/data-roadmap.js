@@ -10,7 +10,7 @@ const dataRoadmap = [
     {
         id: 2,
         time: 'Février 9, 2024',
-        text1: 'Carnval de Vex',
+        text1: 'Carnaval de Vex',
         text2: 'Vex',
         status: 'active'
     },

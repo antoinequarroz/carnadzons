@@ -10,9 +10,8 @@ function Planning(props) {
 
     const [dataTitle] = useState({
         title: 'Thème du carnaval 2024',
-        text: ' Les Modzons sur la Lune'
+        text: 'Les Modzons sur la Lune'
     });
-
 
     return (
         <section className="tf-section technology">
@@ -24,15 +23,60 @@ function Planning(props) {
                                 <h2 className="title title mb20 ">Horaires</h2>
                             </div>
                             <h4 className="sub_technology">{dataTitle.text}</h4>
-                            <p>Amis aventuriers de l'espace, bienvenue au Carna'dzons de Saint-Martin, sous le thème 'Les Modzons sur la Lune' ! Rejoignez-nous pour une journée où nous explorons les confins de l'univers. L'espace, un domaine d'audace et de mystère, inspire nos costumes scintillants de symboles lunaires et stellaires, évoquant des astronautes et des voyageurs interstellaires. Les rues se transforment en galaxies lointaines, avec des chars décorés comme des vaisseaux spatiaux. La musique, un mélange de rythmes terrestres et de sons cosmiques, invite à une danse interstellaire. Cette aventure spatiale symbolise notre désir de liberté, de découverte et d'unité. Vivez cette expérience unique le 4 février 2024 à Saint-Martin, où le carnaval devient une odyssée spatiale, unissant la communauté dans un voyage à travers les étoiles.</p>
+                            <ul>
+                                <li>
+                                    <h6>Dès 14h00 :</h6>
+                                    <ul>
+                                        <li> Défilé des guggens jusqu'à la place de l'église</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h6>Dès 14h30 :</h6>
+                                    <ul>
+                                        <li> Apéro sur la place de l'église</li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <h6>16h00 :</h6>
+                                    <ul>
+                                        <li> Grand cortège et carousel des guggens</li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <h6>18h00 :</h6>
+                                    <ul>
+                                        <li> Production des sociétés</li>
+                                        <ul>
+                                            <li> La Perce-Neige</li>
+                                            <li> Les Fifres et Tambours La Maya</li>
+                                            <li> La Coccinelle</li>
+                                            <li> Les K'sôs</li>
+                                            <li> Les Peinsaclicks</li>
+                                            <li> La Glouglouggen</li>
+                                            <li> Les Chenegaudes</li>
+                                        </ul>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h6>Dès 23h00 :</h6>
+                                    <ul>
+                                        <li>Animation avec DJ Lucian</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            {/* Le reste de votre texte descriptif ici */}
                         </div>
                     </div>
                     <div className="col-lg-6 col-md-12">
                         <div className="tf-title" data-aos="fade-left" data-aos-duration="800">
-                            <div className="img_technology afficheImg2">
-                                <img src={require("../../assets/images/common/AfficheCarna2024.png")} alt="" />
-                                <img className="coin coin_1" src={require("../../assets/images/planet/bleu.png")} alt="" />
-                                <img className="coin coin_6" src={require("../../assets/images/planet/bruneAnneaux.png")} alt="" />
+                            <div className="img_technology afficheImg2 pt-5">
+                                <img src={require("../../assets/images/backgroup/FlyerVerso300.png")} alt=""/>
+                                <img className="coin coin_1" src={require("../../assets/images/planet/bleu.png")}
+                                     alt=""/>
+                                <img className="coin coin_6"
+                                     src={require("../../assets/images/planet/bruneAnneaux.png")} alt=""/>
                             </div>
                         </div>
                     </div>

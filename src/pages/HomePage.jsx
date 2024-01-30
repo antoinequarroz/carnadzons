@@ -36,11 +36,11 @@ function HomePage(props) {
                 <Technology data={dataPartner} />
             </div>
 
-            {/*
+            {
             <div id="horaires">
                 <Planning data={dataPartner} />
             </div>
-            */}
+            }
 
 
             <div className="bg_body">
