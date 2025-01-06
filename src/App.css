@@ -208,7 +208,7 @@ a {
   display: inline-block;
 }
 a:hover {
-  color: #86FF00;
+  color: #f3ea4c;
   transition: all 0.3s;
 }
 
@@ -545,7 +545,7 @@ form button {
 
 #scroll-top:before {
   z-index: -1;
-  background: #86FF00;
+  background: #f3ea4c;
 }
 
 #scroll-top:after {
@@ -597,7 +597,7 @@ form button {
   content: "";
   display: block;
   border-radius: 50%;
-  border: 2px solid #86FF00;
+  border: 2px solid #f3ea4c;
   position: absolute;
   top: 50%;
   left: 50%;

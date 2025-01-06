@@ -12,6 +12,7 @@ import Faqs from '../components/faqs';
 import dataFaq from '../assets/fake-data/data-faqs';
 import Team from '../components/team';
 import dataTeam from '../assets/fake-data/data-team';
+import Contact from "./Contact";
 
 function HomePage(props) {
 
@@ -47,16 +48,13 @@ function HomePage(props) {
                     <Team data={dataTeam} />
                 </div>
 
-                <div className="partner-container">
-                    <Partner2 data={dataPartner} />
-                </div>
 
                 <div id="faq"> {/* Identifiant pour 'FAQ' */}
                     <Faqs data={dataFaq} />
                 </div>
 
                 <div id="contact"> {/* Identifiant pour 'Contact' */}
-                    {/* Votre composant de contact ici */}
+                    <Contact />
                 </div>
             </div>
         </div>

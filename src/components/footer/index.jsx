@@ -49,7 +49,7 @@ function Footer(props) {
                         <ul className="widget-link contact">
                             <li>
                                 <p>Adresse</p>
-                                <Link to="#">Rue de l'Evouette 5, 1969 Saint-Martin</Link>
+                                <Link to="#">Rue de l'Eglise 4, 1969 Saint-Martin</Link>
                             </li>
                             <li>
                                 <p>Phone</p>
@@ -106,7 +106,7 @@ function Footer(props) {
             <div className="container">
                 <div className="wrap-fx">
                     <div className="Copyright">
-                        Copyright © 2024. Designed by <Link to="https://themeforest.net/user/themesflat/portfolio">Themesflat</Link>
+                        Copyright © 2025. Designed by <Link to="https://themeforest.net/user/themesflat/portfolio">Themesflat</Link>
                     </div>
                     <ul className="social">
                         <li>
@@ -131,10 +131,7 @@ function Footer(props) {
             
         </div>
 
-        {
-                isVisible && 
-                <Link onClick={scrollToTop}  to='#' id="scroll-top"></Link>
-            }
+
     </footer>
     );
 }

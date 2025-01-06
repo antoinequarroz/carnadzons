@@ -1,7 +1,7 @@
-import img1 from '../images/planet/bleu.png';
-import img2 from '../images/planet/orange.png';
-import img3 from '../images/planet/red.png';
-import img4 from '../images/planet/brune.png';
+import img1 from '../images/backgroup/Sword.png';
+import img2 from '../images/backgroup/Hammer.png';
+import img3 from '../images/backgroup/Shield.png';
+import img4 from '../images/backgroup/Axe.png';
 
 
 const dataFeatured = [
