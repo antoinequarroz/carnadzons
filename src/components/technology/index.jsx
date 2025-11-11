@@ -10,7 +10,7 @@ function Technology(props) {
 
     const [dataTitle] = useState({
         title: 'Thème du carnaval 2025',
-        text: ' Retour au Moyen-Âge'
+        text: 'Destination Far West'
     });
 
 
@@ -34,7 +34,7 @@ function Technology(props) {
                                 <h2 className="title mb20">{dataTitle.title}</h2>
                             </div>
                             <h4 className="sub_technology">{dataTitle.text}</h4>
-                            <p>Amis chevaliers et dames de Saint-Martin, bienvenue au Carna'dzons de Saint-Martin, sous le thème 'Les Royaumes Médiévaux' ! Rejoignez-nous pour une journée où nous plongeons au cœur des époques chevaleresques. Le Moyen Âge, un temps de bravoure et de légendes, inspire nos costumes majestueux de chevaliers, de princesses et de créatures mythiques, évoquant les nobles et les artisans des anciens royaumes. Les rues se transforment en châteaux enchantés et en marchés médiévaux, avec des chars décorés comme des catapultes et des tournois. La musique, un mélange de mélodies traditionnelles et de chants épiques, invite à des danses folkloriques et à des festins dignes des grandes cours. Cette aventure médiévale symbolise notre désir de courage, de camaraderie et de célébration des traditions. Vivez cette expérience unique le 22 février 2025 à Saint-Martin, où le carnaval devient une épopée médiévale, unissant la communauté dans un voyage au cœur des légendes et des histoires d'antan.</p>
+                            <p>Chers cowboys et cowgirls de Saint-Martin, bienvenue au Carna'dzons de Saint-Martin, sous le thème 'Far West' ! Rejoignez-nous pour une journée où nous plongeons au cœur de l'Ouest Américain sauvage. Le Far West, une époque de pionniers et d'aventuriers, inspire nos costumes légendaires de cowboys, d'Indiens, de shérifs et de hors-la-loi, évoquant les saloons et les ranchs des grandes plaines. Les rues se transforment en villes minières, avec des chars décorés comme des diligences et des trains du Wild West. La musique country et les danses en ligne animeront nos rues, rappelant l'ambiance des rodéos et des soirées autour du feu de camp. Cette aventure western symbolise notre esprit de liberté, d'audace et de camaraderie. Vivez cette expérience unique le 22 février 2025 à Saint-Martin, où le carnaval devient une épopée du Far West, unissant la communauté dans un voyage au cœur des légendes de l'Ouest sauvage.</p>
                         </div>
                     </div>
                 </div>

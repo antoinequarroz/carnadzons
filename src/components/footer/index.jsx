@@ -49,7 +49,7 @@ function Footer(props) {
                         <ul className="widget-link contact">
                             <li>
                                 <p>Adresse</p>
-                                <Link to="#">Rue de l'Eglise 4, 1969 Saint-Martin</Link>
+                                <Link to="#">Rue de l'Evouette 5, 1969 Saint-Martin</Link>
                             </li>
                             <li>
                                 <p>Phone</p>

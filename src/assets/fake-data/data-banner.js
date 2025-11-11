@@ -6,8 +6,8 @@ import img4 from '../images/slider/icon_3.png';
 const dataBanner = [
     {
         id: 1,
-        heading: 'Enter the gateway of Blockchain Gaming',
-        sub_heading: 'Visually and spatially connecting games in a seamless metaverse experience',
+        heading: "Bienvenue au Carna'dzons 2025",
+        sub_heading: "Plongez dans l'aventure du Far West au coeur de Saint-Martin",
         img1: img1,
         img2: img2,
         img3: img3,
@@ -15,8 +15,8 @@ const dataBanner = [
     }, 
     {
         id: 2,
-        heading: 'Enter the gateway of Blockchain Gaming',
-        sub_heading: 'Visually and spatially connecting games in a seamless metaverse experience',
+        heading: "Bienvenue au Carna'dzons 2025",
+        sub_heading: "Plongez dans l'aventure du Far West au coeur de Saint-Martin",
         img1: img1,
         img2: img2,
         img3: img3,

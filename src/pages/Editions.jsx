@@ -1,5 +1,4 @@
 import React from 'react';
-
 import PageTitle from '../components/pagetitle';
 import CTA from '../components/cta/cta_v2';
 
@@ -8,16 +7,22 @@ import CTA from '../components/cta/cta_v2';
 function Edition(props) {
     return (
         <div className='inner-page project-grid-5'>
-            {<PageTitle title='Project Details' />}
+            {<PageTitle title='Dernières éditions' />}
             <section className="tf-section details">
                 <div className="container">
                     <div className="row col-12">
                         <div className="sidebar" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200">
                             <div className="prodect-content">
+                                <h4 className="heading mb10">Édition 2024</h4>
+                                <p>Retour en images et en émotions sur l’édition 2024 du Carna'dzons ! Une journée rythmée par les chars, la musique et la convivialité. Merci à toutes et à tous pour votre énergie et votre créativité.</p>
+                                <div className="image mb30 text-center">
+                                    <img className="boder-20" src={process.env.PUBLIC_URL + "/images/affiches/afficheFinal2024.png"} alt="Affiche Carna'dzons 2024" />
+                                </div>
+                                <div className="spacing"></div>
                                 <h4 className="heading mb10">Édition 2023</h4>
                                 <h6>À l’abor’dzons</h6>
                                 <p>Amis pirates bienvenue ! L’espace d’un jour nous vous invitons à vous transformer en pirate ! Les pirates ont longtemps fasciné l’imagination populaire avec leurs aventures audacieuses et leur goût pour la liberté. Ces aventuriers des mers étaient connus pour leur vie dissolue et leur soif de trésors, et leur légende a inspiré de nombreux films, livres et jeux vidéo.</p>
-                                <p> Un pirate typique était un marin expérimenté qui avait abandonné les navires de commerce pour devenir un corsaire indépendant, attaquant et pillant les navires ennemis pour leur butin. Ils étaient souvent associés à des bannières noires et à des crânes et des tibias croisés, et leurs navires étaient ornés de drapeaux de pirate et de têtes de mort.</p>
+                                <p>Un pirate typique était un marin expérimenté qui avait abandonné les navires de commerce pour devenir un corsaire indépendant, attaquant et pillant les navires ennemis pour leur butin. Ils étaient souvent associés à des bannières noires et à des crânes et des tibias croisés, et leurs navires étaient ornés de drapeaux de pirate et de têtes de mort.</p>
                                 <p>Bien que la vie de pirate soit souvent considérée comme dangereuse et impitoyable, elle était aussi pleine de liberté et d’aventure. Les pirates étaient leurs propres patrons et ne répondaient qu’à leur code d’honneur personnel. Ils étaient aussi connus pour leur sens de l’amitié et de la loyauté, se battant souvent côte à côte avec leurs compagnons de bord.</p>
                                 <p>En fin de compte, les pirates restent une figure emblématique de l’histoire maritime et continuent de captiver l’imagination populaire avec leur esprit indomptable et leur soif de liberté.</p>
                                 <p>Être ensemble, écouter de la bonne musique, venez nous rejoindre moussaillons à Saint-Martin le 11 février !</p>

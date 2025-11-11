@@ -1,23 +1,19 @@
-
-
 const dataFaq = [
     {
         id: 1,
-        title: 'Heures du défilé ?',
-        content: 'Le défilé aura lieu le 31 octobre 2021 à 20h00 UTC. et durera environ 1 heure. Ca va être un spectacle incroyable! Fusce est mi, imperdiet porta neque malesuada, blandit scelerisque lectus. Maecenas vel lobortis risus. Donec ornare urna quis libero euismod, ac fermentum diam blandit. Nunc dapibus tempor lacus, vel lacinia enim efficitur eu',
+        title: 'Quand a lieu le défilé Far West ?',
+        content: "Le Carna'dzons 2025 aura lieu le samedi 22 février 2025 à Saint-Martin. Le cortège débutera à 20h00 et défilera dans les rues du village transformées en villes du Far West. Préparez vos costumes de cowboys, cowgirls, shérifs et hors-la-loi pour une soirée inoubliable dans l'ambiance du Wild West !",
     }, 
     {
         id: 2,
-        title: 'Heures des lunbabus ?',
-        content: '00h15: Départ du LUNBABUS devant la place de fête jusqu’à la gare de Sion, en passant par les localités suivantes: Saint-Martin, Evolène Hérémence, Vex, Sion. 3h00: Départ du LUNBABUS devant la place de fête. Saint-Martin, Evolène, Hérémence, Vex, Sion.'
+        title: 'Horaires des Lunbabus ?',
+        content: "00h15: Départ du LUNBABUS devant la place de fête jusqu’à la gare de Sion, en passant par les localités suivantes: Saint-Martin, Evolène, Hérémence, Vex, Sion. 3h00: Départ du LUNBABUS devant la place de fête. Saint-Martin, Evolène, Hérémence, Vex, Sion."
     },
     {
         id: 3,
-        title: 'Entrée est-elle libre ?',
-        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus eleifend egestas. Duis eget dictum purus. Fusce est mi, imperdiet porta neque malesuada, blandit scelerisque lectus. Maecenas vel lobortis risus. Donec ornare urna quis libero euismod, ac fermentum diam blandit. Nunc dapibus tempor lacus, vel lacinia enim efficitur eu'
+        title: "L'entrée est-elle libre ?",
+        content: "Oui, l'accès au Carna'dzons est entièrement gratuit ! Tous les cowboys et cowgirls sont les bienvenus pour participer à cette grande aventure du Far West. Venez nombreux en costume pour vivre pleinement l'ambiance des saloons et des ranchs du Wild West à Saint-Martin !"
     },
-    
-
 ]
 
 export default dataFaq;

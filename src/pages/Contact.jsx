@@ -30,7 +30,7 @@ function Contact(props) {
                                     </div>
                                     <div className="content">
                                         <p>Adresse</p>
-                                        <p className="white">Rue de l'Eglise 4, 1969 Saint-Martin</p>
+                                        <p className="white">Rue de l'Evouette 5, 1969 Saint-Martin</p>
                                     </div>
                                 </li>
                                 <li>
