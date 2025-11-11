@@ -49,7 +49,7 @@ import CTA from '../components/cta/cta_v2';
             </section>
 
 
-            {<CTA />}
+
 
 
         </div>

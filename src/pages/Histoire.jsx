@@ -39,8 +39,6 @@ function Histoire(props) {
         </div>
     </section>
 
-           
-            {<CTA />}
 
             
         </div>

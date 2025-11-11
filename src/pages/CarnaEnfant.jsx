@@ -31,8 +31,6 @@ function CarnaEnfant(props) {
             </section>
 
 
-            {<CTA/>}
-
 
         </div>
     );
