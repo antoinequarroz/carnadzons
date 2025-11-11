@@ -2562,7 +2562,6 @@
         }
     }
 }
-
 /* accordion
 -------------------------------------------------------------- */
 .flat-accordion {
@@ -2601,11 +2600,11 @@
                 font-family: 'risebot';
                 content: "\e902";
                 font-size: 28px;
-            position: absolute;
-            left: 5px;
-            top: -5px;
-            color: $white;
-            @include transition3;
+                position: absolute;
+                left: 5px;
+                top: -5px;
+                color: $white;
+                @include transition3;
             }
             
             padding-left: 40px;

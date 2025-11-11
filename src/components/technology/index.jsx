@@ -9,7 +9,7 @@ function Technology(props) {
     const { data } = props;
 
     const [dataTitle] = useState({
-        title: 'Thème du carnaval 2025',
+        title: 'Thème du carnaval 2026',
         text: 'Destination Far West'
     });
 
@@ -21,10 +21,10 @@ function Technology(props) {
                     <div className="col-lg-6 col-md-12">
                         <div className="tf-title" data-aos="fade-right" data-aos-duration="800">
                             <div className="img_technology afficheImg">
-                                <img src={require("../../assets/images/common/carnadzons2025Affiche.png")} alt="" />
-                                <img className="coin coin_1" src={require("../../assets/images/planet/Potion.png")} alt="" />
-                                <img className="coin coin_2" src={require("../../assets/images/planet/Scroll.png")} alt="" />
-                                <img className="coin coin_6" src={require("../../assets/images/planet/Magic Book.png")} alt="" />
+                                <img src={require("../../assets/images/common/AfficheCarna2026.png")} alt="" />
+                                <img className="coin coin_1" src={require("../../assets/images/planet/041-totem.png")} alt="" />
+                                <img className="coin coin_2" src={require("../../assets/images/planet/044-scarf.png")} alt="" />
+                                <img className="coin coin_6" src={require("../../assets/images/planet/049-barrel.png")} alt="" />
                             </div>
                         </div>
                     </div>

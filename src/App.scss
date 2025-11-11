@@ -18,6 +18,13 @@
     font-display: block;
 } 
 
+// Cowboy Outlaw loaded via public/index.html @font-face
+
+.font-cowboy {
+    font-family: 'Cowboy Outlaw', 'Space Grotesk', sans-serif !important;
+    letter-spacing: 0.5px;
+}
+
 html {
     margin-right: 0 !important;
 }

@@ -1,20 +1,34 @@
 /**
-  * Name: ICOLand | ICO landing page & ICO Crypto HTML Template
   * Version: 1.0.2
   * Author: Themesflat
   * Author URI: http://www.themesflat.com
 */
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
-@font-face {
-  font-family: "resobot-bold";
-  src: url("../../assets/font/GeneralSans-Bold.otf");
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
-}
-html {
-  margin-right: 0 !important;
-}
+  @font-face {
+    font-family: "resobot-bold";
+    src: url("../../assets/font/GeneralSans-Bold.otf");
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  /* Cowboy Outlaw display font */
+  @font-face {
+    font-family: 'Cowboy Outlaw';
+    src: url('/assets/fonts/Cowboy Outlaw.woff2') format('woff2'),
+         url('/assets/fonts/Cowboy Outlaw.woff') format('woff'),
+         url('/assets/fonts/Cowboy Outlaw.ttf') format('truetype'),
+         url('/assets/fonts/Cowboy Outlaw.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  .font-cowboy {
+    font-family: 'Cowboy Outlaw', 'Space Grotesk', sans-serif !important;
+    letter-spacing: 0.5px;
+  }
+  html {
+    margin-right: 0 !important;
+  }
 
 * {
   margin: 0;

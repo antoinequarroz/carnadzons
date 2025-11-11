@@ -161,60 +161,8 @@
 
     li.menu-item.current-menu-item > a {
         color: $color-main1;
-        &::after {
-            color: $color-main1;
-        }
     }
 }
-
-#main-nav2 {
-    .menu {
-        li {
-            a {
-                font-family: "Orbitron", sans-serif;
-                font-size: 16px;
-                line-height: 24px;
-                font-weight: 700;
-                position: relative;
-                display: block;
-                color: #fff;
-                padding-right: 18px;
-                text-transform: capitalize;
-                padding-top: 20px;
-                padding-bottom: 20px;
-                &:hover {
-                    color: $color-hover;
-                }
-            }
-        }
-    }
-}
-
-
-/* Header Fixed
--------------------------------------------------------------- */
-#header_main.is-fixed {
-    @include transition5;
-    z-index: 9999;
-
-    position  : fixed;
-
-    left      : 0;
-    width     : 100%;
-    background: #09121D;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1), inset 0px 1px 0px #ECECEC;
-    &.is-fixed.is-small {
-        top: -1px;
-        opacity: 1;
-        visibility: visible;
-        height: 80px;
-    }
-}
-
-#header_main.main.is-fixed {
-    background-color: #190d3e;
-}
-
 .header.main.is-fixed .tf-button span.tl::before, 
 .header.main.is-fixed .tf-button span.tl::after {
     border-left: 16px solid transparent;

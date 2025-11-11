@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import img from '../../assets/images/backgroup/foretnuit.jpg'
+import img from '../../assets/images/backgroup/bg-desert2.jpg'
 import shape from '../../assets/images/common/shape_3.png'
 import shape1 from '../../assets/images/common/shape_4.svg'
 import { useState } from 'react';
@@ -22,6 +22,10 @@ function Team(props) {
     )
     return (
         <section className="tf-section tf_team">
+            <br/>
+            <br/>
+            <br/>
+            <br/>
                 <div className="overlay">
                     <img src={img} alt="" />
                 </div>

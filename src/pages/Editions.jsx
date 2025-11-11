@@ -4,7 +4,7 @@ import CTA from '../components/cta/cta_v2';
 
 
 
-function Edition(props) {
+  function Edition(props) {
     return (
         <div className='inner-page project-grid-5'>
             {<PageTitle title='Dernières éditions' />}
@@ -13,10 +13,16 @@ function Edition(props) {
                     <div className="row col-12">
                         <div className="sidebar" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200">
                             <div className="prodect-content">
+                                <h4 className="heading mb10">Édition 2025</h4>
+                                <p>Retour en images et en émotions sur l’édition 2024 du Carna'dzons ! Une journée rythmée par les chars, la musique et la convivialité. Merci à toutes et à tous pour votre énergie et votre créativité.</p>
+                                <div className="image mb30 text-center">
+                                    <img className="boder-20" style={{ maxWidth: '520px', width: '100%', height: 'auto' }} src={require ("../assets/images/common/carnadzons2025Affiche.png")} alt="Affiche Carna'dzons 2025" />
+                                </div>
+                                <div className="spacing"></div>
                                 <h4 className="heading mb10">Édition 2024</h4>
                                 <p>Retour en images et en émotions sur l’édition 2024 du Carna'dzons ! Une journée rythmée par les chars, la musique et la convivialité. Merci à toutes et à tous pour votre énergie et votre créativité.</p>
                                 <div className="image mb30 text-center">
-                                    <img className="boder-20" src={process.env.PUBLIC_URL + "/images/affiches/afficheFinal2024.png"} alt="Affiche Carna'dzons 2024" />
+                                    <img className="boder-20" style={{ maxWidth: '520px', width: '100%', height: 'auto' }} src={require ("../assets/images/common/AfficheCarna2024.png")} alt="Affiche Carna'dzons 2024" />
                                 </div>
                                 <div className="spacing"></div>
                                 <h4 className="heading mb10">Édition 2023</h4>
@@ -27,7 +33,7 @@ function Edition(props) {
                                 <p>En fin de compte, les pirates restent une figure emblématique de l’histoire maritime et continuent de captiver l’imagination populaire avec leur esprit indomptable et leur soif de liberté.</p>
                                 <p>Être ensemble, écouter de la bonne musique, venez nous rejoindre moussaillons à Saint-Martin le 11 février !</p>
                                 <div className="image mb30 text-center">
-                                    <img className="boder-20" src={require ("../assets/images/carna/afficheFinal2023.png")} alt="" />
+                                    <img className="boder-20" style={{ maxWidth: '520px', width: '100%', height: 'auto' }} src={require ("../assets/images/carna/afficheFinal2023.png")} alt="Affiche Carna'dzons 2023" />
                                 </div>
                                 <div className="spacing"></div>
                                 <h4 className="heading mb10">Édition 2020</h4>

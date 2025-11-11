@@ -32,7 +32,7 @@ const dataTeam = [
     {
         id: 3,
         img : img13,
-        name: 'Célia Laveaux',
+        name: 'Samuel Morand',
         unit: 'Secrétaire',
         societe: "Carna'dzons",
     }, 
@@ -53,14 +53,14 @@ const dataTeam = [
     {
         id: 6,
         img : img15,
-        name: 'Swen Quarroz',
+        name: 'Jonathan Carrupt',
         unit: 'Sécurité',
         societe: "La Coccinelle",
     },
     {
         id: 7,
         img : img10,
-        name: 'Gilles Zermatten',
+        name: 'Swen Quarroz',
         unit: 'Subsistance ',
         societe: "Fifres et Tambours La Maya",
     },
@@ -98,6 +98,13 @@ const dataTeam = [
         name: 'Mathieu Dayer',
         unit: 'Construction',
         societe: "Les Chenegaudes",
+    },
+    {
+        id: 10,
+        img : img10,
+        name: 'Charlotte',
+        unit: 'Construction',
+        societe: "La Coccinelle",
     },
 ]
 

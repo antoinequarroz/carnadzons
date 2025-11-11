@@ -21,27 +21,26 @@ function Banner (props) {
             <Swiper>
                         <SwiperSlide>
                             <div className="slider-st2">
-                                <img className="icon icon_2" src={require ("../../../assets/images/planet/14_Sword.png")} alt="" />
-                                <img className="icon icon_3 h-25" src={require ("../../../assets/images/planet/12_Treasure Chest.png")}  alt="" />
-                                <img className="icon icon_1 h-25" src={require ("../../../assets/images/planet/15_Shield.png")} alt="" />
+                                <img className="icon icon_2" src={require ("../../../assets/images/planet/047-cactus.png")} alt="" />
+                                <img className="icon icon_3 h-25" src={require ("../../../assets/images/planet/045-crown.png")}  alt="" />
+                                <img className="icon icon_1 h-25" src={require ("../../../assets/images/planet/046-hat.png")} alt="" />
 
                                 <div className="overlay">
-                                    <img src={require ("../../../assets/images//backgroup/bg-chateau3.png")} alt="" />
+                                    <img src={require ("../../../assets/images//backgroup/bg-desert1.jpg")} alt="" />
                                 </div>
                                 <div className="container">
                                     <div className="row">
                                         <div className="col-md-12">
                                             <div className="box-slider">
                                                 <div className="content-box">
-                                                    <h1 className="title" >Le Carna'dzons</h1>
-                                                    <h2 className="title" >Édition spéciale</h2>
-                                                    <h3 className="sub-title">Destination Far West</h3>
+                                                    <h1 className="title font-cowboy" style={{color: "#000"}} >Le Carna'dzons</h1>
+                                                    <h3 className="sub-title font-cowboy"  style={{color: "#000"}}>Destination Far West</h3>
                                                     <section className="tf-section project">
                                                         <div className="container w_1280">
                                                             <div className="row">
                                                                 <div className="col-md-12">
                                                                     <div className="tf-title" data-aos="fade-up" data-aos-duration="800">
-                                                                        <h4 className="title mt-5">
+                                                                        <h4 className="title mt-5 font-cowboy" style={{color: "#000"}}>
                                                                             Le 07 : 02 : 2026
                                                                         </h4>
                                                                         <div className="featured-countdown style2">
