@@ -2570,11 +2570,13 @@
         border-radius: 20px;
         margin-bottom: 16px;
         padding: 16px;
+        overflow: hidden;
         &:last-child {
             margin-bottom: 0;
         }
         .accordion-body {
             padding: 0;
+            overflow: hidden;
         }
         // .icon-Icon {
         //     font-size: 28px;
@@ -2622,9 +2624,11 @@
             position: relative;
             margin-bottom: 0;
             padding: 16px 0 0;
+            padding-left: 40px;
             margin-top: 16px;
-            margin-left: 40px;
             border-top: 1px solid rgba(255,255,255,0.1);
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
         &.active {
             .toggle-title {

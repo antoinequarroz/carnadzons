@@ -5,28 +5,36 @@ const dataRoadmap = [
         text1: "Carna'dzons",
         text2: 'Saint-Martin VS',
         status: 'active'
-    }, 
-    {
-        id: 2,
-        time: 'Février 13, 2026',
-        text1: 'Carnaval de Vex',
-        text2: 'Vex',
-        status: 'active'
     },
     {
-        id: 3,
-        time: 'Février 14, 2026',
-        text1: 'Carnaval de Sion',
-        text2: 'Sion',
-        status: 'active'
-    },
-    {
-        id: 4,
-        time: 'Février 15, 2026',
-        text1: 'Carnaval de Saint-Léonard',
-        text2: 'Saint-Léonard',
-        status: 'active'
-    },
+         id: 2,
+         time: 'A définir',
+         text1: 'En cours de chargement ... ',
+         status: 'active'
+     },
+
+
+    // {
+    //     id: 2,
+    //     time: 'Février 13, 2026',
+    //     text1: 'Carnaval de Vex',
+    //     text2: 'Vex',
+    //     status: 'active'
+    // },
+    // {
+    //     id: 3,
+    //     time: 'Février 14, 2026',
+    //     text1: 'Carnaval de Sion',
+    //     text2: 'Sion',
+    //     status: 'active'
+    // },
+    // {
+    //     id: 4,
+    //     time: 'Février 15, 2026',
+    //     text1: 'Carnaval de Saint-Léonard',
+    //     text2: 'Saint-Léonard',
+    //     status: 'active'
+    // },
 
 
 ]

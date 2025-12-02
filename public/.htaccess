@@ -93,9 +93,19 @@ FileETag None
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteBase /
-    RewriteRule ^index\.html$ - [L]
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_URI} !^/contact/
-    RewriteRule . /index.html [L]
+    
+    # Ne pas rediriger les fichiers qui existent réellement
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+    
+    # Ne pas rediriger les dossiers de ressources statiques
+    RewriteCond %{REQUEST_URI} ^/assets/ [OR]
+    RewriteCond %{REQUEST_URI} ^/static/ [OR]
+    RewriteCond %{REQUEST_URI} ^/contact/ [OR]
+    RewriteCond %{REQUEST_URI} \.(css|js|jpg|jpeg|png|gif|svg|webp|woff|woff2|ttf|otf|eot|ico|json|xml|txt|pdf)$
+    RewriteRule ^ - [L]
+    
+    # Tout le reste vers index.html pour React Router
+    RewriteRule ^ /index.html [L]
 </IfModule>

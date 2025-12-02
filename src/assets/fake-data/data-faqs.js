@@ -2,7 +2,7 @@ const dataFaq = [
     {
         id: 1,
         title: 'Quand a lieu le défilé Far West ?',
-        content: "Le Carna'dzons 2025 aura lieu le samedi 22 février 2025 à Saint-Martin. Le cortège débutera à 20h00 et défilera dans les rues du village transformées en villes du Far West. Préparez vos costumes de cowboys, cowgirls, shérifs et hors-la-loi pour une soirée inoubliable dans l'ambiance du Wild West !",
+        content: "Le Carna'dzons 2026 aura lieu le samedi 7 février 2026 à Saint-Martin. Le cortège débutera à 16h00 et défilera dans les rues du village transformées en villes du Far West. Préparez vos costumes de cowboys, cowgirls, shérifs et hors-la-loi pour une soirée inoubliable dans l'ambiance du Wild West !",
     }, 
     {
         id: 2,
