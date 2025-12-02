@@ -1,0 +1,10 @@
+# Robots.txt pour Carna'dzons
+User-agent: *
+Allow: /
+Disallow: /contact/contact-process.php
+
+# Sitemap
+Sitemap: https://carnadzons.ch/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1

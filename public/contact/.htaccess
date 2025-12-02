@@ -1,0 +1,28 @@
+# Protection contre les requêtes multiples
+<IfModule mod_evasive20.c>
+    DOSHashTableSize 3097
+    DOSPageCount 5
+    DOSSiteCount 100
+    DOSPageInterval 1
+    DOSSiteInterval 1
+    DOSBlockingPeriod 60
+</IfModule>
+
+# Limitation du taux de requêtes
+<IfModule mod_ratelimit.c>
+    SetOutputFilter RATE_LIMIT
+    SetEnv rate-limit 400
+</IfModule>
+
+# Bloquer les user agents suspects
+<IfModule mod_setenvif.c>
+    SetEnvIfNoCase User-Agent "^$" bad_bot
+    SetEnvIfNoCase User-Agent "^-$" bad_bot
+    SetEnvIfNoCase User-Agent "libwww-perl" bad_bot
+    SetEnvIfNoCase User-Agent "python-requests" bad_bot
+    SetEnvIfNoCase User-Agent "curl" bad_bot
+    <RequireAll>
+        Require all granted
+        Require not env bad_bot
+    </RequireAll>
+</IfModule>
