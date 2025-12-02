@@ -98,14 +98,7 @@ const dataTeam = [
         name: 'Charlotte',
         unit: 'Décoration',
         societe: "La Coccinelle",
-    },
-    {
-        id: 6,
-        img : img15,
-        name: 'Jonathan Carrupt',
-        unit: 'Sécurité',
-        societe: "La Coccinelle",
-    },
+    }
 ]
 
 export default dataTeam;
