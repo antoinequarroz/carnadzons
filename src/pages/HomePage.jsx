@@ -27,33 +27,33 @@ function HomePage(props) {
         <div className='header-fixed main home2 counter-scroll'>
             <Banner data={dataBanner} />
 
-            <div id="nous"> {/* Identifiant pour 'Qui sommes-nous' */}
+            <div id="nous">
                 <Featured data={dataFeatured} />
             </div>
 
-            <div id="theme"> {/* Identifiant pour 'Thème' */}
+            <div id="theme">
                 <Technology data={dataPartner} />
             </div>
 
             <div className="bg_body">
                 <div className="bg_h2">
-                    <img src={require("../assets/images/backgroup/bg_home2.png")} alt="" />
+                    <img src={require("../assets/images/backgroup/bg_home2.png")} alt="Background" loading="lazy" />
                 </div>
 
-                <div id="char"> {/* Identifiant pour 'Char' */}
+                <div id="char">
                     <Roadmap data={dataRoadmap} />
                 </div>
 
-                <div id="comite"> {/* Identifiant pour 'Comité' */}
+                <div id="comite">
                     <Team data={dataTeam} />
                 </div>
 
 
-                <div id="faq"> {/* Identifiant pour 'FAQ' */}
+                <div id="faq">
                     <Faqs data={dataFaq} />
                 </div>
 
-                <div id="contact"> {/* Identifiant pour 'Contact' */}
+                <div id="contact">
                     <Contact />
                 </div>
             </div>
@@ -62,4 +62,5 @@ function HomePage(props) {
 }
 
 export default HomePage;
+
 

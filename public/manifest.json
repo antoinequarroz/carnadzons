@@ -1,6 +1,7 @@
 {
-  "short_name": "Carnadzons",
-  "name": "Carnadzons",
+  "short_name": "Carna'dzons",
+  "name": "Carna'dzons - Carnaval de Saint-Martin",
+  "description": "Le plus grand carnaval de la vallée! Destination Far West - 7 février 2026",
   "icons": [
     {
       "src": "favicon.ico",
@@ -10,16 +11,23 @@
     {
       "src": "logo192.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "192x192",
+      "purpose": "any maskable"
     },
     {
       "src": "logo512.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "512x512",
+      "purpose": "any maskable"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "orientation": "portrait-primary",
+  "theme_color": "#FF6B35",
+  "background_color": "#0a1929",
+  "lang": "fr",
+  "dir": "ltr",
+  "categories": ["entertainment", "events"]
 }

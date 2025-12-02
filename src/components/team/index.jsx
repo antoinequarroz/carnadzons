@@ -1,12 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import img from '../../assets/images/backgroup/bg-desert2.jpg'
-import shape from '../../assets/images/common/shape_3.png'
-import shape1 from '../../assets/images/common/shape_4.svg'
 import { useState } from 'react';
-
-
+import './team-simple.scss';
 
 Team.propTypes = {
     data : PropTypes.array,
@@ -21,50 +16,35 @@ function Team(props) {
         }
     )
     return (
-        <section className="tf-section tf_team">
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-                <div className="overlay">
-                    <img src={img} alt="" />
-                </div>
-                <div className="container">
-                    <div className="row">
-                        <div className="col-md-12">
-                            <div className="tf-title mb40" data-aos="fade-up" data-aos-duration="800">
-                                <h2 className="title">
-                                    {dataTitle.title}
-                                </h2>
-                            </div>
+        <section className="tf-section team-simple">
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-12">
+                        <div className="tf-title mb40" data-aos="fade-up" data-aos-duration="800">
+                            <h2 className="title">
+                                {dataTitle.title}
+                            </h2>
                         </div>
-                        <div className="col-md-12">
-                            <div className="team-box-wrapper">
-
-                                {
-                                    data.map(item => (
-                                        <div key={item.id} className="team-box" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
-                                            <img className="shape" src={shape} alt="" />
-                                            <img className="shape_ecfect" src={shape1} alt="" />
-                                            <div className="image">
-                                                <img src={item.img} alt="" />
-                                            </div>
-                                            <div className="content">
-                                                <h5 className="name">{item.name}</h5>
-                                                <p className="position">{item.unit}</p>
-                                                <h6 className="position">{item.societe}</h6>
-                                            </div>
+                    </div>
+                    <div className="col-md-12">
+                        <div className="team-grid">
+                            {
+                                data.map((item, index) => (
+                                    <div key={index} className="team-card" data-aos="fade-up" data-aos-delay={100 + (index * 50)} data-aos-duration="800">
+                                        <div className="card-border"></div>
+                                        <div className="card-content">
+                                            <h4 className="member-name">{item.name}</h4>
+                                            <p className="member-role">{item.unit}</p>
+                                            <p className="member-society">{item.societe}</p>
                                         </div>
-                                    ))
-                                }
-
-                               
-                            </div>
-                        
+                                    </div>
+                                ))
+                            }
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
     );
 }
 

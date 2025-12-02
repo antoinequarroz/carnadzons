@@ -21,9 +21,9 @@ function Banner (props) {
             <Swiper>
                         <SwiperSlide>
                             <div className="slider-st2">
-                                <img className="icon icon_2" src={require ("../../../assets/images/planet/047-cactus.png")} alt="" />
-                                <img className="icon icon_3 h-25" src={require ("../../../assets/images/planet/045-crown.png")}  alt="" />
-                                <img className="icon icon_1 h-25" src={require ("../../../assets/images/planet/046-hat.png")} alt="" />
+                                <img className="icon icon_2" src={require ("../../../assets/images/planet/047-cactus.png")} alt="Cactus" loading="lazy" />
+                                <img className="icon icon_3 h-25" src={require ("../../../assets/images/planet/045-crown.png")}  alt="Couronne" loading="lazy" />
+                                <img className="icon icon_1 h-25" src={require ("../../../assets/images/planet/046-hat.png")} alt="Chapeau" loading="lazy" />
 
                                 <div className="overlay">
                                     <img src={require ("../../../assets/images//backgroup/bg-desert1.jpg")} alt="" />

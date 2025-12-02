@@ -1,10 +1,89 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import PageTitle from '../components/pagetitle';
 import CTA from '../components/cta/cta_v2';
 
 
 function Contact(props) {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        message: '',
+        honeypot: ''
+    });
+    const [formStartTime, setFormStartTime] = useState(null);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitMessage, setSubmitMessage] = useState({ text: '', type: '' });
+
+    useEffect(() => {
+        setFormStartTime(Date.now());
+    }, []);
+
+    const handleChange = (e) => {
+        const { id, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [id]: value
+        }));
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setSubmitMessage({ text: '', type: '' });
+
+        if (formData.honeypot !== '') {
+            setSubmitMessage({ text: 'Erreur de validation du formulaire.', type: 'error' });
+            setIsSubmitting(false);
+            return;
+        }
+
+        const timeSpent = (Date.now() - formStartTime) / 1000;
+        if (timeSpent < 3) {
+            setSubmitMessage({ text: 'Veuillez prendre le temps de remplir le formulaire.', type: 'error' });
+            setIsSubmitting(false);
+            return;
+        }
+
+        try {
+            const response = await fetch('/contact/contact-process.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name: formData.name,
+                    email: formData.email,
+                    phone: formData.phone,
+                    message: formData.message,
+                    timestamp: formStartTime
+                })
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                setSubmitMessage({ text: 'Message envoyé avec succès!', type: 'success' });
+                setFormData({
+                    name: '',
+                    email: '',
+                    phone: '',
+                    message: '',
+                    honeypot: ''
+                });
+                setFormStartTime(Date.now());
+            } else {
+                setSubmitMessage({ text: result.message || 'Erreur lors de l\'envoi du message.', type: 'error' });
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            setSubmitMessage({ text: 'Erreur de connexion. Veuillez réessayer.', type: 'error' });
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
     return (
         <div className='inner-page'>
 
@@ -67,40 +146,94 @@ function Contact(props) {
                 <div className="container"> 
                     <div className="row">
                         <div className="col-md-12">
-                            <form action="contact/contact-process.php" className="form-contact">
+                            <form onSubmit={handleSubmit} className="form-contact">
                                 <div className="project-info-form">
                                     <h6 className="title">Écrire un message</h6>
+                                    {submitMessage.text && (
+                                        <div className={`alert alert-${submitMessage.type}`} style={{
+                                            padding: '10px 15px',
+                                            marginBottom: '15px',
+                                            borderRadius: '4px',
+                                            backgroundColor: submitMessage.type === 'success' ? '#d4edda' : '#f8d7da',
+                                            color: submitMessage.type === 'success' ? '#155724' : '#721c24',
+                                            border: `1px solid ${submitMessage.type === 'success' ? '#c3e6cb' : '#f5c6cb'}`
+                                        }}>
+                                            {submitMessage.text}
+                                        </div>
+                                    )}
                                     <div className="form-inner">
                                         <fieldset>
                                             <label >
                                                 Nom complet
                                             </label>
-                                            <input type="text" id="name" placeholder="Nom / Prénom" required />
+                                            <input 
+                                                type="text" 
+                                                id="name" 
+                                                placeholder="Nom / Prénom" 
+                                                value={formData.name}
+                                                onChange={handleChange}
+                                                required 
+                                            />
                                         </fieldset>
                                         <fieldset>
                                             <label >
                                                 Email
                                             </label>
-                                            <input type="email" id="email" placeholder="Email" required />
+                                            <input 
+                                                type="email" 
+                                                id="email" 
+                                                placeholder="Email" 
+                                                value={formData.email}
+                                                onChange={handleChange}
+                                                required 
+                                            />
                                         </fieldset>
                                         <fieldset>
                                             <label >
                                                 Téléphone
                                             </label>
-                                            <input type="number" id="phone" placeholder="Téléphone" required />
+                                            <input 
+                                                type="tel" 
+                                                id="phone" 
+                                                placeholder="Téléphone" 
+                                                value={formData.phone}
+                                                onChange={handleChange}
+                                                required 
+                                            />
                                         </fieldset>
                                         <fieldset>
                                             <label htmlFor="message">
                                                 Message
                                             </label>
-                                            <textarea id="message" placeholder="Message" rows="5" tabIndex="4" name="message" className="message"  required></textarea>
-                                        </fieldset> 
+                                            <textarea 
+                                                id="message" 
+                                                placeholder="Message" 
+                                                rows="5" 
+                                                tabIndex="4" 
+                                                name="message" 
+                                                className="message" 
+                                                value={formData.message}
+                                                onChange={handleChange}
+                                                required
+                                            ></textarea>
+                                        </fieldset>
+                                        <fieldset style={{ display: 'none' }}>
+                                            <input 
+                                                type="text" 
+                                                id="honeypot" 
+                                                name="honeypot"
+                                                value={formData.honeypot}
+                                                onChange={handleChange}
+                                                tabIndex="-1"
+                                                autoComplete="off"
+                                            />
+                                        </fieldset>
                                     </div>
                                 </div> 
 
                                 <div className="wrap-btn">
-                                    <button type="submit" className="tf-button style1">
-                                        Envoyer un message
+                                    <button type="submit" className="tf-button style1" disabled={isSubmitting}>
+                                        {isSubmitting ? 'Envoi en cours...' : 'Envoyer un message'}
                                     </button>
                                 </div>
                             </form>

@@ -29,7 +29,7 @@ function Affiche (props) {
                         </div>
                         <div className="col-md-5">
                         <div className="image_cta" data-aos="fade-left" data-aos-duration="1200">
-                            <img className="move4 afficheImg" src={img} alt="" />
+                            <img className="move4 afficheImg" src={img} alt="Affiche Carnaval 2024" loading="lazy" />
                         </div>
                         </div>
                     </div>
