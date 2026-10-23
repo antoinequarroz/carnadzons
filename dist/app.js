@@ -1,45 +1,50 @@
 const reduced=matchMedia('(prefers-reduced-motion: reduce)');
-const header=document.querySelector('header'),heroArt=document.querySelector('.hero-art'),templeArt=document.querySelector('.temple-art'),descent=document.querySelector('.descent'),progress=document.querySelector('.progress div');
-const expedition=document.querySelector('.expedition'),stage=document.querySelector('.journey-stage'),track=document.querySelector('.world-track'),heroCopy=document.querySelector('.hero-copy'),heroBottom=document.querySelector('.hero-bottom'),passageCopy=document.querySelector('.passage-copy'),fall=document.querySelector('.continuous-fall'),leftRock=document.querySelector('.foreground-left'),rightRock=document.querySelector('.foreground-right'),leftWall=document.querySelector('.shaft-left'),rightWall=document.querySelector('.shaft-right'),leftPillar=document.querySelector('.pillar-left'),rightPillar=document.querySelector('.pillar-right');
-let paused=reduced.matches,party=false,raf=0,sceneHeight=innerHeight,templeStart=0,expeditionStart=0,totalScroll=1;
-const motion=document.querySelector('#motion');
-const shaftArt=document.querySelector('.shaft-back'),rail=document.querySelector('.chapter-rail'),railLinks=[...rail.querySelectorAll('a')],atmosphere=document.querySelector('.atmosphere');
-let visualScroll=scrollY,lastFrame=0;
-const clamp=(n,a=0,b=1)=>Math.max(a,Math.min(b,n));
-function measure(){sceneHeight=stage.clientHeight||innerHeight;templeStart=descent.offsetTop;expeditionStart=expedition.offsetTop;totalScroll=Math.max(1,document.documentElement.scrollHeight-innerHeight);visualScroll=scrollY;renderScene(visualScroll);}
-function setPaused(value){paused=value;document.body.classList.toggle('paused',value);document.body.classList.toggle('reduced-scene',reduced.matches);motion.setAttribute('aria-pressed',String(value));motion.setAttribute('aria-label',value?'Reprendre les animations':'Mettre les animations en pause');motion.textContent=value?'▷':'Ⅱ';measure();}
-motion.addEventListener('click',()=>setPaused(!paused));reduced.addEventListener('change',()=>setPaused(reduced.matches));
-const menu=document.querySelector('.menu-toggle');menu.addEventListener('click',()=>{const open=header.classList.toggle('menu-open');menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'Fermer le menu':'Ouvrir le menu');menu.textContent=open?'×':'☰';});document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>{header.classList.remove('menu-open');menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Ouvrir le menu');menu.textContent='☰';}));
-function renderScene(visualY){
- const y=visualY,h=sceneHeight,local=Math.max(0,y-expeditionStart),journey=clamp(local/Math.max(h,templeStart)),camera=journey*h*2;
- header.classList.toggle('scrolled',local>h*.45);progress.style.transform=`scaleX(${clamp(y/totalScroll)})`;
- const chapter=local<sceneHeight*.6?0:local<templeStart-sceneHeight*.25?1:2;
- const hideRail=local>templeStart+sceneHeight*1.65||reduced.matches;rail.classList.toggle('rail-hidden',hideRail);rail.inert=hideRail;rail.setAttribute('aria-hidden',String(hideRail));railLinks.forEach((link,i)=>{if(i===chapter)link.setAttribute('aria-current','step');else link.removeAttribute('aria-current');});
- if(reduced.matches)return;
- track.style.transform=`translate3d(0,${-camera}px,0)`;
- const fade=1-clamp((local/h-.12)/.55);heroCopy.style.opacity=fade;heroBottom.style.opacity=1-clamp(local/(h*.3));heroCopy.style.transform=`translate3d(0,${-clamp(local/h,0,1)*65}px,0)`;
- const tunnel=clamp((local/h-.45)/.4)*(1-clamp((local-templeStart+h*.35)/(h*.35)));passageCopy.style.opacity=tunnel;
- atmosphere.style.opacity=clamp((local/sceneHeight-.25)/.6)*(1-clamp((local-templeStart-sceneHeight)/sceneHeight));
- const extra=paused?0:journey;const templeProgress=clamp((local-templeStart)/h,0,2);
- heroArt.style.transform=`translate3d(0,${extra*h*.14}px,0) scale(1.04)`;
- leftRock.style.transform=`translate3d(${-extra*120}px,${-extra*h*.45}px,0) scale(${1+extra*.22})`;
- rightRock.style.transform=`translate3d(${extra*150}px,${-extra*h*.6}px,0) scale(${1+extra*.28})`;
- leftWall.style.transform=`translate3d(${-extra*35}px,${-extra*h*.08}px,0)`;
- rightWall.style.transform=`translate3d(${extra*45}px,${-extra*h*.13}px,0) scaleX(-1)`;
- shaftArt.style.transform=`translate3d(0,${h*.2-extra*28}px,0) scale(${1.03+extra*.035})`;
- fall.style.transform=`translate3d(0,${-extra*30}px,0)`;
- templeArt.style.transform=`translate3d(0,${-templeProgress*(paused?0:20)}px,0) scale(1.045)`;
- leftPillar.style.transform=`translate3d(${-extra*12}px,${-(extra*35+templeProgress*50)}px,0)`;
- rightPillar.style.transform=`translate3d(${extra*12}px,${-(extra*50+templeProgress*70)}px,0) scaleX(-1)`;
+const header=document.querySelector('header'),descent=document.querySelector('.descent'),progress=document.querySelector('.progress div');
+const expedition=document.querySelector('.expedition'),stage=document.querySelector('.world-stage'),camera=document.querySelector('.world-camera'),worldImage=document.querySelector('.world-illustration'),shade=document.querySelector('.world-shade'),heroCopy=document.querySelector('.hero-copy'),heroBottom=document.querySelector('.hero-bottom'),passage=document.querySelector('.passage'),passageCopy=document.querySelector('.passage-copy'),panels=[...document.querySelectorAll('.story-panel')],nearLeft=document.querySelector('.near-left'),nearRight=document.querySelector('.near-right'),atmosphere=document.querySelector('.atmosphere'),rail=document.querySelector('.chapter-rail'),railLinks=[...rail.querySelectorAll('a')];
+const motion=document.querySelector('#motion'),clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v));
+let paused=reduced.matches,party=false,raf=0,lastFrame=0,visualScroll=scrollY,sceneHeight=innerHeight,artWidth=innerWidth,worldHeight=innerWidth*3,viewportWidth=innerWidth,expeditionStart=0,totalScroll=1,stops=[],chapter=-1,railHidden=null,initialHashHandled=false;
+function pageTop(element){return element.getBoundingClientRect().top+scrollY;}
+function measure(){
+ sceneHeight=stage.clientHeight||innerHeight;viewportWidth=stage.clientWidth||innerWidth;expeditionStart=pageTop(expedition);
+ artWidth=Math.max(viewportWidth,sceneHeight*1.3);worldHeight=artWidth*3;camera.style.width=`${artWidth}px`;camera.style.height=`${worldHeight}px`;
+ const centerAt=el=>Math.max(0,pageTop(el)-expeditionStart+el.offsetHeight*.5-sceneHeight*.5);
+ const maxCamera=Math.max(0,worldHeight-sceneHeight);
+ stops=[{x:0,y:0,pan:.59},{x:centerAt(passage),y:Math.min(maxCamera,worldHeight*.255),pan:.72},{x:centerAt(panels[0]),y:Math.min(maxCamera,worldHeight*.65),pan:.57},{x:centerAt(panels[1]),y:maxCamera,pan:.54}];
+ totalScroll=Math.max(1,document.documentElement.scrollHeight-innerHeight);visualScroll=scrollY;renderScene(visualScroll);
 }
-function animateScene(now){
- const dt=lastFrame?Math.min(50,now-lastFrame):16;lastFrame=now;
- const target=scrollY;visualScroll=(paused||reduced.matches)?target:visualScroll+(target-visualScroll)*(1-Math.exp(-dt/75));
- if(Math.abs(target-visualScroll)<.15)visualScroll=target;
- renderScene(visualScroll);
- if(visualScroll!==target)raf=requestAnimationFrame(animateScene);else{raf=0;lastFrame=0;}
+function interpolate(x,key){for(let i=1;i<stops.length;i++){if(x<=stops[i].x){const a=stops[i-1],b=stops[i],t=clamp((x-a.x)/Math.max(1,b.x-a.x));return a[key]+(b[key]-a[key])*t;}}return stops.at(-1)?.[key]||0;}
+function setPaused(value){paused=value;document.body.classList.toggle('paused',value);motion.setAttribute('aria-pressed',String(value));motion.setAttribute('aria-label',value?'Reprendre les animations':'Mettre les animations en pause');motion.textContent=value?'▷':'Ⅱ';renderScene(scrollY);}
+function renderScene(y){
+ if(!stops.length)return;
+ const local=Math.max(0,y-expeditionStart),actual=scrollY-expeditionStart,h=sceneHeight;
+ header.classList.toggle('scrolled',actual>h*.45);progress.style.transform=`scaleX(${clamp(scrollY/totalScroll)})`;
+ const nextChapter=local<stops[1].x*.6?0:local<(stops[1].x+stops[2].x)*.5?1:2;
+ if(nextChapter!==chapter){chapter=nextChapter;railLinks.forEach((a,i)=>{if(i===chapter)a.setAttribute('aria-current','step');else a.removeAttribute('aria-current');});}
+ const hide=actual>stops.at(-1).x+h*.65;
+ if(hide!==railHidden){railHidden=hide;rail.classList.toggle('rail-hidden',hide);rail.inert=hide;rail.setAttribute('aria-hidden',String(hide));}
+ const cameraY=interpolate(local,'y'),pan=interpolate(local,'pan');
+ const cameraX=clamp(viewportWidth*.5-artWidth*pan,viewportWidth-artWidth,0);
+ camera.style.transform=`translate3d(${cameraX}px,${-cameraY}px,0)`;
+ shade.style.opacity=clamp(local/Math.max(1,stops[1].x),0,.95);
+ const fade=1-clamp((actual/h-.08)/.48);heroCopy.style.opacity=fade;heroBottom.style.opacity=1-clamp(actual/(h*.28));
+ heroCopy.style.transform=reduced.matches?'none':`translate3d(0,${-clamp(actual/h)*35}px,0)`;
+ // Native document scrolling moves text; the background follows the same measured landmarks.
+ passageCopy.style.opacity=1;
+ const nearProgress=clamp(local/(h*.8)),nearExtra=(paused||reduced.matches)?0:nearProgress;
+ nearLeft.style.transform=`translate3d(${-nearExtra*70}px,${-nearExtra*h*.28}px,0)`;nearRight.style.transform=`translate3d(${nearExtra*80}px,${-nearExtra*h*.34}px,0)`;
+ nearLeft.style.opacity=nearRight.style.opacity=String((1-nearProgress)*.8);
+ atmosphere.style.opacity=clamp(local/h*.8)*(1-clamp((local-stops.at(-1).x)/h));
 }
-window.addEventListener('scroll',()=>{if(!raf)raf=requestAnimationFrame(animateScene);},{passive:true});window.addEventListener('resize',measure);document.fonts.ready.then(measure);window.addEventListener('load',measure);setPaused(paused);
+function animateScene(now){const dt=lastFrame?Math.min(50,now-lastFrame):16;lastFrame=now;const target=scrollY;visualScroll=(paused||reduced.matches)?target:visualScroll+(target-visualScroll)*(1-Math.exp(-dt/55));if(Math.abs(target-visualScroll)<.15)visualScroll=target;renderScene(visualScroll);if(visualScroll!==target)raf=requestAnimationFrame(animateScene);else{raf=0;lastFrame=0;}}
+function schedule(){if(!raf)raf=requestAnimationFrame(animateScene);}
+window.addEventListener('scroll',schedule,{passive:true});window.addEventListener('resize',measure);motion.addEventListener('click',()=>setPaused(!paused));reduced.addEventListener('change',()=>{setPaused(reduced.matches);measure();});
+const menu=document.querySelector('.menu-toggle');
+function closeMenu(){header.classList.remove('menu-open');menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Ouvrir le menu');menu.textContent='☰';}
+menu.addEventListener('click',()=>{const open=header.classList.toggle('menu-open');menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'Fermer le menu':'Ouvrir le menu');menu.textContent=open?'×':'☰';});
+const hashStops={'#accueil':0,'#surface':0,'#passage':1,'#theme':2,'#programme':3};
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',event=>{closeMenu();const hash=a.getAttribute('href');if(hash in hashStops){event.preventDefault();history.replaceState(null,'',hash);window.scrollTo({top:expeditionStart+stops[hashStops[hash]].x,behavior:reduced.matches?'instant':'smooth'});}}));
+function ready(){measure();if(!initialHashHandled){initialHashHandled=true;if(location.hash in hashStops){window.scrollTo({top:expeditionStart+stops[hashStops[location.hash]].x,behavior:'instant'});visualScroll=scrollY;renderScene(visualScroll);}}}
+worldImage.addEventListener('load',measure);document.fonts.ready.then(ready);window.addEventListener('load',measure);measure();setPaused(paused);
 const eventDate=new Date('2027-01-30T00:00:00+01:00');function countdown(){let diff=Math.max(0,eventDate-Date.now());document.querySelector('#days').textContent=Math.floor(diff/86400000);document.querySelector('#hours').textContent=String(Math.floor(diff/3600000)%24).padStart(2,'0');document.querySelector('#minutes').textContent=String(Math.floor(diff/60000)%60).padStart(2,'0');if(diff===0){document.querySelector('.countdown').setAttribute('aria-label','Le rendez-vous est arrivé');}}countdown();setInterval(countdown,30000);
 const ideas=['Pharaon disco : couronne dorée, lunettes et paillettes.','Cléopâtre de minuit : bleu profond, or et regard de reine.','Momie chic : bandelettes, touche fluo et baskets confortables.','Gardien du temple : col large, motifs géométriques et allure royale.','Scarabée cosmique : reflets métallisés et ailes imaginaires.','Explorateur du Nil : chapeau, carte au trésor et curiosité.'];let idea=0;document.querySelector('#inspire').addEventListener('click',()=>{document.querySelector('#costume-idea').textContent=ideas[idea++%ideas.length];});
 const canvas=document.querySelector('#confetti'),ctx=canvas.getContext('2d');let w,h,particles=[],confettiRaf=0,lastParticleFrame=0;
