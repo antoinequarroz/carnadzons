@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Carnadzons//Soiree Egypte 2027//FR
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:carnadzons-egypte-20270130@carnadzons.ch
+DTSTAMP:20261023T170000Z
+DTSTART;VALUE=DATE:20270130
+DTEND;VALUE=DATE:20270131
+SUMMARY:Carna’dzons — Une nuit en Égypte
+LOCATION:Salle de gym de Saint-Martin\, 1969 Saint-Martin\, Valais
+DESCRIPTION:Soirée du Carna’dzons sur le thème de l’Égypte. Horaires et programme à venir. Contact : contact@carnadzons.ch
+URL:https://www.carnadzons.ch
+END:VEVENT
+END:VCALENDAR
