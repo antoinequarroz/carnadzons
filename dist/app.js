@@ -26,7 +26,7 @@ function renderScene(visualY){
  rightRock.style.transform=`translate3d(${extra*150}px,${-extra*h*.6}px,0) scale(${1+extra*.28})`;
  leftWall.style.transform=`translate3d(${-extra*35}px,${-extra*h*.08}px,0)`;
  rightWall.style.transform=`translate3d(${extra*45}px,${-extra*h*.13}px,0) scaleX(-1)`;
- shaftArt.style.transform=`translate3d(0,${-extra*28}px,0) scale(${1.03+extra*.035})`;
+ shaftArt.style.transform=`translate3d(0,${h*.2-extra*28}px,0) scale(${1.03+extra*.035})`;
  fall.style.transform=`translate3d(0,${-extra*30}px,0)`;
  templeArt.style.transform=`translate3d(0,${-templeProgress*(paused?0:20)}px,0) scale(1.045)`;
  leftPillar.style.transform=`translate3d(${-extra*12}px,${-(extra*35+templeProgress*50)}px,0)`;
