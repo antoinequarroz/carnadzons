@@ -2,14 +2,14 @@ const reduced=matchMedia('(prefers-reduced-motion: reduce)');
 const header=document.querySelector('header'),descent=document.querySelector('.descent'),progress=document.querySelector('.progress div');
 const expedition=document.querySelector('.expedition'),stage=document.querySelector('.world-stage'),camera=document.querySelector('.world-camera'),worldImage=document.querySelector('.world-illustration'),shade=document.querySelector('.world-shade'),heroCopy=document.querySelector('.hero-copy'),heroBottom=document.querySelector('.hero-bottom'),passage=document.querySelector('.passage'),passageCopy=document.querySelector('.passage-copy'),panels=[...document.querySelectorAll('.story-panel')],nearLeft=document.querySelector('.near-left'),nearRight=document.querySelector('.near-right'),atmosphere=document.querySelector('.atmosphere'),rail=document.querySelector('.chapter-rail'),railLinks=[...rail.querySelectorAll('a')];
 const motion=document.querySelector('#motion'),clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v));
-let paused=reduced.matches,party=false,raf=0,lastFrame=0,visualScroll=scrollY,sceneHeight=innerHeight,artWidth=innerWidth,worldHeight=innerWidth*3,viewportWidth=innerWidth,expeditionStart=0,totalScroll=1,stops=[],chapter=-1,railHidden=null,initialHashHandled=false;
+let paused=reduced.matches,party=false,raf=0,lastFrame=0,visualScroll=scrollY,sceneHeight=innerHeight,artWidth=innerWidth,worldHeight=innerWidth*941/1672*2.72,viewportWidth=innerWidth,expeditionStart=0,totalScroll=1,stops=[],chapter=-1,railHidden=null,initialHashHandled=false;
 function pageTop(element){return element.getBoundingClientRect().top+scrollY;}
 function measure(){
  sceneHeight=stage.clientHeight||innerHeight;viewportWidth=stage.clientWidth||innerWidth;expeditionStart=pageTop(expedition);
- artWidth=Math.max(viewportWidth,sceneHeight*1.18);worldHeight=artWidth*3;camera.style.width=`${artWidth}px`;camera.style.height=`${worldHeight}px`;
+ artWidth=Math.min(1672,Math.max(viewportWidth,sceneHeight*1672/941));const tileHeight=artWidth*941/1672;worldHeight=tileHeight*2.72;camera.style.width=`${artWidth}px`;camera.style.height=`${worldHeight}px`;
  const centerAt=el=>Math.max(0,pageTop(el)-expeditionStart+el.offsetHeight*.5-sceneHeight*.5);
  const maxCamera=Math.max(0,worldHeight-sceneHeight);
- stops=[{x:0,y:0,pan:.59},{x:centerAt(passage),y:Math.min(maxCamera,worldHeight*.255),pan:.72},{x:centerAt(panels[0]),y:Math.min(maxCamera,worldHeight*.65),pan:.57},{x:centerAt(panels[1]),y:maxCamera,pan:.54}];
+ stops=[{x:0,y:0,pan:.5},{x:centerAt(passage),y:Math.min(maxCamera,tileHeight*.86),pan:.77},{x:centerAt(panels[0]),y:Math.min(maxCamera,tileHeight*1.62),pan:.56},{x:centerAt(panels[1]),y:maxCamera,pan:.56}];
  totalScroll=Math.max(1,document.documentElement.scrollHeight-innerHeight);visualScroll=scrollY;renderScene(visualScroll);
 }
 function interpolate(x,key){
@@ -54,7 +54,7 @@ menu.addEventListener('click',()=>{const open=header.classList.toggle('menu-open
 const hashStops={'#accueil':0,'#surface':0,'#passage':1,'#theme':2,'#programme':3};
 document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',event=>{closeMenu();const hash=a.getAttribute('href');if(hash in hashStops){event.preventDefault();history.replaceState(null,'',hash);window.scrollTo({top:expeditionStart+stops[hashStops[hash]].x,behavior:reduced.matches?'instant':'smooth'});}}));
 function ready(){measure();if(!initialHashHandled){initialHashHandled=true;if(location.hash in hashStops){window.scrollTo({top:expeditionStart+stops[hashStops[location.hash]].x,behavior:'instant'});visualScroll=scrollY;renderScene(visualScroll);}}}
-worldImage.addEventListener('load',measure);document.fonts.ready.then(ready);window.addEventListener('load',measure);new ResizeObserver(()=>{if(!raf)measure();}).observe(expedition);measure();setPaused(paused);
+document.querySelectorAll('.world-camera img').forEach(img=>img.addEventListener('load',measure));document.fonts.ready.then(ready);window.addEventListener('load',measure);new ResizeObserver(()=>{if(!raf)measure();}).observe(expedition);measure();setPaused(paused);
 const eventDate=new Date('2027-01-30T00:00:00+01:00');function countdown(){let diff=Math.max(0,eventDate-Date.now());document.querySelector('#days').textContent=Math.floor(diff/86400000);document.querySelector('#hours').textContent=String(Math.floor(diff/3600000)%24).padStart(2,'0');document.querySelector('#minutes').textContent=String(Math.floor(diff/60000)%60).padStart(2,'0');if(diff===0){document.querySelector('.countdown').setAttribute('aria-label','Le rendez-vous est arrivé');}}countdown();setInterval(countdown,30000);
 const ideas=['Pharaon disco : couronne dorée, lunettes et paillettes.','Cléopâtre de minuit : bleu profond, or et regard de reine.','Momie chic : bandelettes, touche fluo et baskets confortables.','Gardien du temple : col large, motifs géométriques et allure royale.','Scarabée cosmique : reflets métallisés et ailes imaginaires.','Explorateur du Nil : chapeau, carte au trésor et curiosité.'];let idea=0;document.querySelector('#inspire').addEventListener('click',()=>{document.querySelector('#costume-idea').textContent=ideas[idea++%ideas.length];});
 const canvas=document.querySelector('#confetti'),ctx=canvas.getContext('2d');let w,h,particles=[],confettiRaf=0,lastParticleFrame=0;

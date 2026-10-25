@@ -44,3 +44,8 @@ body{overflow-x:clip}header{background:linear-gradient(#17102c85,transparent)}
 @media(prefers-reduced-motion:reduce){.chapter-rail,.atmosphere{display:none!important}}
 
 @media(max-width:600px){.world-shade{background:linear-gradient(90deg,#110e2bf0,#110e2ba8 68%,#110e2b30)}}
+
+/* Native-sized scene tiles replace the undersized long illustration. */
+.world-stage{width:100%;max-width:1672px;justify-self:center;height:min(100svh,941px);background:#10132a}.world-camera{will-change:transform}.world-illustration,.world-tile{position:absolute;left:0;top:0;width:100%;height:36.76470588%;object-fit:fill;display:block}.world-tile{user-select:none}.tile-canyon{top:31.61764706%;mask-image:linear-gradient(transparent,#000 14%)}.tile-temple{top:63.23529412%;mask-image:linear-gradient(transparent,#000 14%)}.world-near,.living-mist{display:none!important}.world-stage .atmosphere{opacity:.3!important}.live-world{image-rendering:auto}.hero:before{background:radial-gradient(ellipse at 50% 30%,#21143d28,transparent 75%)}.hero-copy h1{text-shadow:0 2px 8px #21143d55}.expedition{background:radial-gradient(ellipse at 50% 25%,#282040,#0d0c19 80%)}
+@media(min-width:1800px){.world-stage{border-inline:1px solid #ffd58c20}.expedition .story-panel{margin-left:max(8%,calc((100vw - 1672px)/2 + 100px))}.passage{padding-left:max(8%,calc((100vw - 1672px)/2 + 100px))}.chapter-rail{right:max(14px,calc((100vw - 1672px)/2 + 10px))}}
+@media(prefers-reduced-motion:reduce){.world-stage{position:sticky;max-width:1672px}.world-camera{transform:none}.world-illustration{position:absolute;object-fit:fill}.world-shade{opacity:.85!important}}
