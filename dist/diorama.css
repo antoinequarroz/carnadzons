@@ -21,3 +21,7 @@
 .water-link{left:40%;width:50%;height:115svh;mask-image:linear-gradient(#000 0%,#000 96%,transparent 100%)}
 /* The fall passes behind the temple ceiling before it enters the pool. */
 .water-link{height:107svh}.temple-scene:before{top:-2svh;height:18%;z-index:4}
+
+/* Water and architecture share one source plane, with no image enlargement. */
+.surface-landscape{position:absolute;inset:0;will-change:transform}.surface-landscape>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 60%}.water-motion{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}.surface-landscape .water-motion{z-index:1}.temple-scene>.water-motion{z-index:0}.temple-shade{z-index:1}.water-lines{animation-duration:1.9s}.water-edge{animation-duration:3.2s}
+@media(prefers-reduced-motion:reduce){.water-motion{display:none}}
