@@ -12,8 +12,14 @@ function measure(){
  stops=[{x:0,y:0,pan:.59},{x:centerAt(passage),y:Math.min(maxCamera,worldHeight*.255),pan:.72},{x:centerAt(panels[0]),y:Math.min(maxCamera,worldHeight*.65),pan:.57},{x:centerAt(panels[1]),y:maxCamera,pan:.54}];
  totalScroll=Math.max(1,document.documentElement.scrollHeight-innerHeight);visualScroll=scrollY;renderScene(visualScroll);
 }
-function interpolate(x,key){for(let i=1;i<stops.length;i++){if(x<=stops[i].x){const a=stops[i-1],b=stops[i],t=clamp((x-a.x)/Math.max(1,b.x-a.x));return a[key]+(b[key]-a[key])*t;}}return stops.at(-1)?.[key]||0;}
+function interpolate(x,key){
+ const n=stops.length;if(x<=stops[0].x)return stops[0][key];if(x>=stops[n-1].x)return stops[n-1][key];
+ const slopes=stops.slice(1).map((b,i)=>(b[key]-stops[i][key])/Math.max(1,b.x-stops[i].x));
+ const tangent=i=>{if(i===0)return slopes[0];if(i===n-1)return 0;const a=slopes[i-1],b=slopes[i];return a*b<=0?0:2*a*b/(a+b);};
+ for(let i=1;i<n;i++)if(x<=stops[i].x){const a=stops[i-1],b=stops[i],d=b.x-a.x,t=clamp((x-a.x)/Math.max(1,d)),t2=t*t,t3=t2*t;return (2*t3-3*t2+1)*a[key]+(t3-2*t2+t)*d*tangent(i-1)+(-2*t3+3*t2)*b[key]+(t3-t2)*d*tangent(i);}
+}
 function setPaused(value){paused=value;document.body.classList.toggle('paused',value);motion.setAttribute('aria-pressed',String(value));motion.setAttribute('aria-label',value?'Reprendre les animations':'Mettre les animations en pause');motion.textContent=value?'▷':'Ⅱ';window.WorldFx?.setPaused(value);renderScene(scrollY);}
+function fadeHeroInactive(y,h){return y>h*.65;}
 function renderScene(y){
  if(!stops.length)return;
  const local=Math.max(0,y-expeditionStart),actual=scrollY-expeditionStart,h=sceneHeight;
@@ -25,6 +31,7 @@ function renderScene(y){
  const cameraY=interpolate(local,'y'),pan=interpolate(local,'pan');
  const cameraX=clamp(viewportWidth*.5-artWidth*pan,viewportWidth-artWidth,0);
  camera.style.transform=`translate3d(${cameraX}px,${-cameraY}px,0)`;
+ heroCopy.inert=fadeHeroInactive(actual,h);heroBottom.inert=actual>h*.6;
  window.WorldFx?.setView({width:viewportWidth,height:h,artWidth,artHeight:worldHeight,x:cameraX,y:-cameraY});
  shade.style.opacity=clamp(local/Math.max(1,stops[1].x),0,.95);
  const fade=1-clamp((actual/h-.08)/.48);heroCopy.style.opacity=fade;heroBottom.style.opacity=1-clamp(actual/(h*.28));
@@ -41,11 +48,13 @@ function schedule(){if(!raf)raf=requestAnimationFrame(animateScene);}
 window.addEventListener('scroll',schedule,{passive:true});window.addEventListener('resize',measure);motion.addEventListener('click',()=>setPaused(!paused));reduced.addEventListener('change',()=>{setPaused(reduced.matches);measure();});
 const menu=document.querySelector('.menu-toggle');
 function closeMenu(){header.classList.remove('menu-open');menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Ouvrir le menu');menu.textContent='☰';}
+document.addEventListener('keydown',event=>{if(event.key==='Escape'&&header.classList.contains('menu-open')){closeMenu();menu.focus();}});
+document.addEventListener('click',event=>{if(header.classList.contains('menu-open')&&!header.contains(event.target))closeMenu();});
 menu.addEventListener('click',()=>{const open=header.classList.toggle('menu-open');menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'Fermer le menu':'Ouvrir le menu');menu.textContent=open?'×':'☰';});
 const hashStops={'#accueil':0,'#surface':0,'#passage':1,'#theme':2,'#programme':3};
 document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',event=>{closeMenu();const hash=a.getAttribute('href');if(hash in hashStops){event.preventDefault();history.replaceState(null,'',hash);window.scrollTo({top:expeditionStart+stops[hashStops[hash]].x,behavior:reduced.matches?'instant':'smooth'});}}));
 function ready(){measure();if(!initialHashHandled){initialHashHandled=true;if(location.hash in hashStops){window.scrollTo({top:expeditionStart+stops[hashStops[location.hash]].x,behavior:'instant'});visualScroll=scrollY;renderScene(visualScroll);}}}
-worldImage.addEventListener('load',measure);document.fonts.ready.then(ready);window.addEventListener('load',measure);measure();setPaused(paused);
+worldImage.addEventListener('load',measure);document.fonts.ready.then(ready);window.addEventListener('load',measure);new ResizeObserver(()=>{if(!raf)measure();}).observe(expedition);measure();setPaused(paused);
 const eventDate=new Date('2027-01-30T00:00:00+01:00');function countdown(){let diff=Math.max(0,eventDate-Date.now());document.querySelector('#days').textContent=Math.floor(diff/86400000);document.querySelector('#hours').textContent=String(Math.floor(diff/3600000)%24).padStart(2,'0');document.querySelector('#minutes').textContent=String(Math.floor(diff/60000)%60).padStart(2,'0');if(diff===0){document.querySelector('.countdown').setAttribute('aria-label','Le rendez-vous est arrivé');}}countdown();setInterval(countdown,30000);
 const ideas=['Pharaon disco : couronne dorée, lunettes et paillettes.','Cléopâtre de minuit : bleu profond, or et regard de reine.','Momie chic : bandelettes, touche fluo et baskets confortables.','Gardien du temple : col large, motifs géométriques et allure royale.','Scarabée cosmique : reflets métallisés et ailes imaginaires.','Explorateur du Nil : chapeau, carte au trésor et curiosité.'];let idea=0;document.querySelector('#inspire').addEventListener('click',()=>{document.querySelector('#costume-idea').textContent=ideas[idea++%ideas.length];});
 const canvas=document.querySelector('#confetti'),ctx=canvas.getContext('2d');let w,h,particles=[],confettiRaf=0,lastParticleFrame=0;
