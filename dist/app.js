@@ -6,14 +6,14 @@ let paused=reduced.matches,party=false,raf=0,lastFrame=0,visualScroll=scrollY,sc
 function pageTop(element){return element.getBoundingClientRect().top+scrollY;}
 function measure(){
  sceneHeight=stage.clientHeight||innerHeight;viewportWidth=stage.clientWidth||innerWidth;expeditionStart=pageTop(expedition);
- artWidth=Math.max(viewportWidth,sceneHeight*1.3);worldHeight=artWidth*3;camera.style.width=`${artWidth}px`;camera.style.height=`${worldHeight}px`;
+ artWidth=Math.max(viewportWidth,sceneHeight*1.18);worldHeight=artWidth*3;camera.style.width=`${artWidth}px`;camera.style.height=`${worldHeight}px`;
  const centerAt=el=>Math.max(0,pageTop(el)-expeditionStart+el.offsetHeight*.5-sceneHeight*.5);
  const maxCamera=Math.max(0,worldHeight-sceneHeight);
  stops=[{x:0,y:0,pan:.59},{x:centerAt(passage),y:Math.min(maxCamera,worldHeight*.255),pan:.72},{x:centerAt(panels[0]),y:Math.min(maxCamera,worldHeight*.65),pan:.57},{x:centerAt(panels[1]),y:maxCamera,pan:.54}];
  totalScroll=Math.max(1,document.documentElement.scrollHeight-innerHeight);visualScroll=scrollY;renderScene(visualScroll);
 }
 function interpolate(x,key){for(let i=1;i<stops.length;i++){if(x<=stops[i].x){const a=stops[i-1],b=stops[i],t=clamp((x-a.x)/Math.max(1,b.x-a.x));return a[key]+(b[key]-a[key])*t;}}return stops.at(-1)?.[key]||0;}
-function setPaused(value){paused=value;document.body.classList.toggle('paused',value);motion.setAttribute('aria-pressed',String(value));motion.setAttribute('aria-label',value?'Reprendre les animations':'Mettre les animations en pause');motion.textContent=value?'▷':'Ⅱ';renderScene(scrollY);}
+function setPaused(value){paused=value;document.body.classList.toggle('paused',value);motion.setAttribute('aria-pressed',String(value));motion.setAttribute('aria-label',value?'Reprendre les animations':'Mettre les animations en pause');motion.textContent=value?'▷':'Ⅱ';window.WorldFx?.setPaused(value);renderScene(scrollY);}
 function renderScene(y){
  if(!stops.length)return;
  const local=Math.max(0,y-expeditionStart),actual=scrollY-expeditionStart,h=sceneHeight;
@@ -25,6 +25,7 @@ function renderScene(y){
  const cameraY=interpolate(local,'y'),pan=interpolate(local,'pan');
  const cameraX=clamp(viewportWidth*.5-artWidth*pan,viewportWidth-artWidth,0);
  camera.style.transform=`translate3d(${cameraX}px,${-cameraY}px,0)`;
+ window.WorldFx?.setView({width:viewportWidth,height:h,artWidth,artHeight:worldHeight,x:cameraX,y:-cameraY});
  shade.style.opacity=clamp(local/Math.max(1,stops[1].x),0,.95);
  const fade=1-clamp((actual/h-.08)/.48);heroCopy.style.opacity=fade;heroBottom.style.opacity=1-clamp(actual/(h*.28));
  heroCopy.style.transform=reduced.matches?'none':`translate3d(0,${-clamp(actual/h)*35}px,0)`;
