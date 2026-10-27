@@ -53,3 +53,21 @@ body.pyramid25-test.reduced-motion .entry-venue{bottom:90px}
 
 .pyramid25-mattes{position:absolute;inset:0;pointer-events:none}.pyramid25-mattes span{position:absolute;inset:0;background:var(--ink)}
 @media(max-width:600px) and (min-height:551px) and (max-height:700px){.pyramid25-test .entry-venue{bottom:65px;font-size:10px}}
+
+/* Revision26: a full-height monument, with its wordmark behind the summit. */
+.pyramid25-test .journey{height:390svh}
+.pyramid25-mattes{z-index:0}
+.pyramid25-world{z-index:2}
+.pyramid26-passage{position:absolute;left:608px;top:565px;width:224px;height:315px;overflow:hidden}
+.pyramid25-test .pyramid26-name{z-index:1;padding:0 2.5vw}
+.pyramid25-test .pyramid26-name h1{display:flex;justify-content:space-between;align-items:center;gap:0;font-size:clamp(40px,14vw,230px);line-height:1.08;letter-spacing:-.025em;white-space:nowrap}
+.pyramid26-name h1 span{display:block}
+.pyramid25-test .pyramid26-name p,.pyramid25-test .entry-venue{display:none}
+.pyramid25-test .scroll-invitation{bottom:22px;background:#0d1215ed;border:1px solid #ffcb712b;padding:9px 13px;font-size:10px;gap:13px}
+.pyramid25-test .scroll-invitation svg{height:24px}
+body.pyramid25-test.reduced-motion .pyramid25-static-enter{z-index:4;background:var(--ink);padding:12px 18px;border:1px solid var(--line)}
+@media(max-width:600px){.pyramid25-test .journey{height:370svh}.pyramid25-test .scroll-invitation{bottom:20px;font-size:9px;padding:8px 12px}}
+@media(max-height:550px){.pyramid25-test .scroll-invitation{bottom:14px;font-size:8px;padding:6px 10px}.pyramid25-test .scroll-invitation svg{height:18px}}
+body.pyramid25-test.reduced-motion .journey{height:auto}
+/* Each leaf owns its perspective; paint the leaves over the recessed jamb. */
+.pyramid25-world{transform-style:flat}
