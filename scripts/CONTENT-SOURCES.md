@@ -108,3 +108,9 @@ The user requested a larger, more immersive pyramid test, a large Carna’dzons 
 - Original transparent native SVG texture in `scripts/pyramid25/wall-carvings.svg`: decorative Egyptian-inspired eye, ankh, reed, bird, water, cartouche, cow, lotus and other motifs. No claim of a translated inscription.
 - The texture is projected onto both walls of each corridor segment and moves with the existing camera. Warm radial light is behind the final opening and fades away at the arrival. No blur filters or raster textures.
 - Accepted homepage, geometry, timing, content, other pages, colours and fonts are preserved.
+### Pyramid experiment · revision29 · 28 October 2026
+
+- User requested a different, less repetitive sense of depth, progressive illumination of the engraved glyphs, and a mouse light.
+- Three nested frames are replaced with one short, broad vestibule and a320×280 rear opening. Scroll distance is350svh on desktop and330svh on phones. Pyramid, dates, carved cow, typefaces and accepted homepage are preserved.
+- Ambient gold strokes are revealed from the far end towards the viewer using the existing original SVG texture. A separate masked warm spotlight follows mouse position in the perspective of each side wall; it is decorative and does not intercept clicks or scrolling.
+- Mouse light is gated to a fine hover pointer and clears on exit, scene handoff, blur, cancellation and motion-preference changes. Touch keeps the scroll illumination; reduced motion retains static access.

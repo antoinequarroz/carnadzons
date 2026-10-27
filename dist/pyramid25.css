@@ -107,3 +107,13 @@ body.pyramid25-test.reduced-motion .pyramid27-tunnel{display:none}
 .pyramid25-world{z-index:4}
 .pyramid25-test .scroll-invitation{z-index:5}
 body.pyramid25-test.reduced-motion .pyramid28-backlight{display:none}
+
+/* Revision29: a shorter open vestibule and light that belongs to the glyphs. */
+.pyramid25-test .journey{height:350svh}
+.pyramid28-light-core{background:radial-gradient(ellipse 38% 40% at 50% 49%,#ffe6a97a 0%,#ffcf7740 30%,#eeb44b12 65%,#b5741900 100%)}
+.pyramid29-ambient,.pyramid29-pointer{opacity:0;pointer-events:none}
+.pyramid29-pointer{transition:opacity 180ms var(--ease-out,cubic-bezier(.23,1,.32,1))}
+@media(max-width:600px){.pyramid25-test .journey{height:330svh}}
+@media(hover:none),(pointer:coarse){.pyramid29-pointer{display:none}}
+@media(prefers-reduced-motion:reduce){.pyramid29-pointer{display:none;transition:none}}
+body.pyramid25-test.reduced-motion .journey{height:auto}
