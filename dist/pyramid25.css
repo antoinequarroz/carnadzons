@@ -71,3 +71,23 @@ body.pyramid25-test.reduced-motion .pyramid25-static-enter{z-index:4;background:
 body.pyramid25-test.reduced-motion .journey{height:auto}
 /* Each leaf owns its perspective; paint the leaves over the recessed jamb. */
 .pyramid25-world{transform-style:flat}
+
+/* Revision27: independent perspective planes in the carved interior. */
+.pyramid25-test .journey{height:460svh}
+.pyramid27-tunnel{position:absolute;inset:0;z-index:0;pointer-events:none}
+.pyramid27-depth{position:absolute;inset:0;isolation:isolate}
+.pyramid27-walls,.pyramid27-walls span{position:absolute;inset:0}
+.pyramid27-walls span{will-change:clip-path}
+.pyramid27-walls span:nth-child(1){background:linear-gradient(#0d1519,#1b2425)}
+.pyramid27-walls span:nth-child(2){background:linear-gradient(#55462e,#111b1f 80%)}
+.pyramid27-walls span:nth-child(3){background:linear-gradient(90deg,#111b1f,#3c3a2c)}
+.pyramid27-walls span:nth-child(4){background:linear-gradient(90deg,#222b28,#0c1519)}
+.pyramid27-frame{position:absolute;left:0;top:0;width:224px;height:315px;transform-origin:0 0;will-change:transform}
+.pyramid27-frame svg{display:block;width:100%;height:100%;overflow:hidden}
+.pyramid25-mattes{z-index:1}
+.pyramid25-test .pyramid26-name{z-index:2}
+.pyramid25-world{z-index:3}
+@media(max-width:600px){.pyramid25-test .journey{height:430svh}}
+body.pyramid25-test.reduced-motion .journey{height:auto}
+body.pyramid25-test.reduced-motion .pyramid27-tunnel{display:none}
+@media(prefers-reduced-motion:reduce){.pyramid27-frame,.pyramid27-walls span{will-change:auto}}

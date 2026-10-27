@@ -14,39 +14,87 @@
   const dunes=[$('#pyramid-dunes-back'),$('#pyramid-dunes-front')];
   const halo=$('#pyramid-background');
   const doors=[$('.pyramid25-door-left'),$('.pyramid25-door-right')];
+  const depths=[...document.querySelectorAll('.pyramid27-depth')].map(element=>({
+    element,depth:Number(element.dataset.depth),frame:element.querySelector('.pyramid27-frame'),
+    walls:[...element.querySelectorAll('.pyramid27-walls span')]
+  }));
   const clamp=x=>Math.max(0,Math.min(1,x));
   const easeOut=x=>1-Math.pow(1-clamp(x),3);
   const easeInOut=x=>{const t=clamp(x);return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;};
-  let viewportW=0,viewportH=0,heroAnchorY=0,base=1,endScale=1,distance=1,journeyTop=0,pageHeight=1;
+  let viewportW=0,viewportH=0,heroAnchorY=0,base=1,distance=1,journeyTop=0,pageHeight=1;
   let queued=false,previous=-1,current=0,target=0,lastTime=0,lastY=scrollY,ready=false,active='';
   let sectionBounds=[],artBounds=[],initialAnchorAllowed=true;
+  // Camera distance is shared by every plane. Each opening expands according
+  // to its own distance from the camera, then leaves only after its throat
+  // has passed every screen edge. This is a traversal rather than one zoom.
+  const cameraStops=[[0,0],[.12,.12],[.42,.98],[.61,1.64],[.79,2.44],[.95,3.24],[1,3.42]];
+  function cameraAt(p){
+    for(let i=1;i<cameraStops.length;i++){
+      const [end,value]=cameraStops[i], [start,prior]=cameraStops[i-1];
+      if(p<=end)return prior+(value-prior)*(p-start)/(end-start);
+    }
+    return cameraStops.at(-1)[1];
+  }
+  function coverScale(anchorY,width,height){
+    return Math.max(viewportW/width,2*Math.max(anchorY,viewportH-anchorY)/height)*1.08;
+  }
+  function placeWalls(walls,left,right,top,bottom){
+    walls[0].style.transform=`translate3d(0,${top-viewportH}px,0)`;
+    walls[1].style.transform=`translate3d(0,${bottom}px,0)`;
+    walls[2].style.transform=`translate3d(${left-viewportW}px,0,0)`;
+    walls[3].style.transform=`translate3d(${right}px,0,0)`;
+  }
+  function connectWalls(walls,near,far){
+    // Twelve simple clipped planes stay viewport-sized; no oversized bitmap
+    // or blurred background is stretched during the perspective traverse.
+    const point=(x,y)=>`${x.toFixed(3)}px ${y.toFixed(3)}px`;
+    const polygons=[
+      [[near.left,near.top],[near.right,near.top],[far.right,far.top],[far.left,far.top]],
+      [[near.left,near.bottom],[far.left,far.bottom],[far.right,far.bottom],[near.right,near.bottom]],
+      [[near.left,near.top],[far.left,far.top],[far.left,far.bottom],[near.left,near.bottom]],
+      [[near.right,near.top],[near.right,near.bottom],[far.right,far.bottom],[far.right,far.top]]
+    ];
+    polygons.forEach((points,index)=>walls[index].style.clipPath=`polygon(${points.map(p=>point(...p)).join(',')})`);
+  }
   function renderEntrance(p){
     if(Math.abs(p-previous)<.00001)return;
     previous=p;
-    const zoom=easeInOut((p-.03)/.92),scale=base*Math.exp(Math.log(endScale/base)*zoom);
-    const anchorY=heroAnchorY+(viewportH*.5-heroAnchorY)*zoom;
+    const camera=cameraAt(p);
+    const anchorY=heroAnchorY+(viewportH*.5-heroAnchorY)*easeInOut(p/.44);
+    const limit=coverScale(anchorY,192,279),denominator=1-camera;
+    const crossed=denominator<=base/limit;
+    const scale=crossed?limit:base/denominator;
     world.style.transform=`translate3d(${viewportW/2-720*scale}px,${anchorY-722.5*scale}px,0) scale(${scale})`;
+    world.style.visibility=crossed?'hidden':'visible';
     const doorLeft=viewportW/2-112*scale,doorRight=viewportW/2+112*scale;
     const doorTop=anchorY-157.5*scale,doorBottom=anchorY+157.5*scale;
-    mattes[0].style.transform=`translate3d(0,${doorTop-viewportH}px,0)`;
-    mattes[1].style.transform=`translate3d(0,${doorBottom}px,0)`;
-    mattes[2].style.transform=`translate3d(${doorLeft-viewportW}px,0,0)`;
-    mattes[3].style.transform=`translate3d(${doorRight}px,0,0)`;
+    placeWalls(mattes,doorLeft,doorRight,doorTop,doorBottom);
+    for(const matte of mattes)matte.style.visibility=crossed?'hidden':'visible';
+    let near={left:doorLeft+16*scale,right:doorRight-16*scale,top:doorTop+18*scale,bottom:doorBottom-18*scale};
+    for(const slice of depths){
+      const remaining=1+slice.depth-camera,cap=coverScale(anchorY,184,271);
+      const passed=remaining<=base/cap,projection=passed?cap:base/remaining;
+      slice.element.style.visibility=passed?'hidden':'visible';
+      slice.frame.style.transform=`translate3d(${viewportW/2-112*projection}px,${anchorY-157.5*projection}px,0) scale(${projection})`;
+      const far={left:viewportW/2-112*projection,right:viewportW/2+112*projection,top:anchorY-157.5*projection,bottom:anchorY+157.5*projection};
+      connectWalls(slice.walls,near,far);
+      near={left:far.left+20*projection,right:far.right-20*projection,top:far.top+22*projection,bottom:far.bottom-22*projection};
+    }
     const fade=1-easeOut(p/.25);
     title.style.opacity=fade;title.style.transform=`translate3d(0,${-46*(1-fade)}px,0)`;venue.style.opacity=fade;
     const ui=1-easeOut(p/.24);
     cue.style.opacity=ui;caption.style.opacity=ui;skip.style.opacity=ui;skip.style.visibility=p>.25?'hidden':'visible';
-    const angle=easeInOut((p-.16)/.43)*103;
+    const angle=easeInOut((p-.12)/.31)*103;
     doors[0].style.transform=`perspective(440px) rotateY(${angle}deg)`;
     doors[1].style.transform=`perspective(440px) rotateY(${-angle}deg)`;
     const drift=easeOut(p/.62);
     dunes[0].setAttribute('transform',`translate(${-12*drift} ${3*drift})`);
     dunes[1].setAttribute('transform',`translate(${15*drift} ${8*drift})`);
     halo.setAttribute('transform',`translate(0 ${-12*drift})`);
-    const reveal=easeOut((p-.55)/.32);
+    const reveal=easeOut((p-.76)/.21);
     arrivalCopy.style.opacity=reveal;
     arrivalCopy.style.transform=`translate3d(0,${18*(1-reveal)}px,0)`;
-    arrival.style.visibility=p>.24?'visible':'hidden';arrival.inert=p<.86;
+    arrival.style.visibility=p>.18?'visible':'hidden';arrival.inert=p<.97;
     entry.style.visibility=p>=.999?'hidden':'visible';
   }
   function renderContents(y){
@@ -85,8 +133,6 @@
     base=Math.max(.12,(floorY-apexY)/720);
     heroAnchorY=floorY-157.5*base;
     title.style.top=`${apexY+(phone?20:24)}px`;
-    // Traverse the smaller interior opening, not only the outer jamb.
-    endScale=Math.max(viewportW/160,viewportH/243)*1.18;
     journeyTop=journey.getBoundingClientRect().top+scrollY;distance=Math.max(1,journey.offsetHeight-viewportH);
     sectionBounds=sections.map(element=>({element,id:element.id,top:element.getBoundingClientRect().top+scrollY,height:element.offsetHeight}));
     arts.forEach(art=>art.style.transform='none');
