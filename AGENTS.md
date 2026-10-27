@@ -31,3 +31,9 @@
 
 - The user asked for a small cow as a decorative carved glyph in the existing background and on the poster. Keep it as native SVG line art; the header remains text-only. The entrance incisions are generated from assets/engraved-stone.svg by build-pages.mjs.
 - The village section uses about19.css and three page links with original gold emblems (papyrus, carnival mask, festive cow). The user rejected photos/posters in these homepage cards; keep those images on the corresponding archive pages. Old poster dates remain archival, not upcoming events.
+
+## Pyramid entrance experiment
+
+- `/test-pyramide/` is an isolated, non-final alternative requested by the user. Keep the accepted homepage temple in place unless the user chooses the pyramid.
+- `scripts/build-pyramid-test.mjs` clones the accepted homepage and is called after the shared page generator. Its source vector is `scripts/pyramid25/scene.svg`; its controller and styles are `dist/pyramid25.js` and `dist/pyramid25.css`.
+- Keep the scene bounded to its1440×1000 viewBox and the four viewport mattes aligned to the projected opening. Large overflowing SVG backgrounds inside the scaled layer can cause rasterisation artefacts. The layer uses native vectors and CSS3D hinged door panels, with reduced-motion/static access and a link back to the accepted temple.

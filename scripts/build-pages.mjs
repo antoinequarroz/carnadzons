@@ -40,3 +40,6 @@ for(const page of pages){
  fs.mkdirSync(path.join(dist,slug),{recursive:true});fs.writeFileSync(path.join(dist,slug,'index.html'),html);
 }
 console.log(`Updated homepage content, shared navigation and ${pages.length} pages.`);
+
+// Regenerate the isolated experiment without changing the accepted homepage.
+await import('./build-pyramid-test.mjs');
