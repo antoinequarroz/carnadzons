@@ -25,3 +25,9 @@
 - Subsequent committee correction: replace Charlotte with Xavier Pralong (Décoration, La Coccinelle) and add Mathis Pralong (La Coccinelle). The surname is Pralong, with a final g; Mathis has no specific function confirmed beyond committee membership.
 - The black/gold 2027 SVG poster is a design proposal and is labelled accordingly; do not call it official without user confirmation.
 - Preserve the entrance smoothing stop condition, reduced motion path, and orientation handoff state; do not reintroduce the removed pinned four-scene sequence.
+- The FAQ content is shared between the homepage and /faqs/ through scripts/faq-content.json. The user confirmed free admission for 2027 and a Lunbabus return shuttle; its times, stops and route are still unconfirmed. Do not restore the old 2026 departure at 02:00 or the cortège at 16:26.
+
+## Engraved cow and village previews
+
+- The user asked for a small cow as a decorative carved glyph in the existing background and on the poster. Keep it as native SVG line art; the header remains text-only. The entrance incisions are generated from assets/engraved-stone.svg by build-pages.mjs.
+- The village section uses about19.css and three visual archive links. The 2026 Far West poster and 2023 children's poster are explicitly archival, not upcoming events.

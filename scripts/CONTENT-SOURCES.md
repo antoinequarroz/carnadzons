@@ -52,3 +52,15 @@ The user requested logos, photographs and descriptive histories for the confirme
 ## Char and committee correction, 27 October 2026
 
 The user requested a quiet “Informations à suivre” placeholder for char appearances because dates and locations are not yet confirmed. Both homepage and char page now use that wording. The user replaced Charlotte with Xavier Pralong for La Coccinelle and added Mathis Pralong for the same society, then explicitly corrected the surname to Pralong. Xavier retains the replaced decoration role; Mathis is listed as a committee member without inventing a specific responsibility. The homepage and committee page both contain 13 members.
+
+## FAQ revision, 27 October 2026
+
+The current official FAQ was checked at https://www.carnadzons.ch/faqs/ via its delivered bundle https://www.carnadzons.ch/static/js/main.3139f930.js. Its three questions refer to the 2026 Far West cortège (7 February, 16:26), a Lunbabus at 02:00 and free admission. The user then explicitly confirmed **free entry for 2027** and **a Lunbabus return shuttle, with times and route to be specified**. Only those newly confirmed conditions were carried into the 2027 FAQ. The old cortège time, bus departure and route were not copied. Six short questions cover date/venue, theme, programme, admission, shuttle and contact. They are generated on both the homepage and /faqs/ from scripts/faq-content.json; changing that file updates both. Contact email and telephone remain published on the official contact page.
+
+## Village section and archival previews, 27 October 2026
+
+The user requested more readable, visually developed access to history, previous editions and the children's carnival. Three full-card links now show the existing historical photo, the official 2026 poster and the 2023 children's archive. The dates are labelled as archives, without announcing the old events as upcoming. The official 2026 poster, already retrieved from the source site's PDF earlier in this task, is added to the editions gallery so it can be opened in full. Assets/archives/edition-2026.png is the retained 596×842 raster render of that poster.
+
+## Cow hieroglyph, 27 October 2026
+
+The user requested an original little cow carved among the decorative Egyptian motifs and on the poster. The motif is a new native SVG line drawing, with four legs, udder, short horns, ears and two spots. It is decorative and does not claim to translate historical Egyptian writing. It replaces a bird motif in the existing 720×720 engraved tile. The homepage entrance's inline incisions are now generated from that same asset, so the doors and page surfaces stay consistent. The poster reuses the motif and has a small distinct engraving beside the date. The existing wordmark remains text-only. The separately exported editable poster has also been updated while preserving all editable text and grouped vectors.

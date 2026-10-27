@@ -2,7 +2,7 @@
 :root{--ease-in-out:cubic-bezier(.77,0,.175,1);--temple-close-duration:400ms;--temple-open-duration:500ms}
 .page-transition{position:fixed;inset:0;z-index:1000;overflow:hidden;visibility:hidden;pointer-events:none;perspective:1600px;isolation:isolate;contain:layout paint}
 html[data-temple-transition] .page-transition{visibility:visible;pointer-events:auto}
-.temple-leaf{position:absolute;top:0;bottom:0;width:calc(50% + 1px);background:var(--ink,#0D1215) url('/assets/engraved-stone.svg') repeat;background-size:900px auto;color:var(--gold,#FFCB71);backface-visibility:hidden;display:flex;align-items:center;justify-content:center}
+.temple-leaf{position:absolute;top:0;bottom:0;width:calc(50% + 1px);background:var(--ink,#0D1215) url('/assets/engraved-stone.svg?v=vache-19') repeat;background-size:900px auto;color:var(--gold,#FFCB71);backface-visibility:hidden;display:flex;align-items:center;justify-content:center}
 .temple-leaf-left{left:0;transform-origin:left center;transform:rotateY(-102deg);border-right:1px solid #FFCB71}
 .temple-leaf-right{right:0;transform-origin:right center;transform:rotateY(102deg);border-left:1px solid #FFCB71}
 .temple-leaf::before{content:'';position:absolute;inset:28px;border:1px solid #ffcb716b;pointer-events:none}

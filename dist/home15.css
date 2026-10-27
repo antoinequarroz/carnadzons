@@ -17,3 +17,7 @@
 /* A quiet placeholder until the char's calendar is confirmed. */
 .home15-char.char18-simple{min-height:420px;padding-top:100px;padding-bottom:100px}.home15-char.char18-simple .char18-status{font-size:20px;line-height:1.5;color:var(--gold);margin:0 0 14px}.home15-char.char18-simple .home15-copy>p:last-child{max-width:360px;margin:0}
 @media(max-width:700px){.home15-char.char18-simple{min-height:0;gap:30px;padding-top:80px;padding-bottom:80px}.home15-char.char18-simple .char18-status{font-size:17px}}
+
+/* A concise FAQ, with the same quiet gold rules as the rest of the site. */
+.home15-faq-list summary{color:var(--gold);font-size:15px}.home15-faq-list p strong{color:var(--white);font-weight:600}.home15-faq-list summary:hover{color:var(--white)}
+@media(max-width:600px){.home15-faq-list summary{font-size:13px}.home15-faq-list p{font-size:13px}}
