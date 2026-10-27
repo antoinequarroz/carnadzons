@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 const root=path.resolve(import.meta.dirname,'..'),dist=path.join(root,'dist');
 const pages=JSON.parse(fs.readFileSync(path.join(import.meta.dirname,'site-pages.json'),'utf8'));
-const version='accueil-15';
+const version='royaume-16';
 const transitionMarkup=fs.readFileSync(path.join(import.meta.dirname,'temple-transition.html'),'utf8').trim();
 const transitionHead=`<link rel="stylesheet" href="/page-transition.css?v=${version}"><script src="/page-transition-boot.js?v=${version}"></script><script src="/page-transition.js?v=${version}" defer></script>`;
 const shellHead=`<link rel="stylesheet" href="/pages.css?v=${version}"><link rel="stylesheet" href="/site-shell.css?v=${version}"><script src="/navigation.js?v=${version}" defer></script>${transitionHead}`;
@@ -23,6 +23,7 @@ home=home.replace(/<link rel="stylesheet" href="\/?(?:pages|site-shell|home15|pa
 home=home.replace(/<!-- temple-navigation:start -->[\s\S]*?<!-- temple-navigation:end -->/g,'');
 home=home.replace(/(<body\b[^>]*>)/,`$1${transitionMarkup}`);
 home=home.replace(/<link rel="preload" as="font" href="assets\/fonts-v8\/onest-latin.woff2" type="font\/woff2" crossorigin>/,'<link rel="preload" as="font" href="/assets/fonts-v15/manrope-variable.ttf" type="font/ttf" crossorigin>');
+home=home.replace(/(scroll-scenes\.css|egypt\.js)\?v=[^\"]+/g,`$1?v=${version}`);
 home=home.replace('</head>',`${shellHead}<link rel="stylesheet" href="/home15.css?v=${version}"></head>`);
 fs.writeFileSync(path.join(dist,'index.html'),home);fs.writeFileSync(path.join(dist,'entree-egypte.html'),home);
 for(const page of pages){

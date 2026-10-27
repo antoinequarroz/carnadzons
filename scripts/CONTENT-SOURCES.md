@@ -35,3 +35,7 @@ Regenerate all pages and shared menus with `node scripts/build-pages.mjs`. It pr
 The user requested the new homepage order and primary navigation, removal of the cow section and brand icon, a new post-entrance heading, and a body-font proposal. Cleopatra headings are retained; Manrope is self-hosted under its included OFL license from https://github.com/google/fonts/tree/main/ofl/manrope.
 
 The user confirmed **Les Chenegaudes** and **Les Gugg’Dragons** for the 2027 evening and requested an original black/gold poster proposal. The SVG in assets/affiche-egypte-2027.svg is that proposal, not an approved official poster. No times, prices or char appearances were added.
+
+## Theme invitation and poster revision, 27 October 2026
+
+The user accepted the homepage design and requested an expanded 2027 theme invitation in the tone of their 2026 Far West text, a hieroglyph background on the poster, a new title and larger entrance-door dates. “Au royaume des pharaons” is the new creative title; the theme remains Egypt. The invitation describes costumes and imagination, without adding unconfirmed event décor, hours or logistics. The engraved poster uses the site's original native SVG motifs. Entrance numerals are enlarged from 60 to 68 SVG units, with the accepted door geometry and scroll motion preserved.
