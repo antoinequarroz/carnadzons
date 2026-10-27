@@ -30,4 +30,4 @@
 ## Engraved cow and village previews
 
 - The user asked for a small cow as a decorative carved glyph in the existing background and on the poster. Keep it as native SVG line art; the header remains text-only. The entrance incisions are generated from assets/engraved-stone.svg by build-pages.mjs.
-- The village section uses about19.css and three visual archive links. The 2026 Far West poster and 2023 children's poster are explicitly archival, not upcoming events.
+- The village section uses about19.css and three page links with original gold emblems (papyrus, carnival mask, festive cow). The user rejected photos/posters in these homepage cards; keep those images on the corresponding archive pages. Old poster dates remain archival, not upcoming events.

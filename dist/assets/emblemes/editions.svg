@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-labelledby="editions-title editions-desc">
+  <title id="editions-title">Les éditions — masque de carnaval</title>
+  <desc id="editions-desc">Emblème original : un masque élégant devant deux plaques évoquant les éditions précédentes.</desc>
+  <g id="embleme-editions" fill="none" stroke="#FFCB71" stroke-linecap="round" stroke-linejoin="round">
+    <g id="plaques-souvenirs" stroke-width="2.2">
+      <path d="m62 40 86 13-16 110-86-13Z" opacity=".4" />
+      <path d="m54 49 92-7 8 112-92 7Z" opacity=".7" />
+    </g>
+    <g id="masque" stroke-width="2.8">
+      <path id="silhouette-masque" d="M35 82C55 64 83 65 100 83C117 65 145 64 165 82L156 111C142 132 119 133 100 113C81 133 58 132 44 111Z" fill="#0D1215" />
+      <path id="oeil-gauche" d="M54 92Q70 81 86 94Q74 108 58 102Z" />
+      <path id="oeil-droit" d="M146 92Q130 81 114 94Q126 108 142 102Z" />
+      <path id="nez" d="M100 91v15" stroke-width="2.4" />
+      <path id="ornement" d="m100 74 5 6-5 6-5-6Z" fill="#FFCB71" stroke="none" />
+    </g>
+  </g>
+</svg>

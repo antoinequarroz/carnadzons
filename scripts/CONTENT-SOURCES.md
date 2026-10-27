@@ -64,3 +64,7 @@ The user requested more readable, visually developed access to history, previous
 ## Cow hieroglyph, 27 October 2026
 
 The user requested an original little cow carved among the decorative Egyptian motifs and on the poster. The motif is a new native SVG line drawing, with four legs, udder, short horns, ears and two spots. It is decorative and does not claim to translate historical Egyptian writing. It replaces a bird motif in the existing 720×720 engraved tile. The homepage entrance's inline incisions are now generated from that same asset, so the doors and page surfaces stay consistent. The poster reuses the motif and has a small distinct engraving beside the date. The existing wordmark remains text-only. The separately exported editable poster has also been updated while preserving all editable text and grouped vectors.
+
+## Village emblems, 27 October 2026
+
+The user rejected the photographic/poster previews in the village section and requested logos instead. They are replaced by three original monochrome SVG emblems: a papyrus for history, a carnival mask for editions and a festive little cow for the children's carnival. These are navigation symbols, not claims to be official society logos. The photo and historical posters remain available on their respective pages. The page links and body text are preserved; archival captions are removed from the homepage cards because those cards no longer display archives.

@@ -3,7 +3,7 @@ import path from 'node:path';
 const root=path.resolve(import.meta.dirname,'..'),dist=path.join(root,'dist');
 const pages=JSON.parse(fs.readFileSync(path.join(import.meta.dirname,'site-pages.json'),'utf8'));
 const faqItems=JSON.parse(fs.readFileSync(path.join(import.meta.dirname,'faq-content.json'),'utf8'));
-const version='faq-vache-19';
+const version='emblemes-20';
 const carvingSource=fs.readFileSync(path.join(dist,'assets/engraved-stone.svg'),'utf8');
 const carvingGroup=carvingSource.match(/<g\b[^>]*id="incisions"[\s\S]*<\/g>(?=\s*<\/defs>)/)?.[0];
 if(!carvingGroup)throw new Error('The engraved background must contain the incisions group.');
