@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="720" viewBox="0 0 720 720">
+  <title>Pierre noire gravée — motifs égyptiens originaux</title>
+  <desc>Décor abstrait de roseaux, oiseaux, vagues, serpents et cartouches. Les motifs sont décoratifs et ne transcrivent aucun texte.</desc>
+  <defs>
+    <g id="incisions" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <!-- The long joints meet the tile edges; the second tile continues them. -->
+      <path d="M0 0V720M180 0V720M360 0V720M540 0V720M0 360H720M0 0H720"/>
+      <!-- A reed bundle and its stems. -->
+      <path d="M44 48q19 19 31 53M74 44q2 22 1 57M108 49Q87 70 75 101M75 101v79M57 179h38M56 116q17-4 19 13M94 121q-18 0-19 13"/>
+      <!-- A broad shallow wave, followed by an oval eye-like device. -->
+      <path d="m32 217 15-9 15 9 15-9 15 9 15-9 15 9 15-9M32 232l15-9 15 9 15-9 15 9 15-9 15 9 15-9M39 283q40-32 80 0-40 28-80 0ZM72 269q-12 16 2 28M80 299l-14 22h35"/>
+      <!-- A long original bird silhouette, with a fine second leg. -->
+      <path d="M212 69q19-24 38-9l9 19 39 5-28 12 6 42q2 20 30 34-33 10-57-9-18-15-15-49l1-29-23-6 19-8M246 95q15 18 12 43M249 164l-3 35-14 3M265 171l5 28 14 3M248 67h1"/>
+      <!-- A cartouche deliberately left empty, with three geometric dividers. -->
+      <path d="M240 233h47q20 0 20 20v49q0 20-20 20h-47q-20 0-20-20v-49q0-20 20-20ZM216 333h95M248 251v52M265 251v52M282 251v52"/>
+      <!-- A narrow loop and crossbar, then a low rectangular altar. -->
+      <path d="M445 54c-25 0-31 38 0 49 31-11 25-49 0-49ZM445 103v78M418 120h54M422 180h46M403 223h86v16h-86ZM414 240v51h65v-51M407 302h79M421 316h52"/>
+      <!-- A quiet cobra-like curve above an open bowl. -->
+      <path d="M579 73q10-32 29-24 12 5 9 20-4 19-21 36-15 17 2 32 23 19 36-5M610 74l23 4-18 9M596 48q27 0 27 25M581 171q41 45 82 0ZM586 187h72M622 204v28M600 233h44M592 276v48h61v-48M583 276h79M605 293v17M622 293v17M639 293v17"/>
+      <!-- Second row: an angular feather and a shallow water band. -->
+      <path d="M55 411q70 23 55 87-12 33-50 40l17-58-22-69ZM72 459l32 11M66 481l41 13M63 505l31 11M60 538l-13 38M31 619l16-9 16 9 16-9 16 9 16-9 16 9 16-9M31 637l16-9 16 9 16-9 16 9 16-9 16 9 16-9M42 677h86"/>
+      <!-- A compact geometric seated owl, reduced to a few carved lines. -->
+      <path d="m221 428 16 11 14-9 17 9 16-11 7 45-11 52-29 26-30-26-10-52 10-45ZM222 462q12-14 24 0M257 462q12-14 23 0M251 474l-7 13h14ZM230 490l7 23M272 490l-7 23M243 544l-5 20h-15M259 544l5 20h15M216 597h87v17h-87ZM231 614v50M287 614v50M225 675h68"/>
+      <!-- A sun above a papyrus fan, with alternating long and short rays. -->
+      <path d="M445 427a24 24 0 1 0 0 48 24 24 0 1 0 0-48ZM445 413v-12M414 420l-8-8M476 420l8-8M409 451h-12M481 451h12M414 482l-8 8M476 482l8 8M445 489v13M404 550q41 28 82 0l-10 35h-62l-10-35ZM420 557l6 26M437 563l2 20M453 563l-2 20M470 557l-6 26M445 586v65M423 653h44M411 679h68"/>
+      <!-- A large double cartouche beside a small abstract step motif. -->
+      <path d="M601 411h44q22 0 22 22v79q0 22-22 22h-44q-22 0-22-22v-79q0-22 22-22ZM601 423h44q10 0 10 10v79q0 10-10 10h-44q-10 0-10-10v-79q0-10 10-10ZM576 546h95M607 443h31M607 460h31M607 477h31M607 494h31M583 607h25v-20h27v20h25v56h-77v-56ZM595 676h53"/>
+    </g>
+  </defs>
+  <path fill="#0D1215" d="M0 0h720v720H0z"/>
+  <!-- Bottom-right rim, then a dark recessed centre. No blur or raster grain. -->
+  <use href="#incisions" transform="translate(1.05 1.25)" stroke="#293236" stroke-width="1.35" opacity=".64"/>
+  <use href="#incisions" stroke="#070C0F" stroke-width="1.65" opacity=".96"/>
+</svg>
