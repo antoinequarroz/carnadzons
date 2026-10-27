@@ -14,9 +14,11 @@
   const dunes=[$('#pyramid-dunes-back'),$('#pyramid-dunes-front')];
   const halo=$('#pyramid-background');
   const doors=[$('.pyramid25-door-left'),$('.pyramid25-door-right')];
+  const backlight=$('.pyramid28-backlight');
   const depths=[...document.querySelectorAll('.pyramid27-depth')].map(element=>({
     element,depth:Number(element.dataset.depth),frame:element.querySelector('.pyramid27-frame'),
-    walls:[...element.querySelectorAll('.pyramid27-walls span')]
+    walls:[...element.querySelectorAll('.pyramid27-walls span')],
+    carvings:[...element.querySelectorAll('.pyramid28-carving')]
   }));
   const clamp=x=>Math.max(0,Math.min(1,x));
   const easeOut=x=>1-Math.pow(1-clamp(x),3);
@@ -44,7 +46,21 @@
     walls[2].style.transform=`translate3d(${left-viewportW}px,0,0)`;
     walls[3].style.transform=`translate3d(${right}px,0,0)`;
   }
-  function connectWalls(walls,near,far){
+  function projectCarving(element,points){
+    // Unit-square homography: the carved vector follows all four wall corners,
+    // including their vanishing-point compression, using one CSS transform.
+    const [[x0,y0],[x1,y1],[x2,y2],[x3,y3]]=points;
+    const dx1=x1-x2,dx2=x3-x2,dx3=x0-x1+x2-x3;
+    const dy1=y1-y2,dy2=y3-y2,dy3=y0-y1+y2-y3;
+    const determinant=dx1*dy2-dx2*dy1;
+    if(Math.abs(determinant)<.000001){element.style.visibility='hidden';return;}
+    const g=(dx3*dy2-dx2*dy3)/determinant,h=(dx1*dy3-dx3*dy1)/determinant;
+    const a=x1-x0+g*x1,b=x3-x0+h*x3,d=y1-y0+g*y1,e=y3-y0+h*y3;
+    const matrix=[a/240,d/240,0,g/240,b/315,e/315,0,h/315,0,0,1,0,x0,y0,0,1];
+    element.style.transform=`matrix3d(${matrix.join(',')})`;
+    element.style.visibility='inherit';
+  }
+  function connectWalls(walls,near,far,carvings){
     // Twelve simple clipped planes stay viewport-sized; no oversized bitmap
     // or blurred background is stretched during the perspective traverse.
     const point=(x,y)=>`${x.toFixed(3)}px ${y.toFixed(3)}px`;
@@ -55,11 +71,22 @@
       [[near.right,near.top],[near.right,near.bottom],[far.right,far.bottom],[far.right,far.top]]
     ];
     polygons.forEach((points,index)=>walls[index].style.clipPath=`polygon(${points.map(p=>point(...p)).join(',')})`);
+    const nested=far.left>near.left+.1&&far.right<near.right-.1&&far.top>near.top+.1&&far.bottom<near.bottom-.1;
+    carvings.forEach((element,index)=>{
+      if(!nested){element.style.visibility='hidden';return;}
+      const points=index===0?polygons[2]:[polygons[3][0],polygons[3][3],polygons[3][2],polygons[3][1]];
+      projectCarving(element,points);
+    });
   }
   function renderEntrance(p){
     if(Math.abs(p-previous)<.00001)return;
     previous=p;
     const camera=cameraAt(p);
+    if(backlight){
+      const light=easeOut((p-.1)/.5)*(1-easeInOut((p-.86)/.13));
+      backlight.style.opacity=light;
+      backlight.style.transform=`translate3d(0,${12*(1-light)}px,0) scale(${.94+.06*light})`;
+    }
     const anchorY=heroAnchorY+(viewportH*.5-heroAnchorY)*easeInOut(p/.44);
     const limit=coverScale(anchorY,192,279),denominator=1-camera;
     const crossed=denominator<=base/limit;
@@ -77,7 +104,7 @@
       slice.element.style.visibility=passed?'hidden':'visible';
       slice.frame.style.transform=`translate3d(${viewportW/2-112*projection}px,${anchorY-157.5*projection}px,0) scale(${projection})`;
       const far={left:viewportW/2-112*projection,right:viewportW/2+112*projection,top:anchorY-157.5*projection,bottom:anchorY+157.5*projection};
-      connectWalls(slice.walls,near,far);
+      connectWalls(slice.walls,near,far,slice.carvings);
       near={left:far.left+20*projection,right:far.right-20*projection,top:far.top+22*projection,bottom:far.bottom-22*projection};
     }
     const fade=1-easeOut(p/.25);

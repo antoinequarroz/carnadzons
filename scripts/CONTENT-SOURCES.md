@@ -102,3 +102,9 @@ The user requested a larger, more immersive pyramid test, a large Carna’dzons 
 - Original native SVG masonry bevels, opposing lit/shaded faces, gold portal thickness and stair lips. No raster assets, blur or new factual content.
 - Three original inner stone openings (`scripts/pyramid25/passage.svg`) project independently behind the entrance. Twelve viewport-sized wall quadrilaterals connect their exact edges; the camera clears all four openings before revealing the accepted arrival section.
 - Main homepage, temple entrance, body sections, event facts and all secondary pages remain unchanged. Cleopatra, Manrope and the black/gold palette are retained.
+### Pyramid experiment · revision28 · 27 October 2026
+
+- User requested engraved corridor walls and a golden light at the back, test only.
+- Original transparent native SVG texture in `scripts/pyramid25/wall-carvings.svg`: decorative Egyptian-inspired eye, ankh, reed, bird, water, cartouche, cow, lotus and other motifs. No claim of a translated inscription.
+- The texture is projected onto both walls of each corridor segment and moves with the existing camera. Warm radial light is behind the final opening and fades away at the arrival. No blur filters or raster textures.
+- Accepted homepage, geometry, timing, content, other pages, colours and fonts are preserved.

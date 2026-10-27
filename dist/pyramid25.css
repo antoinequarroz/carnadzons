@@ -91,3 +91,19 @@ body.pyramid25-test.reduced-motion .journey{height:auto}
 body.pyramid25-test.reduced-motion .journey{height:auto}
 body.pyramid25-test.reduced-motion .pyramid27-tunnel{display:none}
 @media(prefers-reduced-motion:reduce){.pyramid27-frame,.pyramid27-walls span{will-change:auto}}
+
+/* Revision28: incisions belong to the wall planes; warm light is at the back. */
+.pyramid28-carving{position:absolute;left:0;top:0;width:240px;height:315px;transform-origin:0 0;backface-visibility:hidden;pointer-events:none}
+.pyramid28-carving svg{display:block;width:100%;height:100%;overflow:hidden}
+.pyramid27-walls span:nth-child(3) .pyramid28-carving{opacity:.95}
+.pyramid27-walls span:nth-child(4) .pyramid28-carving{opacity:.78}
+.pyramid28-backlight{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:0;transform-origin:50% 50%}
+.pyramid28-backlight span{position:absolute;inset:0}
+.pyramid28-light-core{background:radial-gradient(ellipse 18% 38% at 50% 49%,#ffe6a9 0%,#ffcf779c 22%,#eeb44b4a 55%,#b5741900 100%)}
+.pyramid28-light-halo{background:radial-gradient(ellipse 65% 70% at 50% 49%,#ffcb712b 0%,#d99c2e12 44%,#d99c2e00 78%)}
+.pyramid27-tunnel{z-index:1}
+.pyramid25-mattes{z-index:2}
+.pyramid25-test .pyramid26-name{z-index:3}
+.pyramid25-world{z-index:4}
+.pyramid25-test .scroll-invitation{z-index:5}
+body.pyramid25-test.reduced-motion .pyramid28-backlight{display:none}
