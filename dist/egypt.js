@@ -19,7 +19,7 @@
   const programmeCopy=$('.programme-copy'), programmeOrbit=$('.programme-orbit');
   const sceneNote=$('.scene-scroll-note');
   let sceneMode=false, sequenceTop=0, sequenceUnit=1, lastUnit=-1, circleX=0, circleY=0, circleMax=1, gateWidth=70;
-  const doors = ['left','right'].map(side => ({side,panel:$(`.door-${side} .door-panel`),line:$(`.door-${side} .door-line`),handle:$(`.door-${side} .door-handle`)}));
+  const doors = ['left','right'].map(side => ({side,panel:$(`.door-${side} .door-panel`),line:$(`.door-${side} .door-line`),handle:$(`.door-${side} .door-handle`),date:$(`.door-${side} .door-date`),clip:$(`.date-clip-polygon-${side}`)}));
   const clamp = x => Math.max(0, Math.min(1,x));
   // Explicit cubic easing over scroll distance, with no clock or trailing inertia.
   const easeOut = x => 1 - Math.pow(1-clamp(x),3);
@@ -47,7 +47,15 @@
     skip.style.visibility=p>.25?'hidden':'visible';
     const opening=easeInOut((p-.39)/.4), angle=opening*Math.PI*.58;
     for(const d of doors){
-      d.panel.setAttribute('points',[[0,150],[75,150],[75,360],[0,360]].map(([u,y])=>project(d.side,u,y,angle).join(',')).join(' '));
+      const projectedDoor=[[0,150],[75,150],[75,360],[0,360]].map(([u,y])=>project(d.side,u,y,angle).join(',')).join(' ');
+      d.panel.setAttribute('points',projectedDoor);
+      d.clip.setAttribute('points',projectedDoor);
+      // Keep the gold inscription attached to the same projected door surface.
+      const q=280/(280+Math.sin(angle)*37.5), horizontal=Math.cos(angle)*q*q;
+      const anchorX=d.side==='left'?262.5:337.5;
+      const [dateX,dateY]=project(d.side,37.5,255,angle);
+      d.date.setAttribute('transform',`matrix(${horizontal} 0 0 ${q} ${dateX-horizontal*anchorX} ${dateY-q*255})`);
+      d.date.style.visibility=angle<Math.PI/2?'visible':'hidden';
       d.line.setAttribute('d',path(d.side,[[7,160],[67,160],[67,350],[7,350]],angle,true));
       d.handle.setAttribute('d',path(d.side,[[65,246],[65,264]],angle));
     }

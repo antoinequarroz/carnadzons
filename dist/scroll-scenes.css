@@ -10,3 +10,5 @@ body,.arrival,.site-footer{background-image:url('assets/engraved-stone.svg');bac
 @media(prefers-reduced-motion:reduce){.scroll-sequence{height:auto!important}.sequence-stage{position:relative!important;height:auto!important;overflow:visible!important}.scroll-panel{position:relative!important;inset:auto!important;height:auto!important;min-height:0!important;visibility:visible!important;transform:none!important;clip-path:none!important}.scene-marker{position:relative!important;top:auto!important}.scene-transitions,.scene-navigation,.scene-scroll-note{display:none!important}}
 .black-field,.door-panel{fill:url(#stone-carving)}
 .has-scroll-scenes .scene-navigation{background:#0d1215ed;padding:0 10px;border:1px solid #ffcb7120;border-radius:2px}.has-scroll-scenes .scene-navigation a{display:flex}
+
+.door-date{fill:var(--gold);pointer-events:none}.door-date-main{font-family:var(--display);font-size:42px;font-weight:400;letter-spacing:-.035em}.door-date-year{font-family:Onest,Arial,sans-serif;font-size:9px;letter-spacing:1.6px;fill:var(--gold);opacity:.8}
