@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 const root=path.resolve(import.meta.dirname,'..'),dist=path.join(root,'dist');
 const pages=JSON.parse(fs.readFileSync(path.join(import.meta.dirname,'site-pages.json'),'utf8'));
-const version='guggens-17';
+const version='char-comite-18';
 const transitionMarkup=fs.readFileSync(path.join(import.meta.dirname,'temple-transition.html'),'utf8').trim();
 const transitionHead=`<link rel="stylesheet" href="/page-transition.css?v=${version}"><script src="/page-transition-boot.js?v=${version}"></script><script src="/page-transition.js?v=${version}" defer></script>`;
 const shellHead=`<link rel="stylesheet" href="/pages.css?v=${version}"><link rel="stylesheet" href="/site-shell.css?v=${version}"><script src="/navigation.js?v=${version}" defer></script>${transitionHead}`;

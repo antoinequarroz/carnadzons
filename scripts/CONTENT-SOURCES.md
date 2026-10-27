@@ -48,3 +48,7 @@ The user requested logos, photographs and descriptive histories for the confirme
 - Chenegaudes official entrance logo: https://static.wixstatic.com/media/f75f87_cdfbe8c4747b4605a44e84f5253942ed~mv2.png from https://www.chenegaudes.ch/ (819×1212, alpha). Local assets/guggens/chenegaudes-logo.png.
 - Gugg’Dragons official logo: https://guggdragons.ch/wp-content/uploads/2026/06/Logo_Guggen_draggons_Chermignon-removebg-preview.png from https://guggdragons.ch/ (666×375, alpha). Local assets/guggens/guggdragons-logo.png.
 - Gugg’Dragons group photograph: https://guggdragons.ch/wp-content/uploads/2026/06/guggs-dragons.jpg from https://guggdragons.ch/ (2048×1330). Local assets/guggens/guggdragons-groupe.jpg.
+
+## Char and committee correction, 27 October 2026
+
+The user requested a quiet “Informations à suivre” placeholder for char appearances because dates and locations are not yet confirmed. Both homepage and char page now use that wording. The user replaced Charlotte with Xavier Pralong for La Coccinelle and added Mathis Pralong for the same society, then explicitly corrected the surname to Pralong. Xavier retains the replaced decoration role; Mathis is listed as a committee member without inventing a specific responsibility. The homepage and committee page both contain 13 members.

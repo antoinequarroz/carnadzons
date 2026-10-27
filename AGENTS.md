@@ -22,5 +22,6 @@
 
 - Section order: presentation, theme/poster, invited guggens, char, committee, FAQ, final date/venue. Navbar order: Accueil, Qui sommes-nous, Thème, Char, Comité, FAQ, Contact. The header brand has no cow icon.
 - The user confirmed Les Chenegaudes and Les Gugg’Dragons for 2027. Committee membership was confirmed unchanged.
+- Subsequent committee correction: replace Charlotte with Xavier Pralong (Décoration, La Coccinelle) and add Mathis Pralong (La Coccinelle). The surname is Pralong, with a final g; Mathis has no specific function confirmed beyond committee membership.
 - The black/gold 2027 SVG poster is a design proposal and is labelled accordingly; do not call it official without user confirmation.
 - Preserve the entrance smoothing stop condition, reduced motion path, and orientation handoff state; do not reintroduce the removed pinned four-scene sequence.
