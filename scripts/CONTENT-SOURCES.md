@@ -68,3 +68,7 @@ The user requested an original little cow carved among the decorative Egyptian m
 ## Village emblems, 27 October 2026
 
 The user rejected the photographic/poster previews in the village section and requested logos instead. They are replaced by three original monochrome SVG emblems: a papyrus for history, a carnival mask for editions and a festive little cow for the children's carnival. These are navigation symbols, not claims to be official society logos. The photo and historical posters remain available on their respective pages. The page links and body text are preserved; archival captions are removed from the homepage cards because those cards no longer display archives.
+
+## Final rendezvous block, 27 October 2026
+
+After approving the village emblems, the user asked to continue. The last homepage block keeps the accepted giant date and title, adds the user-confirmed free admission and planned Lunbabus return (time/route still to come), and improves the mobile agenda/route actions. The Google Maps link now uses the official directions URL with a destination search string for the known venue, without inventing a street address or a route origin: https://developers.google.com/maps/documentation/urls/get-started#directions . The calendar download keeps the same event UID, retains the all-day 30 January date because hours remain unknown, uses CRLF and UTF-8-safe line folding, and includes the current title and confirmed access information.
