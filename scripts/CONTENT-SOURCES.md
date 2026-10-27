@@ -39,3 +39,12 @@ The user confirmed **Les Chenegaudes** and **Les Gugg’Dragons** for the 2027 e
 ## Theme invitation and poster revision, 27 October 2026
 
 The user accepted the homepage design and requested an expanded 2027 theme invitation in the tone of their 2026 Far West text, a hieroglyph background on the poster, a new title and larger entrance-door dates. “Au royaume des pharaons” is the new creative title; the theme remains Egypt. The invitation describes costumes and imagination, without adding unconfirmed event décor, hours or logistics. The engraved poster uses the site's original native SVG motifs. Entrance numerals are enlarged from 60 to 68 SVG units, with the accepted door geometry and scroll motion preserved.
+
+## Invited guggens, 27 October 2026
+
+The user requested logos, photographs and descriptive histories for the confirmed 2027 guests. The Chenegaudes copy follows the supplied text. The shorter Gugg’Dragons copy is based on the user's supplied history (Chermignon, founded 2002, more than 40 musicians/accompanying members, 20th anniversary in 2022). These are histories of the societies, not new programme commitments. Their original logos are preserved; a native SVG viewport trims only transparent export margins around the Gugg’Dragons logo. Bitmaps are unchanged. Group photos use a light monochrome CSS treatment to match the site's palette.
+
+- Chenegaudes group photograph: https://www.carnadzons.ch/static/media/Chenegaudes.1b21f499d14d0be497ff.png (existing Carna’dzons site's photoImage for Chenegaudes; 791×444). Local assets/guggens/chenegaudes-groupe.png.
+- Chenegaudes official entrance logo: https://static.wixstatic.com/media/f75f87_cdfbe8c4747b4605a44e84f5253942ed~mv2.png from https://www.chenegaudes.ch/ (819×1212, alpha). Local assets/guggens/chenegaudes-logo.png.
+- Gugg’Dragons official logo: https://guggdragons.ch/wp-content/uploads/2026/06/Logo_Guggen_draggons_Chermignon-removebg-preview.png from https://guggdragons.ch/ (666×375, alpha). Local assets/guggens/guggdragons-logo.png.
+- Gugg’Dragons group photograph: https://guggdragons.ch/wp-content/uploads/2026/06/guggs-dragons.jpg from https://guggdragons.ch/ (2048×1330). Local assets/guggens/guggdragons-groupe.jpg.

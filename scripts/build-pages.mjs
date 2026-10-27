@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 const root=path.resolve(import.meta.dirname,'..'),dist=path.join(root,'dist');
 const pages=JSON.parse(fs.readFileSync(path.join(import.meta.dirname,'site-pages.json'),'utf8'));
-const version='royaume-16';
+const version='guggens-17';
 const transitionMarkup=fs.readFileSync(path.join(import.meta.dirname,'temple-transition.html'),'utf8').trim();
 const transitionHead=`<link rel="stylesheet" href="/page-transition.css?v=${version}"><script src="/page-transition-boot.js?v=${version}"></script><script src="/page-transition.js?v=${version}" defer></script>`;
 const shellHead=`<link rel="stylesheet" href="/pages.css?v=${version}"><link rel="stylesheet" href="/site-shell.css?v=${version}"><script src="/navigation.js?v=${version}" defer></script>${transitionHead}`;
@@ -19,12 +19,12 @@ home=home.replace(/<header class="site-header">[\s\S]*?<\/header>/,header('',tru
 home=home.replace(/<footer class="site-footer[^\"]*">[\s\S]*?<\/footer>/,footer('',true));
 const homeContent=fs.readFileSync(path.join(import.meta.dirname,'home-sections.html'),'utf8');
 home=home.replace(/<div class="home15-content">[\s\S]*?<\/div><\/main>/,`<div class="home15-content">${homeContent}</div></main>`);
-home=home.replace(/<link rel="stylesheet" href="\/?(?:pages|site-shell|home15|page-transition).css[^\"]*">/g,'').replace(/<script src="\/?(?:navigation|page-transition(?:-boot)?).js[^\"]*"(?: defer)?><\/script>/g,'');
+home=home.replace(/<link rel="stylesheet" href="\/?(?:pages|site-shell|home15|guggens17|page-transition).css[^\"]*">/g,'').replace(/<script src="\/?(?:navigation|page-transition(?:-boot)?).js[^\"]*"(?: defer)?><\/script>/g,'');
 home=home.replace(/<!-- temple-navigation:start -->[\s\S]*?<!-- temple-navigation:end -->/g,'');
 home=home.replace(/(<body\b[^>]*>)/,`$1${transitionMarkup}`);
 home=home.replace(/<link rel="preload" as="font" href="assets\/fonts-v8\/onest-latin.woff2" type="font\/woff2" crossorigin>/,'<link rel="preload" as="font" href="/assets/fonts-v15/manrope-variable.ttf" type="font/ttf" crossorigin>');
 home=home.replace(/(scroll-scenes\.css|egypt\.js)\?v=[^\"]+/g,`$1?v=${version}`);
-home=home.replace('</head>',`${shellHead}<link rel="stylesheet" href="/home15.css?v=${version}"></head>`);
+home=home.replace('</head>',`${shellHead}<link rel="stylesheet" href="/home15.css?v=${version}"><link rel="stylesheet" href="/guggens17.css?v=${version}"></head>`);
 fs.writeFileSync(path.join(dist,'index.html'),home);fs.writeFileSync(path.join(dist,'entree-egypte.html'),home);
 for(const page of pages){
  const {slug,title,kicker,description}=page;
