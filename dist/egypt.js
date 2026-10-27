@@ -24,19 +24,20 @@
   // Explicit cubic easing over scroll distance, with no clock or trailing inertia.
   const easeOut = x => 1 - Math.pow(1-clamp(x),3);
   const easeInOut = x => {const t=clamp(x);return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;};
-  let viewportW=0, viewportH=0, base=1, endScale=1, distance=1, journeyTop=0;
+  let viewportW=0, viewportH=0, heroAnchorY=0, base=1, endScale=1, distance=1, journeyTop=0;
   let spiritTop=0, spiritHeight=1, programmeTop=0, programmeHeight=1, pageHeight=1;
   let queued=false, previous=-1, isComplete=false;
+  let lastScrollY=scrollY, layoutReady=false, sequenceLength=0, plainScenes=[];
   function project(side,u,y,angle){
     const perspective=280/(280+Math.sin(angle)*u);
-    return [(side==='left'?225:375)+(side==='left'?1:-1)*u*Math.cos(angle)*perspective,255+(y-255)*perspective];
+    return [(side==='left'?205:395)+(side==='left'?1:-1)*u*Math.cos(angle)*perspective,255+(y-255)*perspective];
   }
   function path(side,points,angle,close=false){return points.map(([u,y],i)=>`${i?'L':'M'}${project(side,u,y,angle).join(',')}`).join('')+(close?'Z':'');}
   function renderEntrance(p){
     if(Math.abs(p-previous)<.00002)return;
     previous=p;
     const zoom=easeInOut((p-.12)/.88), scale=Math.exp(Math.log(endScale)*zoom);
-    const centerY=viewportH*.35+base*25;
+    const centerY=heroAnchorY+base*25;
     // Repaint this small native SVG to keep the enlarged lines sharp at every zoom.
     portal.setAttribute('transform',`translate(${viewportW/2} ${centerY}) scale(${base*scale}) translate(-300 -255)`);
     const fade=1-easeOut(p/.2);
@@ -47,17 +48,17 @@
     skip.style.visibility=p>.25?'hidden':'visible';
     const opening=easeInOut((p-.39)/.4), angle=opening*Math.PI*.58;
     for(const d of doors){
-      const projectedDoor=[[0,150],[75,150],[75,360],[0,360]].map(([u,y])=>project(d.side,u,y,angle).join(',')).join(' ');
+      const projectedDoor=[[0,150],[95,150],[95,360],[0,360]].map(([u,y])=>project(d.side,u,y,angle).join(',')).join(' ');
       d.panel.setAttribute('points',projectedDoor);
       d.clip.setAttribute('points',projectedDoor);
       // Keep the gold inscription attached to the same projected door surface.
-      const q=280/(280+Math.sin(angle)*37.5), horizontal=Math.cos(angle)*q*q;
-      const anchorX=d.side==='left'?262.5:337.5;
-      const [dateX,dateY]=project(d.side,37.5,255,angle);
+      const q=280/(280+Math.sin(angle)*47.5), horizontal=Math.cos(angle)*q*q;
+      const anchorX=d.side==='left'?252.5:347.5;
+      const [dateX,dateY]=project(d.side,47.5,255,angle);
       d.date.setAttribute('transform',`matrix(${horizontal} 0 0 ${q} ${dateX-horizontal*anchorX} ${dateY-q*255})`);
       d.date.style.visibility=angle<Math.PI/2?'visible':'hidden';
-      d.line.setAttribute('d',path(d.side,[[7,160],[67,160],[67,350],[7,350]],angle,true));
-      d.handle.setAttribute('d',path(d.side,[[65,246],[65,264]],angle));
+      d.line.setAttribute('d',path(d.side,[[7,160],[87,160],[87,350],[7,350]],angle,true));
+      d.handle.setAttribute('d',path(d.side,[[85,246],[85,264]],angle));
     }
     const drift=easeOut(p/.5);
     papyri[0].setAttribute('transform',`translate(${-12*drift} ${4*drift}) rotate(${-3*drift} 100 360)`);
@@ -112,7 +113,7 @@
   }
   function paint(){
     queued=false;
-    const y=scrollY;
+    const y=scrollY;lastScrollY=y;
     if(!reduced.matches){
       renderEntrance(clamp((y-journeyTop)/distance));
       if(sceneMode)renderSequence(Math.max(0,Math.min(7,(y-sequenceTop)/sequenceUnit)));
@@ -123,11 +124,13 @@
   function measure(){
     document.body.classList.toggle('reduced-motion',reduced.matches);
     viewportW=stage.clientWidth;viewportH=stage.clientHeight;
-    const logoW=viewportW<=600?Math.min(viewportW*.94,viewportH*.55,440):Math.min(viewportW*.46,viewportH*.67,550);
+    const phone=viewportW<=600;
+    const logoW=phone?Math.min(viewportW*1.08,viewportH*.61,480):Math.min(viewportW*(viewportW<=1000?.68:.49),viewportH*.72,650);
+    heroAnchorY=viewportH*(viewportH<550?.43:.35);
     base=logoW/600; world.setAttribute('viewBox',`0 0 ${viewportW} ${viewportH}`);
-    title.style.top=`${viewportH*.35+base*164+22}px`;
-    const centerY=viewportH*.35+base*25;
-    endScale=Math.max(viewportW/(150*base),2*Math.max(centerY,viewportH-centerY)/(210*base))*1.15;
+    title.style.top=`${heroAnchorY+base*164+22}px`;
+    const centerY=heroAnchorY+base*25;
+    endScale=Math.max(viewportW/(190*base),2*Math.max(centerY,viewportH-centerY)/(210*base))*1.15;
     journeyTop=journey.getBoundingClientRect().top+scrollY;
     distance=Math.max(1,journey.offsetHeight-viewportH);
     sceneMode=!reduced.matches&&viewportH>=620;
@@ -151,15 +154,48 @@
       irisWorld.setAttribute('viewBox',`0 0 ${viewportW} ${viewportH}`);
       gateWidth=leftGate.getBoundingClientRect().width;
     }
+    sequenceLength=sequence.offsetHeight;
+    plainScenes=sceneMode?[]:panels.map(panel=>({top:panel.getBoundingClientRect().top+scrollY,height:panel.offsetHeight}));
+    layoutReady=true;
     lastUnit=-1;
     pageHeight=Math.max(1,document.documentElement.scrollHeight-innerHeight);
     previous=-1;
     if(reduced.matches){arrival.inert=false;arrival.style.visibility='visible';entry.style.visibility='hidden';mascot.style.transform='none';medallion.removeAttribute('transform');orbit.removeAttribute('transform');}
     paint();
   }
+  function resizeLayout(){
+    if(!layoutReady){measure();return;}
+    const width=stage.clientWidth, height=stage.clientHeight;
+    if(width===viewportW&&height===viewportH){pageHeight=Math.max(1,document.documentElement.scrollHeight-innerHeight);schedule();return;}
+    // Preserve the place in the journey when orientation changes the pinned layout.
+    const y=lastScrollY, oldUnit=sequenceUnit;
+    let place;
+    if(y<=journeyTop+distance){place={kind:'entry',fraction:clamp((y-journeyTop)/distance)};}
+    else if(y<sequenceTop){place={kind:'approach',fraction:clamp((y-journeyTop-distance)/Math.max(1,sequenceTop-journeyTop-distance))};}
+    else if(y<sequenceTop+sequenceLength){
+      if(sceneMode){
+        const unit=Math.max(0,Math.min(7,(y-sequenceTop)/oldUnit));
+        place={kind:'scene',pinned:true,unit,index:unit<1.4?0:unit<3.6?1:unit<5.8?2:3};
+      }else{
+        let index=0;
+        plainScenes.forEach((scene,i)=>{if(y+viewportH*.35>=scene.top)index=i;});
+        place={kind:'scene',pinned:false,index};
+      }
+    }else{place={kind:'footer',offset:y-sequenceTop-sequenceLength};}
+    measure();
+    requestAnimationFrame(()=>{
+      if(place.kind==='entry')window.scrollTo({top:journeyTop+place.fraction*distance,behavior:'instant'});
+      else if(place.kind==='approach')window.scrollTo({top:journeyTop+distance+place.fraction*(sequenceTop-journeyTop-distance),behavior:'instant'});
+      else if(place.kind==='scene'){
+        if(sceneMode&&place.pinned)window.scrollTo({top:sequenceTop+place.unit*sequenceUnit,behavior:'instant'});
+        else document.getElementById(panels[place.index].dataset.scene)?.scrollIntoView({block:'start',behavior:'instant'});
+      }else window.scrollTo({top:sequenceTop+sequenceLength+place.offset,behavior:'instant'});
+      schedule();
+    });
+  }
   arrival.inert=true;
   addEventListener('scroll',schedule,{passive:true});
-  addEventListener('resize',measure,{passive:true});
+  addEventListener('resize',resizeLayout,{passive:true});
   addEventListener('pageshow',measure);
   reduced.addEventListener('change',measure);
   document.fonts.ready.then(measure);
