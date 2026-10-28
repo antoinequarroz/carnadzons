@@ -20,7 +20,9 @@ function menu(slug='',isHome=false){return `<details class="site-menu"><summary 
 function header(slug='',isHome=false){return `<header class="site-header"><a class="brand" href="${isHome?'#accueil':'/'}" aria-label="Carna’dzons, accueil"><span>Carna’dzons</span></a><div class="header-actions"><nav class="primary-navigation" aria-label="Navigation principale">${links(primary,slug,isHome)}</nav>${menu(slug,isHome)}</div></header>`;}
 function footer(slug='',isHome=false){const bottom=`<div class="footer-bottom"><span>Saint-Martin · Valais · 2027</span><a href="mailto:contact@carnadzons.ch">contact@carnadzons.ch</a><a class="back-top" href="${isHome?'#accueil':'/'}">Retour au temple <span aria-hidden="true">↑</span></a></div>`;if(isHome)return `<footer class="site-footer home15-footer">${bottom}</footer>`;return `<footer class="site-footer"><a href="/" class="footer-brand">Carna’dzons</a><div class="footer-pages">${groups.map(([heading,items])=>`<div><p class="menu-heading">${heading}</p>${links(items,slug,isHome)}</div>`).join('')}</div>${bottom}</footer>`;}
 let home=fs.readFileSync(path.join(dist,'index.html'),'utf8');
-home=home.replace(/<g\b[^>]*id="incisions"[\s\S]*?<\/g>\s*(?=<clipPath id="date-clip-left")/,`${carvingGroup}\n`);
+const templeEntry=fs.readFileSync(path.join(import.meta.dirname,'temple30-entry.svg'),'utf8').replace('<!-- temple30-incisions -->',carvingGroup).trim();
+home=home.replace(/<svg class="entry-world"[\s\S]*?<\/svg>(?=<div class="entry-name">)/,templeEntry);
+home=home.replace(/<div class="entry-name">[\s\S]*?<\/div>(?:<p class="entry-venue">[\s\S]*?<\/p>)?(?=<\/div>\s*<div class="scroll-invitation">)/,'<div class="entry-name"><h1>Carna’dzons</h1><p>Une nuit en Égypte</p><p class="entry-venue"><time datetime="2027-01-30">30 janvier 2027</time><span class="entry-venue-dot" aria-hidden="true">·</span><span>Saint-Martin</span></p></div>');
 home=home.replace(/<header class="site-header">[\s\S]*?<\/header>/,header('',true));
 home=home.replace(/<footer class="site-footer[^\"]*">[\s\S]*?<\/footer>/,footer('',true));
 const homeContent=fs.readFileSync(path.join(import.meta.dirname,'home-sections.html'),'utf8').replace('<!-- faq-items -->',faqMarkup());
@@ -29,8 +31,9 @@ home=home.replace(/<link rel="stylesheet" href="\/?(?:pages|site-shell|home15|ab
 home=home.replace(/<!-- temple-navigation:start -->[\s\S]*?<!-- temple-navigation:end -->/g,'');
 home=home.replace(/(<body\b[^>]*>)/,`$1${transitionMarkup}`);
 home=home.replace(/<link rel="preload" as="font" href="assets\/fonts-v8\/onest-latin.woff2" type="font\/woff2" crossorigin>/,'<link rel="preload" as="font" href="/assets/fonts-v15/manrope-variable.ttf" type="font/ttf" crossorigin>');
-home=home.replace(/(scroll-scenes\.css|egypt\.js)\?v=[^\"]+/g,`$1?v=${version}`);
-home=home.replace('</head>',`${shellHead}<link rel="stylesheet" href="/home15.css?v=${version}"><link rel="stylesheet" href="/guggens17.css?v=${version}"><link rel="stylesheet" href="/about19.css?v=${version}"></head>`);
+home=home.replace(/scroll-scenes\.css\?v=[^\"]+/g,`scroll-scenes.css?v=${version}`).replace(/egypt\.js\?v=[^\"]+/g,'egypt.js?v=temple-30');
+home=home.replace(/<link rel="stylesheet" href="\/?temple30.css[^\"]*">/g,'');
+home=home.replace('</head>',`${shellHead}<link rel="stylesheet" href="/home15.css?v=${version}"><link rel="stylesheet" href="/guggens17.css?v=${version}"><link rel="stylesheet" href="/about19.css?v=${version}"><link rel="stylesheet" href="/temple30.css?v=temple-30"></head>`);
 fs.writeFileSync(path.join(dist,'index.html'),home);fs.writeFileSync(path.join(dist,'entree-egypte.html'),home);
 for(const page of pages){
  const {slug,title,kicker,description}=page;
@@ -41,5 +44,4 @@ for(const page of pages){
 }
 console.log(`Updated homepage content, shared navigation and ${pages.length} pages.`);
 
-// Regenerate the isolated experiment without changing the accepted homepage.
-await import('./build-pyramid-test.mjs');
+// The rejected pyramid experiment remains frozen; the temple is the active entrance.

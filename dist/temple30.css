@@ -1,0 +1,20 @@
+/* Material and light refinements of the accepted temple silhouette. */
+.entry-world #egypt-frame{fill:url(#temple30-gold)}
+.entry-world .door-panel{fill:url(#temple30-leaf-stone)}
+.door-bevel-lit{fill:#31403a;opacity:.9}
+.door-bevel-shadow{fill:#070d10;opacity:.96}
+.door-engraving{fill:url(#temple30-door-incisions);opacity:.65}
+.door-line-shadow{fill:none;stroke:#03090c;stroke-width:1.5;opacity:.8}
+.entry-world .door-line{stroke:url(#temple30-leaf-metal);opacity:.85}
+.temple30-ambient-light,.temple30-pointer-light{pointer-events:none;opacity:0}
+.temple30-pointer-light{transition:opacity 180ms cubic-bezier(.23,1,.32,1)}
+.homepage .entry-name p{margin:15px 0 0;letter-spacing:.08em}
+.homepage .entry-name .entry-venue{position:static;display:flex;align-items:center;justify-content:center;gap:13px;flex-wrap:wrap;width:auto;margin:23px 0 0;font-size:clamp(12px,1.15vw,14px);line-height:1.5;letter-spacing:.015em;color:var(--white)}
+.entry-venue time{color:var(--gold);font-weight:600}
+.homepage .entry-venue span{display:inline;font-size:inherit;color:inherit}
+.homepage .entry-venue .entry-venue-dot{color:#ffcb7180}
+@media(max-width:600px){.homepage .entry-name{padding:0 5vw}.homepage .entry-name p{font-size:10px;margin-top:13px}.homepage .entry-name .entry-venue{font-size:12px;margin-top:19px;gap:10px;letter-spacing:0}}
+@media(max-height:550px){.homepage .entry-name h1{font-size:clamp(28px,6.5svh,42px);line-height:1.1}.homepage .entry-name p{font-size:9px;margin-top:8px}.homepage .entry-name .entry-venue{font-size:11px;margin-top:12px;gap:10px}.homepage .entry-venue span{display:inline}}
+@media(max-width:360px) and (max-height:650px){.homepage .skip-journey{top:auto;bottom:68px}}
+@media(hover:none),(pointer:coarse){.temple30-pointer-light{display:none}}
+@media(prefers-reduced-motion:reduce){.temple30-pointer-light{display:none;transition:none}}
