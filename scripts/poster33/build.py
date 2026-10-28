@@ -102,7 +102,7 @@ def build(kind, config):
     add(root, 'title', {'id': 'poster-title'}).text = 'Carna’dzons 2027 — Au royaume des pharaons'
     add(root, 'desc', {'id': 'poster-desc'}).text = ('Proposition graphique noir et doré pour le carnaval de Saint-Martin : '
         'Carna’dzons en titre principal, le thème en sous-titre, un temple aux portes ouvertes, '
-        'un soleil et une petite vache gravée. 30 janvier 2027, salle de gym de Saint-Martin. '
+        'un soleil, des colonnes de signes gravés et de petites vaches dans le fond. 30 janvier 2027, salle de gym de Saint-Martin. '
         'Entrée gratuite, Les Chenegaudes et Les Gugg’Dragons. Tous les textes de cette version sont modifiables.')
     style = add(root, 'style')
     style.text = '\n'.join('@font-face{font-family:'+name+';src:url(data:font/ttf;base64,'+
