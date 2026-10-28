@@ -1,0 +1,38 @@
+/* The same hall carries the visitor from the temple into the village story. */
+.arrival31{background:radial-gradient(ellipse 64% 54% at 50% 47%,#0d1215e6 15%,#0d121566 65%,transparent)}
+.arrival31 .arrival-content{max-width:1180px;padding-bottom:24px}
+.arrival31 .arrival-sun{width:160px;margin-bottom:27px;transform-origin:center}
+.arrival31 .arrival-location{color:var(--gold);font-size:11px;letter-spacing:.035em;margin-bottom:29px}
+.arrival31 h2{font-size:clamp(58px,7.4vw,110px);line-height:1.13}
+.arrival31-title-line{display:block}
+.arrival31-rule{display:flex;align-items:center;justify-content:center;gap:12px;width:190px;max-width:45vw;margin:27px 0 0;transform-origin:center;pointer-events:none}
+.arrival31-rule>span{height:1px;flex:1;background:linear-gradient(90deg,transparent,#ffcb7180)}
+.arrival31-rule>span:last-child{transform:rotate(180deg)}
+.arrival31-rule svg{width:10px;height:10px;fill:none;stroke:var(--gold);stroke-width:1}
+.arrival31 .arrival-caption{max-width:39ch;color:#d5d5cf;font-size:15px;line-height:1.9;margin:24px 0 17px}
+.arrival31 .arrival-caption time{color:var(--gold);white-space:nowrap}
+.arrival31 .arrival-link{font-size:12px;min-height:44px;align-items:center}
+.arrival31-threshold{position:absolute;bottom:0;left:8vw;right:8vw;display:flex;align-items:center;gap:23px;height:82px;pointer-events:none;color:var(--gold)}
+.arrival31-threshold>span{height:1px;flex:1;background:linear-gradient(90deg,transparent,#ffcb714d)}
+.arrival31-threshold>span:last-child{transform:rotate(180deg)}
+.arrival31-threshold svg{width:28px;height:82px;fill:none;stroke:currentColor;stroke-width:1;opacity:.65}
+.homepage #nous{border-top:0;padding-top:120px}
+.homepage #nous::after{content:'';position:absolute;top:0;left:50%;width:1px;height:35px;background:linear-gradient(#ffcb71a6,transparent);pointer-events:none}
+.homepage #nous .about19-heading{align-items:center;margin-bottom:60px}
+.homepage #nous .about19-intro{padding-left:30px;border-left:1px solid var(--line)}
+.homepage #nous .about19-story{position:relative;border-top:1px solid var(--line);padding-top:18px}
+.homepage #nous .about19-story::before{content:'';position:absolute;top:-1px;left:0;width:30px;height:1px;background:var(--gold)}
+.homepage #nous .about20-logo{height:200px;margin-bottom:24px}
+.homepage #nous .about20-logo img{width:185px;height:185px}
+.homepage #nous .about19-link-label svg{transition:transform 180ms cubic-bezier(.23,1,.32,1)}
+@media(hover:hover) and (pointer:fine){
+  .homepage #nous .about19-story:hover .about19-link-label svg{transform:translate(2px,-2px)}
+  .arrival31 .arrival-link span{transition:transform 180ms cubic-bezier(.23,1,.32,1)}
+  .arrival31 .arrival-link:hover span{transform:translateY(2px)}
+}
+@media(max-width:1000px){.arrival31 h2{font-size:clamp(57px,7.6vw,84px)}.homepage #nous .about19-heading{margin-bottom:45px}.homepage #nous .about19-intro{padding-left:24px}}
+@media(max-width:760px){.homepage #nous .about19-intro{padding-left:0;border-left:0}.homepage #nous .about19-heading{gap:27px}.homepage #nous .about20-logo{height:160px;margin-bottom:0}.homepage #nous .about20-logo img{width:145px;height:145px}.homepage #nous .about19-story{padding-top:25px}.arrival31-threshold{left:7vw;right:7vw}}
+@media(max-width:600px){.arrival31{padding:100px 7vw 88px}.arrival31 .arrival-content{padding-bottom:20px}.arrival31 .arrival-sun{width:130px;margin-bottom:24px}.arrival31 .arrival-location{font-size:10px;max-width:260px;margin-bottom:27px}.arrival31 h2{font-size:clamp(36px,9.6vw,57px);line-height:1.16}.arrival31-rule{width:140px;margin-top:25px}.arrival31 .arrival-caption{font-size:13px;line-height:1.85;max-width:32ch;margin:22px 0 14px}.arrival31 .arrival-link{font-size:11px}.arrival31-threshold{height:64px;gap:15px}.arrival31-threshold svg{height:64px}.homepage #nous{padding-top:95px}.homepage #nous .about19-heading{margin-bottom:35px}}
+@media(max-width:500px){.homepage #nous .about20-logo{height:160px;margin-bottom:22px}.homepage #nous .about20-logo img{width:160px;height:160px}}
+@media(max-height:550px){.arrival31{padding:71px 5vw 39px}.arrival31 .arrival-content{padding-bottom:0}.arrival31 .arrival-sun{width:62px;margin-bottom:7px}.arrival31 .arrival-location{font-size:8px;line-height:1.5;margin-bottom:10px}.arrival31 h2{font-size:clamp(30px,9svh,49px);line-height:1.1}.arrival31-rule{width:125px;margin-top:10px;gap:9px}.arrival31-rule svg{width:7px;height:7px}.arrival31 .arrival-caption{font-size:10px;line-height:1.6;max-width:55ch;margin:11px 0 4px}.arrival31 .arrival-link{font-size:9px;min-height:32px;padding:6px 0}.arrival31-threshold{height:32px;gap:14px}.arrival31-threshold svg{height:32px;width:14px}}
+@media(prefers-reduced-motion:reduce){.arrival31-title-line,.arrival31-rule,.arrival31 .arrival-sun,.homepage #nous .about19-heading,.homepage #nous .about20-logo{transform:none!important}.homepage #nous .about19-link-label svg,.arrival31 .arrival-link span{transition:none}}
