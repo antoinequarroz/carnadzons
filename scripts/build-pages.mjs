@@ -29,13 +29,13 @@ home=home.replace(/<header class="site-header">[\s\S]*?<\/header>/,header('',tru
 home=home.replace(/<footer class="site-footer[^\"]*">[\s\S]*?<\/footer>/,footer('',true));
 const homeContent=fs.readFileSync(path.join(import.meta.dirname,'home-sections.html'),'utf8').replace('<!-- faq-items -->',faqMarkup());
 home=home.replace(/<div class="home15-content">[\s\S]*?<\/div><\/main>/,`<div class="home15-content">${homeContent}</div></main>`);
-home=home.replace(/<link rel="stylesheet" href="\/?(?:pages|site-shell|home15|about19|guggens17|arrival31|page-transition).css[^\"]*">/g,'').replace(/<script src="\/?(?:navigation|page-transition(?:-boot)?).js[^\"]*"(?: defer)?><\/script>/g,'');
+home=home.replace(/<link rel="stylesheet" href="\/?(?:pages|site-shell|home15|about19|guggens17|arrival31|theme32|page-transition).css[^\"]*">/g,'').replace(/<script src="\/?(?:navigation|page-transition(?:-boot)?).js[^\"]*"(?: defer)?><\/script>/g,'');
 home=home.replace(/<!-- temple-navigation:start -->[\s\S]*?<!-- temple-navigation:end -->/g,'');
 home=home.replace(/(<body\b[^>]*>)/,`$1${transitionMarkup}`);
 home=home.replace(/<link rel="preload" as="font" href="assets\/fonts-v8\/onest-latin.woff2" type="font\/woff2" crossorigin>/,'<link rel="preload" as="font" href="/assets/fonts-v15/manrope-variable.ttf" type="font/ttf" crossorigin>');
-home=home.replace(/scroll-scenes\.css\?v=[^\"]+/g,`scroll-scenes.css?v=${version}`).replace(/egypt\.js\?v=[^\"]+/g,'egypt.js?v=accueil-31');
+home=home.replace(/scroll-scenes\.css\?v=[^\"]+/g,`scroll-scenes.css?v=${version}`).replace(/egypt\.js\?v=[^\"]+/g,'egypt.js?v=theme-32');
 home=home.replace(/<link rel="stylesheet" href="\/?temple30.css[^\"]*">/g,'');
-home=home.replace('</head>',`${shellHead}<link rel="stylesheet" href="/home15.css?v=${version}"><link rel="stylesheet" href="/guggens17.css?v=${version}"><link rel="stylesheet" href="/about19.css?v=${version}"><link rel="stylesheet" href="/temple30.css?v=temple-30"><link rel="stylesheet" href="/arrival31.css?v=accueil-31"></head>`);
+home=home.replace('</head>',`${shellHead}<link rel="stylesheet" href="/home15.css?v=${version}"><link rel="stylesheet" href="/guggens17.css?v=${version}"><link rel="stylesheet" href="/about19.css?v=${version}"><link rel="stylesheet" href="/temple30.css?v=temple-30"><link rel="stylesheet" href="/arrival31.css?v=accueil-31"><link rel="stylesheet" href="/theme32.css?v=theme-32"></head>`);
 fs.writeFileSync(path.join(dist,'index.html'),home);fs.writeFileSync(path.join(dist,'entree-egypte.html'),home);
 for(const page of pages){
  const {slug,title,kicker,description}=page;

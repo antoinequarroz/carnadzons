@@ -8,6 +8,7 @@
   const skip=$('.skip-journey'), arrival=$('.arrival'), arrivalCopy=$('.arrival-content');
   const arrivalLines=[...document.querySelectorAll('.arrival31-title-line')],arrivalRule=$('.arrival31-rule'),arrivalSun=$('.arrival-sun');
   const village=$('#nous'),villageHeading=$('.about19-heading'),villageLogos=[...document.querySelectorAll('#nous .about20-logo')];
+  const theme=$('#theme'),themeHeading=$('.theme32-heading'),themeFrame=$('.theme32-frame'),themeRail=$('.theme32-frame-rail');
   const progressLine=$('.page-progress'), reduced=matchMedia('(prefers-reduced-motion: reduce)');
   const papyri=[$('#papyrus-left'),$('#papyrus-right')], sun=$('#winged-sun');
   const sections=[...document.querySelectorAll('.home15-section')];
@@ -27,6 +28,7 @@
   let sectionBounds=[],artBounds=[],initialAnchorAllowed=true;
   let projectedScale=1,projectedY=0;
   let villageHeadingTop=0,villageLogoTops=[];
+  let themeHeadingTop=0,themeFrameTop=0,themeHeadingProgress=0,themeFrameProgress=0;
   function project(side,u,y,angle){
     const q=280/(280+Math.sin(angle)*u);
     return [(side==='left'?205:395)+(side==='left'?1:-1)*u*Math.cos(angle)*q,255+(y-255)*q];
@@ -114,6 +116,14 @@
     const villageProgress=top=>settled?1:easeOut((y+viewportH*.88-top)/(viewportH*.35));
     if(villageHeading)villageHeading.style.transform=`translate3d(0,${16*(1-villageProgress(villageHeadingTop))}px,0)`;
     villageLogos.forEach((logo,index)=>{const stagger=viewportW>760?index*40:0;logo.style.transform=`translate3d(0,${12*(1-villageProgress(villageLogoTops[index]+stagger))}px,0)`;});
+    // The poster settles once, before reading; body copy is never faded or moved.
+    const themeSettled=reduced.matches||['#theme','#soiree'].includes(location.hash)||theme?.contains(document.activeElement);
+    const themeProgress=top=>themeSettled?1:easeOut((y+viewportH*.92-top)/(viewportH*.34));
+    themeHeadingProgress=Math.max(themeHeadingProgress,themeProgress(themeHeadingTop));
+    themeFrameProgress=Math.max(themeFrameProgress,themeProgress(themeFrameTop));
+    if(themeHeading)themeHeading.style.transform=`translate3d(0,${14*(1-themeHeadingProgress)}px,0)`;
+    if(themeFrame)themeFrame.style.transform=`translate3d(0,${18*(1-themeFrameProgress)}px,0) scale(${.985+.015*themeFrameProgress})`;
+    if(themeRail)themeRail.style.transform=`scaleY(${.12+.88*themeFrameProgress})`;
   }
   function paint(time){
     queued=false;
@@ -148,6 +158,9 @@
     if(villageHeading)villageHeading.style.transform='none';villageLogos.forEach(logo=>logo.style.transform='none');
     villageHeadingTop=villageHeading?villageHeading.getBoundingClientRect().top+scrollY:0;
     villageLogoTops=villageLogos.map(logo=>logo.getBoundingClientRect().top+scrollY);
+    if(themeHeading)themeHeading.style.transform='none';if(themeFrame)themeFrame.style.transform='none';
+    themeHeadingTop=themeHeading?themeHeading.getBoundingClientRect().top+scrollY:0;
+    themeFrameTop=themeFrame?themeFrame.getBoundingClientRect().top+scrollY:0;
     pageHeight=Math.max(1,document.documentElement.scrollHeight-innerHeight);
     current=target=clamp((scrollY-journeyTop)/distance);previous=-1;lastTime=0;ready=true;
     if(reduced.matches){entry.style.visibility='hidden';arrival.inert=false;arrival.style.visibility='visible';arrivalCopy.style.opacity=1;arrivalCopy.style.transform='none';arts.forEach(art=>art.style.transform='none');arrivalLines.forEach(line=>line.style.transform='none');if(arrivalRule)arrivalRule.style.transform='none';if(arrivalSun)arrivalSun.style.transform='none';}
