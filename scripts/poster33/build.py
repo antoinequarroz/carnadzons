@@ -100,7 +100,7 @@ def build(kind, config):
     root = node('svg', {'width': str(w), 'height': str(h), 'viewBox': f'0 0 1100 {height}',
                         'version': '1.1', 'role': 'img', 'aria-labelledby': 'poster-title poster-desc'})
     add(root, 'title', {'id': 'poster-title'}).text = 'Carna’dzons 2027 — Au royaume des pharaons'
-    add(root, 'desc', {'id': 'poster-desc'}).text = ('Proposition graphique noir et doré pour le carnaval de Saint-Martin : '
+    add(root, 'desc', {'id': 'poster-desc'}).text = ('Affiche noir et doré du carnaval de Saint-Martin : '
         'Carna’dzons en titre principal, le thème en sous-titre, un temple aux portes ouvertes, '
         'un soleil, des colonnes de signes gravés et de petites vaches dans le fond. 30 janvier 2027, salle de gym de Saint-Martin. '
         'Entrée gratuite, Les Chenegaudes et Les Gugg’Dragons. Tous les textes de cette version sont modifiables.')
