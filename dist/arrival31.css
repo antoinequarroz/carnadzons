@@ -36,3 +36,10 @@
 @media(max-width:500px){.homepage #nous .about20-logo{height:160px;margin-bottom:22px}.homepage #nous .about20-logo img{width:160px;height:160px}}
 @media(max-height:550px){.arrival31{padding:71px 5vw 39px}.arrival31 .arrival-content{padding-bottom:0}.arrival31 .arrival-sun{width:62px;margin-bottom:7px}.arrival31 .arrival-location{font-size:8px;line-height:1.5;margin-bottom:10px}.arrival31 h2{font-size:clamp(30px,9svh,49px);line-height:1.1}.arrival31-rule{width:125px;margin-top:10px;gap:9px}.arrival31-rule svg{width:7px;height:7px}.arrival31 .arrival-caption{font-size:10px;line-height:1.6;max-width:55ch;margin:11px 0 4px}.arrival31 .arrival-link{font-size:9px;min-height:32px;padding:6px 0}.arrival31-threshold{height:32px;gap:14px}.arrival31-threshold svg{height:32px;width:14px}}
 @media(prefers-reduced-motion:reduce){.arrival31-title-line,.arrival31-rule,.arrival31 .arrival-sun,.homepage #nous .about19-heading,.homepage #nous .about20-logo{transform:none!important}.homepage #nous .about19-link-label svg,.arrival31 .arrival-link span{transition:none}}
+
+/* Animations désactivées : l’entrée animée (et son h1) est masquée, ce titre prend le relais. */
+.arrival31-static-title{display:none}
+@media(prefers-reduced-motion:reduce){.homepage .arrival31-static-title{display:block}}
+.homepage.reduced-motion .arrival31-static-title,body.reduced-motion .arrival31-static-title{display:block}
+.arrival31-static-title{font-family:var(--display);font-weight:400;color:var(--gold);font-size:clamp(46px,8vw,104px);line-height:1.1;letter-spacing:-.03em;margin:0 0 22px}
+.arrival31-static-title span{display:block;font-family:var(--body,Manrope,sans-serif);font-size:15px;letter-spacing:.12em;color:var(--white);margin-top:12px}

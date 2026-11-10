@@ -1,0 +1,38 @@
+/* Lisibilité : planchers de taille de texte, chargés en dernier sur toutes les pages.
+   Plusieurs anciennes feuilles réduisent le texte sur mobile ; ces règles l'en empêchent. */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+
+/* Grand écran : plus rien sous 12 px. */
+.skip-journey,.scroll-invitation,.back-top,.footer-bottom,.menu-heading,.breadcrumb,.section-kicker,.arrival-location,.member-society{font-size:12px}
+
+/* Téléphones (portrait et paysage). */
+@media (max-width:760px),(max-height:550px){
+  /* Petites étiquettes, surtitres, pied de page : 13 px minimum. */
+  .section-kicker,.card-label,.kids24-label,.member-society,.menu-heading,.menu-edition-note,
+  .breadcrumb,.breadcrumb a,.breadcrumb span,.footer-bottom,.footer-bottom a,.footer-bottom span,.back-top,
+  .edition23-filetype,.kids24-filetype,.date-year,.arrival-location,.arrival31 .arrival-location,
+  figcaption,figcaption span,.guggen17-origin,.guggen17-origin span,.event-details dt,
+  .skip-journey,.scroll-invitation,.journey-caption,.entry-name p,.homepage .entry-name p,
+  .temple-leaf-year,.edition23-archive-note,.history22-archive figcaption{font-size:13px!important}
+  .skip-journey,.scroll-invitation{letter-spacing:.02em!important}
+
+  /* Liens, boutons, dates et informations : 14 à 15 px. */
+  .text-link,.arrival-link,.button-gold,.site-menu,.menu-open-label,.menu-close-label,
+  .menu-secondary a,.footer-pages a,figcaption a,.member-role,
+  .page-body time,.edition23-date,.edition23-date time,.edition23-date span,.kids24-date,.kids24-date time,.kids24-date span,
+  .entry-venue,.entry-venue time,.entry-venue span,.homepage .entry-name .entry-venue,
+  .rendezvous21-transport,.rendezvous21-transport span,.rendezvous21-transport strong,.home15-rendezvous .rendezvous21-transport{font-size:14px!important}
+  .text-link,.button-gold,.footer-pages a,.menu-secondary a{min-height:44px}
+  .event-details dd,.event-details dd span,.event-details dd strong{font-size:15px!important}
+
+  /* Texte courant et réponses de la FAQ : 16 px, en gris clair bien contrasté. */
+  .prose,.prose p,.prose li,.prose strong,.prose a,details .prose,
+  .theme32 .home16-theme-story p,.body-copy,.body-copy.secondary,.arrival-caption,.arrival31 .arrival-caption,
+  .page-description,.contact-copy,.programme p:not(.section-kicker){font-size:16px!important;line-height:1.7!important}
+  .prose,.prose p,.prose li,.body-copy.secondary,.contact-copy p{color:#d9dbda!important}
+  .page-body,.page-description,.notice,.notice p{font-size:16px!important;line-height:1.75!important}
+  .faq-list summary{font-size:16px!important}
+  .faq-list details>div,.faq-list details>p{font-size:16px!important;color:#d9dbda!important}
+  .facts dt{font-size:13px!important}
+  .menu-nav a,.menu-primary a{font-size:16px!important}
+}
