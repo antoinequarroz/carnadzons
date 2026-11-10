@@ -1,0 +1,71 @@
+/* Original posters, framed by the same black stone and gold as Notre histoire. */
+.edition23-page .page-main{max-width:1380px}
+.edition23-page .page-intro{margin-bottom:0}
+.edition23-page .page-intro h1{font-size:clamp(58px,6.5vw,92px);max-width:1050px}
+.edition23-page .page-description{max-width:680px}
+.edition23-years{display:flex;align-items:center;gap:12px 38px;position:sticky;top:92px;z-index:12;background:#0d1215f7;border-bottom:1px solid var(--line);padding:12px 0;margin-bottom:50px}
+.edition23-years a{display:flex;align-items:center;justify-content:center;min-width:60px;min-height:44px;color:var(--gold);font-size:16px;font-weight:500;text-decoration:none;box-shadow:inset 0 -1px transparent;transition:box-shadow .2s,color .2s}
+.edition23-years a:hover{box-shadow:inset 0 -1px var(--gold);color:var(--white)}
+.edition23-years a:focus-visible,.edition23-poster a:focus-visible{outline:2px solid var(--gold);outline-offset:5px}
+.edition23-record{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(40px,7vw,100px);align-items:center;padding:58px 0 64px;border-bottom:1px solid var(--line);scroll-margin-top:176px}
+.edition23-record:first-child{padding-top:0}
+.edition23-info{grid-column:2;grid-row:1;min-width:0}
+.edition23-info h2{margin:0 0 20px;line-height:1.15}
+.edition23-year{display:block;font-size:clamp(65px,7vw,94px);letter-spacing:-.04em;margin-bottom:24px}
+.edition23-theme{display:block;font-size:clamp(35px,4vw,54px);line-height:1.17;max-width:600px;text-wrap:balance}
+.edition23-info .edition23-date{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;color:var(--gold);font-size:13px;margin:0 0 24px;line-height:1.6}
+.edition23-info .edition23-story{font-size:16px;line-height:1.85;color:var(--muted);max-width:47ch;margin:0}
+.edition23-info .edition23-booklet{display:inline-flex;align-items:center;gap:12px;font-size:13px;margin-top:30px;min-height:44px}
+.edition23-filetype{font-size:10px;border:1px solid #ffcb7140;padding:1px 5px;line-height:1.6}
+.edition23-poster{grid-column:1;grid-row:1;width:100%;max-width:330px;justify-self:center;min-width:0}
+.edition23-poster-link{display:block;position:relative;padding:12px;border:1px solid #ffcb7133;background:#0d1215;transition:border-color .2s}
+.edition23-poster-link::before,.edition23-poster-link::after{content:'';position:absolute;width:40px;height:40px;pointer-events:none;border-style:solid;border-color:var(--gold)}
+.edition23-poster-link::before{left:-1px;top:-1px;border-width:1px 0 0 1px}
+.edition23-poster-link::after{right:-1px;bottom:-1px;border-width:0 1px 1px 0}
+.edition23-poster-link:hover{border-color:var(--gold)}
+.edition23-poster img{display:block;width:100%;height:auto}
+.edition23-page .edition23-poster figcaption{margin-top:13px}
+.edition23-poster figcaption a{display:flex;justify-content:space-between;gap:15px;align-items:center;min-height:44px;color:var(--gold);font-size:12px;line-height:1.6}
+.edition23-poster figcaption a:hover{color:var(--white)}
+.edition23-page .edition23-archive-note{font-size:12px;line-height:1.8;color:var(--muted);margin:22px 0 0}
+.edition23-next{display:flex;align-items:center;justify-content:space-between;gap:35px;margin-top:60px;padding:30px 0 0}
+.edition23-next h2{font-size:clamp(32px,3.5vw,46px);line-height:1.2;margin:0 0 14px}
+.edition23-next p{color:var(--muted);font-size:14px;margin:0}
+.edition23-next-links{display:flex;align-items:flex-start;flex-direction:column;gap:20px;flex-shrink:0}
+.edition23-next-links .button-gold{min-height:52px;gap:25px;max-width:100%;font-size:13px}
+.edition23-next-links .text-link{font-size:13px;min-height:44px;display:inline-flex;align-items:center}
+@media(max-width:1150px){.edition23-years{top:80px}}
+@media(max-width:900px){
+ .edition23-record{gap:35px;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr)}
+ .edition23-year{font-size:65px}
+ .edition23-theme{font-size:36px}
+ .edition23-info .edition23-story{font-size:15px}
+ .edition23-next{align-items:flex-start;flex-direction:column}
+}
+@media(max-width:650px){
+ .edition23-page .page-intro h1{font-size:clamp(40px,10vw,64px);line-height:1.15}
+ .edition23-page .page-description{font-size:14px;line-height:1.75}
+ .edition23-page .page-intro{padding-bottom:28px}
+ .edition23-years{top:76px;gap:0;justify-content:space-between;padding:8px 0;margin-bottom:32px}
+ .edition23-years a{min-width:54px;font-size:14px}
+ .edition23-record{grid-template-columns:1fr;gap:28px;padding:40px 0;scroll-margin-top:154px}
+ .edition23-info{grid-row:auto;grid-column:auto}
+ .edition23-poster{grid-row:auto;grid-column:auto;max-width:330px}
+ .edition23-year{font-size:65px;margin-bottom:17px}
+ .edition23-theme{font-size:35px;max-width:550px}
+ .edition23-info h2{margin-bottom:18px}
+ .edition23-info .edition23-date{font-size:12px;margin-bottom:18px;gap:6px 10px}
+ .edition23-info .edition23-story{font-size:15px;line-height:1.8;max-width:52ch}
+ .edition23-info .edition23-booklet{margin-top:17px;font-size:12px}
+ .edition23-poster-link{padding:9px}
+ .edition23-page .edition23-poster figcaption{margin-top:7px}
+ .edition23-next{margin-top:32px;padding-top:15px;gap:24px}
+ .edition23-next h2{font-size:32px}
+ .edition23-next-links{width:100%;gap:14px}
+ .edition23-next-links .button-gold{width:100%;justify-content:space-between;font-size:12px;padding:17px 20px}
+ .edition23-next-links .text-link{font-size:13px}
+ .edition23-page .page-return{margin-top:32px}
+}
+@media(prefers-reduced-motion:reduce){.edition23-years a,.edition23-poster-link{transition:none}}
+
+@media(max-height:550px){.edition23-years{top:66px}}

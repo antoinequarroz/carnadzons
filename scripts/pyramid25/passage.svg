@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 224 315" fill="none" aria-hidden="true">
+<defs>
+ <linearGradient id="p27-stone" x1="0" y1="0" x2="224" y2="315" gradientUnits="userSpaceOnUse"><stop stop-color="#514734"/><stop offset=".48" stop-color="#282d29"/><stop offset="1" stop-color="#111b1e"/></linearGradient>
+ <linearGradient id="p27-edge" x1="8" y1="10" x2="210" y2="300" gradientUnits="userSpaceOnUse"><stop stop-color="#f5d38b"/><stop offset=".38" stop-color="#a98a4d"/><stop offset="1" stop-color="#3c3c2d"/></linearGradient>
+</defs>
+<!-- A stone opening with an actual transparent throat, not a black inset. -->
+<path d="M0 0H224V315H0Z M20 22V293H204V22Z" fill="url(#p27-stone)" fill-rule="evenodd"/>
+<path d="M0 0H224L218 6H6Z M0 0 6 6V309L0 315Z" fill="#b3975c" opacity=".7"/>
+<path d="M224 0V315H0L6 309H218V6Z" fill="#080f12"/>
+<path d="M10 12H214V303H10Z M20 22V293H204V22Z" fill="url(#p27-edge)" fill-rule="evenodd"/>
+<path d="M20 22 24 27V288L20 293Z M20 22H204L200 27H24Z" fill="#050c10"/>
+<path d="M204 22V293H20L24 288H200V27Z" fill="#8f774a"/>
+<path d="M7 8H217M7 8V307M13 15H211M13 15V300" stroke="#efc77d" stroke-width=".6" opacity=".65"/>
+<path d="M7 307H217V8M17 19H207V297" stroke="#070e12" stroke-width="1.2"/>
+<g stroke="#080f12" stroke-width="1.4"><path d="M0 70H10M0 137H10M0 204H10M0 271H10M214 44H224M214 111H224M214 178H224M214 245H224"/></g>
+<g stroke="#b19c68" stroke-width=".6" opacity=".5"><path d="M1 72H9M1 139H9M1 206H9M1 273H9M215 46H223M215 113H223M215 180H223M215 247H223"/></g>
+<g stroke="#c2a66b" stroke-width=".7" opacity=".55"><path d="M4 92V112M2 98 4 94 6 98M2 104H6M218 150H222M220 145V163M218 162H222M3 224Q7 218 7 225Q7 229 3 230M2 234H8M217 80 220 76 223 80 220 85Z"/></g>
+<path d="M20 293H204M13 303H211" stroke="#e6bd75" stroke-width="1.1" opacity=".7"/>
+</svg>

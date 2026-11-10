@@ -1,0 +1,83 @@
+/* Children's carnival: future news and dated, original archives. */
+.kids24-page .page-main{max-width:1380px}
+.kids24-page .page-intro{margin-bottom:40px}
+.kids24-page .page-intro h1{font-size:clamp(58px,6.5vw,92px);max-width:1080px}
+.kids24-page .page-description{max-width:680px}
+.kids24-page .page-body{font-size:16px;line-height:1.85}
+.kids24-page .kids24-label{font-size:12px;line-height:1.5;color:var(--muted);margin:0 0 14px}
+.kids24-next{display:grid;grid-template-columns:100px minmax(0,1fr);gap:35px;align-items:center;padding:12px 0 40px;border-bottom:1px solid var(--line)}
+.kids24-cow{display:block;width:100px;height:100px;object-fit:contain}
+.kids24-next h2{font-size:clamp(31px,3.4vw,43px);line-height:1.2;margin:0 0 14px}
+.kids24-next p:not(.kids24-label){font-size:15px;line-height:1.8;color:var(--muted);max-width:65ch;margin:0 0 16px}
+.kids24-next .text-link{display:inline-flex;align-items:center;min-height:44px;font-size:13px}
+.kids24-memory{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:24px clamp(40px,6vw,80px);align-items:start;margin-top:68px}
+.kids24-memory-intro{grid-column:1;grid-row:1}
+.kids24-memory h2{font-size:clamp(37px,4.3vw,58px);line-height:1.18;margin:0 0 22px}
+.kids24-memory-intro p:not(.kids24-label):not(.kids24-date){color:var(--muted);max-width:48ch;margin:0}
+.kids24-memory-intro strong{color:var(--white);font-weight:600}
+.kids24-memory-intro .kids24-date{display:flex;flex-wrap:wrap;gap:7px 11px;color:var(--gold);font-size:13px;line-height:1.6;margin:0 0 23px}
+.kids24-poster{grid-column:2;grid-row:1/span 2;width:100%;max-width:370px;justify-self:center;min-width:0}
+.kids24-poster-frame{position:relative;display:block;padding:12px;border:1px solid #ffcb7133;background:#0d1215;transition:border-color .2s}
+.kids24-poster-frame::before,.kids24-poster-frame::after{content:'';position:absolute;width:42px;height:42px;pointer-events:none;border-color:var(--gold);border-style:solid}
+.kids24-poster-frame::before{top:-1px;left:-1px;border-width:1px 0 0 1px}
+.kids24-poster-frame::after{bottom:-1px;right:-1px;border-width:0 1px 1px 0}
+.kids24-poster-frame:hover{border-color:var(--gold)}
+.kids24-poster img,.kids24-old-poster img{display:block;width:100%;height:auto}
+.kids24-page .kids24-poster figcaption{margin-top:10px}
+.kids24-poster figcaption a{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:44px;font-size:12px;line-height:1.6;color:var(--gold)}
+.kids24-poster figcaption a:hover{color:var(--white)}
+.kids24-programme{grid-column:1;grid-row:2;min-width:0}
+.kids24-programme h3{font-family:var(--body);font-size:15px;font-weight:600;color:var(--white);margin:0 0 15px;line-height:1.5}
+.kids24-programme ul{list-style:none;padding:0;margin:0;border-top:1px solid var(--line)}
+.kids24-programme li{display:flex;align-items:center;gap:18px;padding:16px 0;border-bottom:1px solid var(--line);color:var(--muted);font-size:14px;line-height:1.7}
+.kids24-programme li::before{content:'';width:5px;height:5px;border:1px solid #ffcb71b3;transform:rotate(45deg);flex-shrink:0;margin:0 2px}
+.kids24-programme .text-link{display:inline-flex;align-items:center;gap:12px;font-size:12px;min-height:44px;margin-top:18px}
+.kids24-filetype{font-size:10px;border:1px solid #ffcb7140;padding:1px 5px;line-height:1.6}
+.kids24-older{display:grid;grid-template-columns:140px minmax(0,1fr);gap:35px;align-items:center;border-top:1px solid var(--line);margin-top:68px;padding-top:40px}
+.kids24-old-poster{display:block;border:1px solid #ffcb7133;padding:6px;background:var(--ink)}
+.kids24-older h2{font-size:clamp(30px,3.4vw,42px);line-height:1.2;margin:0 0 15px}
+.kids24-older p:not(.kids24-label){max-width:55ch;font-size:14px;line-height:1.8;color:var(--muted);margin:0 0 12px}
+.kids24-older time{color:var(--gold);font-size:12px}
+.kids24-older .text-link{display:inline-flex;align-items:center;min-height:44px;font-size:13px}
+.kids24-more{margin-top:38px}.kids24-more .text-link{display:inline-flex;align-items:center;min-height:44px;font-size:13px}
+@media(max-width:900px){
+ .kids24-memory{grid-template-columns:minmax(0,1fr) minmax(0,.9fr);column-gap:35px}
+ .kids24-memory h2{font-size:40px}
+ .kids24-page .page-body{font-size:15px}
+}
+@media(max-width:700px){
+ .kids24-memory{grid-template-columns:1fr;gap:28px}
+ .kids24-memory-intro,.kids24-poster,.kids24-programme{grid-column:auto;grid-row:auto}
+ .kids24-poster{max-width:370px}
+ .kids24-programme{margin-top:8px}
+ .kids24-memory-intro p:not(.kids24-label):not(.kids24-date){max-width:60ch}
+}
+@media(max-width:600px){
+ .kids24-page .page-intro h1{font-size:clamp(40px,10.4vw,63px);line-height:1.15}
+ .kids24-page .page-description{font-size:14px;line-height:1.75}
+ .kids24-page .page-intro{padding-bottom:28px;margin-bottom:28px}
+ .kids24-next{grid-template-columns:1fr;gap:20px;padding:0 0 32px}
+ .kids24-cow{width:72px;height:72px}
+ .kids24-page .kids24-label{font-size:11px;margin-bottom:12px}
+ .kids24-next h2{font-size:32px}
+ .kids24-next p:not(.kids24-label){font-size:14px}
+ .kids24-next .text-link{font-size:12px}
+ .kids24-memory{margin-top:38px;gap:25px}
+ .kids24-memory h2{font-size:36px;margin-bottom:18px}
+ .kids24-memory-intro .kids24-date{font-size:12px;margin-bottom:20px}
+ .kids24-memory-intro p:not(.kids24-label):not(.kids24-date){font-size:15px;line-height:1.8}
+ .kids24-poster-frame{padding:9px}
+ .kids24-programme li{font-size:14px;padding:16px 0;gap:14px}
+ .kids24-programme h3{font-size:15px}
+ .kids24-programme .text-link{font-size:11px;gap:9px}
+ .kids24-older{grid-template-columns:92px minmax(0,1fr);gap:22px;margin-top:38px;padding-top:30px;align-items:start}
+ .kids24-older h2{font-size:28px;line-height:1.25;margin-bottom:12px}
+ .kids24-older p:not(.kids24-label){font-size:13px}
+ .kids24-older .text-link{font-size:12px;line-height:1.8}
+ .kids24-more{margin-top:26px}.kids24-more .text-link{font-size:12px;line-height:1.8}
+ .kids24-page .page-return{margin-top:30px}
+}
+@media(max-width:360px){.kids24-older{grid-template-columns:1fr}.kids24-old-poster{width:110px}}
+@media(prefers-reduced-motion:reduce){.kids24-poster-frame{transition:none}}
+
+.kids24-page h2[id]{scroll-margin-top:130px}

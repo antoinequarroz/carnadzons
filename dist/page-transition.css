@@ -1,0 +1,16 @@
+/* A separate portal between documents; it never changes the page layout. */
+:root{--ease-in-out:cubic-bezier(.77,0,.175,1);--temple-close-duration:400ms;--temple-open-duration:500ms}
+.page-transition{position:fixed;inset:0;z-index:1000;overflow:hidden;visibility:hidden;pointer-events:none;perspective:1600px;isolation:isolate;contain:layout paint}
+html[data-temple-transition] .page-transition{visibility:visible;pointer-events:auto}
+.temple-leaf{position:absolute;top:0;bottom:0;width:calc(50% + 1px);background:var(--ink,#0D1215) url('/assets/engraved-stone.svg?v=vache-19') repeat;background-size:900px auto;color:var(--gold,#FFCB71);backface-visibility:hidden;display:flex;align-items:center;justify-content:center}
+.temple-leaf-left{left:0;transform-origin:left center;transform:rotateY(-102deg);border-right:1px solid #FFCB71}
+.temple-leaf-right{right:0;transform-origin:right center;transform:rotateY(102deg);border-left:1px solid #FFCB71}
+.temple-leaf::before{content:'';position:absolute;inset:28px;border:1px solid #ffcb716b;pointer-events:none}
+.temple-leaf::after{content:'';position:absolute;inset:36px;border:1px solid #ffcb7129;pointer-events:none}
+html[data-temple-transition='closed'] .temple-leaf{transform:rotateY(0deg)}
+.temple-leaf-date{display:flex;flex-direction:column;align-items:center;gap:28px;margin-top:-5vh;font-family:var(--display,Cleopatra,serif);font-size:clamp(85px,14vw,220px);line-height:1;letter-spacing:-.045em;font-weight:400}
+.temple-leaf-year{font-family:Onest,Arial,sans-serif;font-size:12px;line-height:1;letter-spacing:.5em;margin-left:.5em;color:#ffcb71b3}
+.temple-leaf-glyph{position:absolute;bottom:9vh;left:50%;transform:translateX(-50%);width:65px;height:100px;stroke:currentColor;stroke-width:1;fill:none;opacity:.5}
+@media(max-width:600px){.page-transition{perspective:1000px}.temple-leaf{background-size:650px auto}.temple-leaf::before{inset:14px}.temple-leaf::after{inset:20px}.temple-leaf-date{font-size:clamp(75px,23vw,138px);gap:24px}.temple-leaf-year{font-size:9px}.temple-leaf-glyph{width:44px;height:70px;bottom:11vh}}
+@media(max-height:500px){.temple-leaf::before{inset:12px}.temple-leaf::after{inset:18px}.temple-leaf-date{font-size:28svh;gap:14px;margin-top:-12svh}.temple-leaf-glyph{height:52px;bottom:6svh}}
+@media(prefers-reduced-motion:reduce){html[data-temple-transition] .page-transition{visibility:hidden;pointer-events:none}}

@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Carnadzons//Carnaval Egypte 2027//FR
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:carnadzons-egypte-20270130@carnadzons.ch
+DTSTAMP:20261027T191849Z
+SEQUENCE:1
+DTSTART;VALUE=DATE:20270130
+DTEND;VALUE=DATE:20270131
+SUMMARY:Carna’dzons 2027 — Au royaume des pharaons
+LOCATION:Salle de gym de Saint-Martin\, 1969 Saint-Martin\, Valais
+DESCRIPTION:Carnaval de Saint-Martin sur le thème de l’Égypte. Entrée 
+ gratuite. Retour en Lunbabus prévu : horaires et parcours à venir. Progr
+ amme et horaires de la fête à venir. Contact : contact@carnadzons.ch
+URL:https://www.carnadzons.ch
+END:VEVENT
+END:VCALENDAR

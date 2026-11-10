@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-labelledby="enfants-title enfants-desc">
+  <title id="enfants-title">Le carnaval des enfants — vachette</title>
+  <desc id="enfants-desc">Emblème original : une petite tête de vache souriante entourée d’étoiles et de confettis.</desc>
+  <g id="embleme-enfants" fill="none" stroke="#FFCB71" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+    <g id="confettis" stroke-width="2.4">
+      <path d="m100 22 2.7 7.3L110 32l-7.3 2.7L100 42l-2.7-7.3L90 32l7.3-2.7Z" />
+      <path d="m32 43 2 5.5 5.5 2-5.5 2L32 58l-2-5.5-5.5-2 5.5-2Z" fill="#FFCB71" stroke="none" />
+      <path d="m164 43 7 5M27 116l-5 8M172 118l6 6" />
+    </g>
+    <g id="vachette">
+      <path id="cornes" d="M68 71Q49 56 53 40Q69 48 75 65M132 71Q151 56 147 40Q131 48 125 65" />
+      <path id="oreilles" d="M65 80Q44 66 32 74Q37 92 61 96M135 80Q156 66 168 74Q163 92 139 96" />
+      <path id="tete" d="M69 65Q100 52 131 65L140 126Q142 149 100 160Q58 149 60 126Z" fill="#0D1215" />
+      <path id="tache" d="M101 59Q119 57 130 70L132 88Q118 96 108 83Z" fill="#FFCB71" fill-opacity=".15" stroke-width="2.3" />
+      <path id="yeux-rieurs" d="M76 103q5-6 10 0M114 103q5-6 10 0" />
+      <path id="museau" d="M80 117H120Q137 117 137 135Q137 155 100 161Q63 155 63 135Q63 117 80 117Z" fill="#0D1215" />
+      <path id="sourire" d="M88 144q12 8 24 0" stroke-width="2.3" />
+      <ellipse id="narine-gauche" cx="85" cy="132" rx="2.6" ry="3.8" fill="#FFCB71" stroke="none" />
+      <ellipse id="narine-droite" cx="115" cy="132" rx="2.6" ry="3.8" fill="#FFCB71" stroke="none" />
+    </g>
+  </g>
+</svg>

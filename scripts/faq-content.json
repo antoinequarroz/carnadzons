@@ -1,0 +1,33 @@
+[
+  {
+    "id": "date-lieu",
+    "question": "Quand et où a lieu le Carna’dzons 2027 ?",
+    "answer": "<p>Le samedi <strong>30 janvier 2027</strong>, à la salle de gym de Saint-Martin, en Valais.</p>",
+    "open": true
+  },
+  {
+    "id": "theme",
+    "question": "Quel est le thème de cette édition ?",
+    "answer": "<p>Cap sur l’Égypte avec « Au royaume des pharaons ». Pharaons, reines du Nil ou explorateurs : laissez parler votre imagination pour votre costume.</p>"
+  },
+  {
+    "id": "programme",
+    "question": "Quel est le programme de la fête ?",
+    "answer": "<p>Les Chenegaudes et les Gugg’Dragons seront de la fête. Le programme complet et les horaires seront annoncés ici prochainement.</p>"
+  },
+  {
+    "id": "entree",
+    "question": "L’entrée est-elle gratuite ?",
+    "answer": "<p>Oui, l’entrée au Carna’dzons est <strong>gratuite</strong>.</p>"
+  },
+  {
+    "id": "navette",
+    "question": "Une navette est-elle prévue pour le retour ?",
+    "answer": "<p>Oui, une navette <strong>Lunbabus</strong> est prévue. Les horaires, les arrêts et le parcours seront communiqués ici dès qu’ils seront confirmés.</p>"
+  },
+  {
+    "id": "contact",
+    "question": "Comment contacter le comité ?",
+    "answer": "<p>Écrivez-nous à <a href=\"mailto:contact@carnadzons.ch\">contact@carnadzons.ch</a> ou appelez le <a href=\"tel:+41791576450\">079 157 64 50</a>.</p>"
+  }
+]
