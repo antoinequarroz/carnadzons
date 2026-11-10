@@ -31,7 +31,7 @@
 - Section order: presentation, theme/poster, invited guggens, char, committee, FAQ, final date/venue. Navbar order: Accueil, Qui sommes-nous, Thème, Char, Comité, FAQ, Contact. The header brand has no cow icon.
 - The user confirmed Les Chenegaudes and Les Gugg’Dragons for 2027. Committee membership was confirmed unchanged.
 - Subsequent committee correction: replace Charlotte with Xavier Pralong (Décoration, La Coccinelle) and add Mathis Pralong (La Coccinelle). The surname is Pralong, with a final g; Mathis has no specific function confirmed beyond committee membership.
-- Committee correction 10 November 2026: Thé Rossier replaces Mathieu Dayer (role Construction and society Les Chenegaudes kept from the previous entry, not separately confirmed).
+- Committee correction 10 November 2026: Théo Rossier replaces Mathieu Dayer (role Construction and society Les Chenegaudes kept from the previous entry, not separately confirmed).
 - The black/gold 2027 SVG poster is a design proposal and is labelled accordingly; do not call it official without user confirmation.
 - Preserve the entrance smoothing stop condition, reduced motion path, and orientation handoff state; do not reintroduce the removed pinned four-scene sequence.
 - The FAQ content is shared between the homepage and /faqs/ through scripts/faq-content.json. The user confirmed free admission for 2027 and a Lunbabus return shuttle; its times, stops and route are still unconfirmed. Do not restore the old 2026 departure at 02:00 or the cortège at 16:26.
