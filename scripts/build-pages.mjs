@@ -43,7 +43,7 @@ home=home.replace(/<link rel="stylesheet" href="\/?temple30.css[^\"]*">/g,'');
 home=home.replace(/<!-- share:start -->[\s\S]*?<!-- share:end -->/g,'').replace(/<link rel="stylesheet" href="\/readable40.css[^"]*">/g,'');
 const homeTitle=home.match(/<title>([^<]*)<\/title>/)[1],homeDescription=home.match(/<meta name="description" content="([^"]*)">/)[1];
 home=home.replace('</title>',`</title>${shareHead({title:homeTitle,description:homeDescription.replaceAll('&quot;','"').replaceAll('&amp;','&'),path:'/'})}`);
-home=home.replace('</head>',`${shellHead}<link rel="stylesheet" href="/home15.css?v=${version}"><link rel="stylesheet" href="/guggens17.css?v=${version}"><link rel="stylesheet" href="/about19.css?v=${version}"><link rel="stylesheet" href="/temple30.css?v=temple-30"><link rel="stylesheet" href="/arrival31.css?v=accueil-40"><link rel="stylesheet" href="/theme32.css?v=theme-32">${readableHead}</head>`);
+home=home.replace('</head>',`${shellHead}<link rel="stylesheet" href="/home15.css?v=${version}"><link rel="stylesheet" href="/guggens17.css?v=${version}"><link rel="stylesheet" href="/about19.css?v=${version}"><link rel="stylesheet" href="/temple30.css?v=temple-30"><link rel="stylesheet" href="/arrival31.css?v=accueil-40"><link rel="stylesheet" href="/theme32.css?v=video-41">${readableHead}</head>`);
 fs.writeFileSync(path.join(dist,'index.html'),home);fs.writeFileSync(path.join(dist,'entree-egypte.html'),home);
 function renderPage(page){
  const {slug,title,kicker,description}=page;
