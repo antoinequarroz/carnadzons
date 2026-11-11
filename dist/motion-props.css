@@ -1,0 +1,41 @@
+/* All absolute coordinates are relative to the existing 320svh .world. */
+.scene-props{position:absolute;inset:0;pointer-events:none;isolation:isolate}
+.scene-props svg{display:block;width:100%;height:100%;overflow:visible}
+.scene-props .motion-boat{position:absolute;top:82svh;left:48%;width:clamp(62px,7vw,145px);height:auto;z-index:4;will-change:transform}
+.scene-props .motion-boat-float{aspect-ratio:220/200;transform-origin:50% 88%}
+.scene-props .motion-palm{position:absolute;top:45svh;left:-3%;width:clamp(120px,14vw,280px);height:55svh;z-index:6;transform-origin:50% 100%;will-change:transform}
+.scene-props .motion-palm svg{overflow:visible}
+.scene-props .motion-palm-right{left:auto;right:-4%;top:51svh;width:clamp(110px,12vw,250px);height:48svh;z-index:5}
+.scene-props .motion-palm-right>svg{transform:scaleX(-1)}
+.scene-props .palm-frond{transform-box:view-box;transform-origin:137px 144px;will-change:transform}
+.scene-props .motion-gate{position:absolute;top:182svh;left:0;width:100%;height:110svh;z-index:9;transform-origin:50% 56%;will-change:transform,opacity}
+.scene-props .motion-torch{position:absolute;width:clamp(42px,5.3vw,90px);height:25svh;z-index:5;will-change:transform}
+.scene-props .motion-torch-near{top:250svh;left:59%}
+.scene-props .motion-torch-far{top:242svh;right:10%;width:clamp(32px,3.8vw,68px);height:20svh;z-index:3}
+.scene-props .motion-flame{transform-box:view-box;transform-origin:50px 82px;will-change:transform,opacity}
+.scene-props .motion-torch-halo{transform-box:view-box;transform-origin:50px 45px}
+@media(max-width:600px){
+  .scene-props .motion-boat{top:83svh;left:46%;width:66px}
+  .scene-props .motion-palm{left:-15%;top:45svh;width:150px;height:55svh}
+  .scene-props .motion-palm-right{right:-17%;left:auto;top:51svh;width:135px;height:48svh}
+  .scene-props .motion-gate{left:-12%;width:124%;height:112svh}
+  .scene-props .motion-torch-near{top:279svh;left:40%;width:42px;height:23svh}
+  .scene-props .motion-torch-far{top:257svh;right:2%;width:34px;height:18svh}
+}
+@media(prefers-reduced-motion:reduce){
+  .scene-props .motion-boat,.scene-props .motion-palm,.scene-props .motion-gate,.scene-props .motion-torch,.scene-props .palm-frond,.scene-props .motion-flame{will-change:auto}
+}
+
+/* A staged approach through the foreground frame. */
+.camera-rig{position:absolute;inset:0;transform-origin:50% 52%;will-change:transform}.scene-props{z-index:7}.threshold-gate{position:absolute;top:-5%;left:0;width:100%;height:110%;z-index:13;pointer-events:none;transform-origin:50% 56%;opacity:0;visibility:hidden;will-change:transform,opacity}.threshold-gate svg{width:100%;height:100%;display:block}.scene-props .motion-boat-float{animation:nile-bob 5s var(--ease-in-out) infinite}.scene-props .palm-frond-left{animation:frond-left 8s var(--ease-in-out) infinite}.scene-props .palm-frond-center{animation:frond-center 10s var(--ease-in-out) infinite}.scene-props .palm-frond-right{animation:frond-right 9s var(--ease-in-out) infinite}.scene-props .motion-palm-right .palm-frond{animation-delay:-4s}.scene-props .motion-flame-outer{animation:flame-outer 1.7s var(--ease-in-out) infinite}.scene-props .motion-flame-inner{animation:flame-inner 1.1s var(--ease-in-out) infinite}.scene-props .motion-torch-far .motion-flame{animation-delay:-.7s}.scene-props .motion-torch-halo{animation:halo-breathe 2.5s var(--ease-in-out) infinite}.motion-door-light{position:absolute;top:221svh;right:8%;width:24%;height:65svh;z-index:2;background:radial-gradient(ellipse at 70% 50%,#ffd4aa30,transparent 70%);transform-origin:70% 50%;animation:door-light 6s var(--ease-in-out) infinite;pointer-events:none}.motion-scene-idle *{animation-play-state:paused!important}
+@keyframes nile-bob{0%,100%{transform:translate3d(0,0,0) rotate(-2deg)}50%{transform:translate3d(5px,-6px,0) rotate(2deg)}}
+@keyframes frond-left{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(4deg)}}@keyframes frond-center{0%,100%{transform:rotate(1deg)}50%{transform:rotate(-3deg)}}@keyframes frond-right{0%,100%{transform:rotate(2deg)}50%{transform:rotate(-4deg)}}
+@keyframes flame-outer{0%,100%{transform:scale(1,1);opacity:.9}35%{transform:scale(.92,1.16);opacity:1}70%{transform:scale(1.07,.9);opacity:.82}}@keyframes flame-inner{0%,100%{transform:scale(.94,1.12);opacity:1}50%{transform:scale(1.08,.89);opacity:.75}}@keyframes halo-breathe{0%,100%{transform:scale(.96);opacity:.15}50%{transform:scale(1.18);opacity:.3}}@keyframes door-light{0%,100%{transform:scale(.97);opacity:.65}50%{transform:scale(1.08);opacity:1}}
+@media(max-width:600px){.threshold-gate{left:-12%;width:124%}.motion-door-light{top:235svh;right:-25%;width:65%;height:80svh}.scene-props .motion-palm{opacity:.85}.scene-props .motion-torch-near{left:37%;top:281svh}.scene-props .motion-boat{width:57px}}
+@media(prefers-reduced-motion:reduce){.threshold-gate{display:none!important}.camera-rig{transform:none!important}.scene-props .motion-boat-float,.scene-props .palm-frond,.scene-props .motion-flame,.scene-props .motion-torch-halo,.motion-door-light{animation:none!important}.scene-props .motion-palm{will-change:auto}}
+
+.cliff-lip{position:absolute;top:96svh;width:55%;left:-5%;height:17svh;z-index:4}.cliff-lip.right{left:auto;right:-7%;width:52%}.cliff-lip svg{width:100%;height:100%;display:block}.surface-landscape>img{object-position:center 60%}
+@media(max-width:600px){.cliff-lip{width:67%;left:-10%;height:17svh}.cliff-lip.right{width:63%;left:auto;right:-13%}}
+.surface-scene{overflow:hidden}.water-link{height:118svh;z-index:5;mask-image:linear-gradient(#000 0%,#000 98%,transparent 100%)}
+.scene-props .motion-torch-near{top:257svh}.scene-props .motion-torch-far{top:262svh}
+@media(max-width:600px){.scene-props .motion-torch-near{top:284svh}.scene-props .motion-torch-far{top:266svh}}

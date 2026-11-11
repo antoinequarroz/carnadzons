@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-labelledby="histoire-title histoire-desc">
+  <title id="histoire-title">Notre histoire — papyrus</title>
+  <desc id="histoire-desc">Emblème original : un rouleau de papyrus doré et quelques signes gravés.</desc>
+  <g id="embleme-histoire" transform="translate(-7 -8) scale(1.1)" fill="none" stroke="#FFCB71" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+    <path id="rouleau" d="M65 48H141V138Q141 154 126 154H53Q38 154 38 139Q38 124 53 124H66V62Q66 48 52 48Q38 48 38 62Q38 76 52 76H66" />
+    <path id="rebords" d="M53 124Q67 124 67 138M53 154H126M141 62H154Q154 48 141 48" />
+    <path id="lignes-gravees" d="M84 76h34M84 91h25M84 106h33" stroke-width="2.3" />
+    <path id="signe-grave" d="m105 119 8 13H97Z" stroke-width="2.3" />
+    <path id="jonc" d="M84 119v13M79 132h10" stroke-width="2.3" />
+  </g>
+</svg>

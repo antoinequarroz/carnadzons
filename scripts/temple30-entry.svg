@@ -1,0 +1,131 @@
+<svg class="entry-world" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" aria-hidden="true"><defs><!-- Insert these children in .entry-world > defs. Original 600 × 400 temple coordinates. -->
+<linearGradient id="temple30-gold" gradientUnits="userSpaceOnUse" x1="134" y1="120" x2="461" y2="367">
+  <stop stop-color="#FFDC92"/>
+  <stop offset=".28" stop-color="#F6C66E"/>
+  <stop offset=".51" stop-color="#DBAD58"/>
+  <stop offset=".75" stop-color="#F1C674"/>
+  <stop offset="1" stop-color="#B88339"/>
+</linearGradient>
+<linearGradient id="temple30-front" gradientUnits="userSpaceOnUse" x1="135" y1="150" x2="449" y2="351">
+  <stop stop-color="#EAC078"/>
+  <stop offset=".45" stop-color="#FFCF7A"/>
+  <stop offset=".78" stop-color="#D8A957"/>
+  <stop offset="1" stop-color="#B58240"/>
+</linearGradient>
+<linearGradient id="temple30-cap" gradientUnits="userSpaceOnUse" x1="120" y1="119" x2="480" y2="132">
+  <stop stop-color="#FFE8AF"/>
+  <stop offset=".43" stop-color="#FFD48A"/>
+  <stop offset="1" stop-color="#D9A956"/>
+</linearGradient>
+<linearGradient id="temple30-threshold" gradientUnits="userSpaceOnUse" x1="300" y1="352" x2="300" y2="394">
+  <stop stop-color="#FAD187"/>
+  <stop offset=".32" stop-color="#C29450"/>
+  <stop offset=".68" stop-color="#91652F"/>
+  <stop offset="1" stop-color="#E4B96D"/>
+</linearGradient>
+<!-- A restrained dark stone body, distinct from the #0D1215 wall. Set the polygon's fill with a CSS selector because .door-panel currently defines fill. -->
+<linearGradient id="temple30-leaf-stone" x1="0" y1="0" x2="1" y2="1">
+  <stop stop-color="#26302E"/>
+  <stop offset=".24" stop-color="#192321"/>
+  <stop offset=".64" stop-color="#10191A"/>
+  <stop offset="1" stop-color="#080F13"/>
+</linearGradient>
+<linearGradient id="temple30-leaf-metal" x1="0" y1="0" x2="1" y2="1">
+  <stop stop-color="#FFE1A0"/>
+  <stop offset=".44" stop-color="#C19755"/>
+  <stop offset="1" stop-color="#6A4C28"/>
+</linearGradient>
+<pattern id="temple30-glyph-lines" width="720" height="720" patternUnits="userSpaceOnUse"><use href="#incisions" stroke="#ffcb71" stroke-width="1.1" opacity=".8"/></pattern>
+<pattern id="temple30-door-incisions" width="720" height="720" patternUnits="userSpaceOnUse"><use href="#incisions" transform="translate(.8 .9)" stroke="#52604f" stroke-width="1" opacity=".4"/><use href="#incisions" stroke="#040a0d" stroke-width="1.5" opacity=".8"/></pattern>
+<radialGradient id="temple30-light-falloff"><stop stop-color="white"/><stop offset=".35" stop-color="white" stop-opacity=".9"/><stop offset="1" stop-color="white" stop-opacity="0"/></radialGradient>
+<mask id="temple30-ambient-mask" maskUnits="userSpaceOnUse"><circle class="temple30-ambient-focus" fill="url(#temple30-light-falloff)"/></mask>
+<mask id="temple30-pointer-mask" maskUnits="userSpaceOnUse"><circle class="temple30-pointer-focus" fill="url(#temple30-light-falloff)"/></mask>
+    <!-- temple30-incisions -->
+<clipPath id="date-clip-left" clipPathUnits="userSpaceOnUse"><polygon class="date-clip-polygon-left"/></clipPath><clipPath id="date-clip-right" clipPathUnits="userSpaceOnUse"><polygon class="date-clip-polygon-right"/></clipPath><pattern id="stone-carving" width="720" height="720" patternUnits="userSpaceOnUse"><rect width="720" height="720" fill="#0D1215"/>  <use href="#incisions" transform="translate(1.05 1.25)" stroke="#293236" stroke-width="1.35" opacity=".64"/>
+  <use href="#incisions" stroke="#070C0F" stroke-width="1.65" opacity=".96"/>
+</pattern></defs><g class="portal"><path class="black-field" d="M-20000-20000H20000V20000H-20000Z M205 150V360H395V150Z" fill-rule="evenodd"/><path class="temple30-ambient-light" d="M0 0" fill="url(#temple30-glyph-lines)" fill-rule="evenodd" mask="url(#temple30-ambient-mask)"/><path class="temple30-pointer-light" d="M0 0" fill="url(#temple30-glyph-lines)" fill-rule="evenodd" mask="url(#temple30-pointer-mask)"/><g class="doors"><g class="door-left"><polygon class="door-panel"/><g class="temple30-door-front"><polygon class="door-bevel-lit"/><polygon class="door-bevel-shadow"/><polygon class="door-engraving"/><path class="door-line-shadow"/></g><path class="door-line"/><path class="door-handle"/><g clip-path="url(#date-clip-left)"><g class="door-date"><text class="door-date-main" x="252.5" y="239" text-anchor="middle">30</text><text class="door-date-year" x="252.5" y="282" text-anchor="middle">20</text></g></g></g><g class="door-right"><polygon class="door-panel"/><g class="temple30-door-front"><polygon class="door-bevel-lit"/><polygon class="door-bevel-shadow"/><polygon class="door-engraving"/><path class="door-line-shadow"/></g><path class="door-line"/><path class="door-handle"/><g clip-path="url(#date-clip-right)"><g class="door-date"><text class="door-date-main" x="347.5" y="239" text-anchor="middle">01</text><text class="door-date-year" x="347.5" y="282" text-anchor="middle">27</text></g></g></g></g><g class="temple-mark"><g id="winged-sun">
+    <circle cx="300" cy="73" r="21"/>
+    <path d="M275 69C245 63 217 53 173 53H145C168 70 198 82 237 87L274 89L280 79Z"/>
+    <path d="M325 69C355 63 383 53 427 53H455C432 70 402 82 363 87L326 89L320 79Z"/>
+    <path d="M274 91C251 91 227 88 209 83L226 98C243 103 260 104 278 100Z"/>
+    <path d="M326 91C349 91 373 88 391 83L374 98C357 103 340 104 322 100Z"/>
+    <path d="M293 97L288 111H312L307 97Z"/>
+  </g>
+
+  <g id="egypt-frame">
+    <!-- The doorway is exactly x205–395, y150–360. -->
+    <path d="M120 119H480L472 132H463V150H137V132H128Z"/>
+    <path d="M148 150H205V360H120Z"/>
+    <path d="M395 150H452L480 360H395Z"/>
+    <path d="M113 352H205V365H111Z"/>
+    <path d="M395 352H487L489 365H395Z"/>
+    <path d="M91 375C151 353 222 342 300 342C378 342 449 353 509 375C441 360 372 353 300 353C228 353 159 360 91 375Z" transform="translate(0 19)"/>
+  </g>
+
+<!-- Insert as the final child of #egypt-frame, before the existing inscription group.
+     Set #egypt-frame { fill: url(#temple30-gold); }.
+     Every overlay remains inside the exact accepted temple silhouette. -->
+<g class="temple30-frame-relief" stroke="none">
+  <!-- Wide cornice: lit top, broad front face, shaded underside. -->
+  <path d="M120 119H480L475.7 126H124.3Z" fill="url(#temple30-cap)"/>
+  <path d="M128 132H472L463 137H137Z" fill="#A37435"/>
+  <path d="M137 132H463V145H137Z" fill="url(#temple30-front)"/>
+  <path d="M137 145H463V150H137Z" fill="#8B602D"/>
+  <path d="M124.3 126H475.7L472 132H128Z" fill="#C6964A"/>
+  <path d="M137.5 132.5H462.5M139 145H461" fill="none" stroke="#FFE4A6" stroke-width=".8" opacity=".72"/>
+
+  <!-- The left jamb takes the warm key light. Its inner edge falls into the doorway. -->
+  <path d="M148 150H205L198 157H155Z" fill="#FFE1A0"/>
+  <path d="M148 150L155 157L131 352L120 360Z" fill="#F1CA85"/>
+  <path d="M155 157H198V352H131Z" fill="url(#temple30-front)"/>
+  <path d="M205 150V360L198 352V157Z" fill="#79552C"/>
+  <path d="M155.5 157.5H197.5M155.5 157.5 131.7 351.5" fill="none" stroke="#FFE7B2" stroke-width=".9" opacity=".67"/>
+  <path d="M197.4 158V351" fill="none" stroke="#B4823C" stroke-width="1"/>
+
+  <!-- The right jamb has a lit inner bevel and a darker outer return. -->
+  <path d="M395 150H452L445 157H402Z" fill="#F9D18B"/>
+  <path d="M395 150V360L402 352V157Z" fill="#E7B968"/>
+  <path d="M402 157H445L469 352H402Z" fill="url(#temple30-front)"/>
+  <path d="M452 150 480 360 469 352 445 157Z" fill="#91632D"/>
+  <path d="M402.5 157.5H444.4M402.5 157.5V351" fill="none" stroke="#FFE2A0" stroke-width=".8" opacity=".65"/>
+  <path d="M445 158 468.7 351" fill="none" stroke="#A37234" stroke-width=".9"/>
+
+  <!-- Narrow raised plinths, preserving the exact foot outlines. -->
+  <path d="M113 352H205V357H112.2Z" fill="#F8D18C"/>
+  <path d="M112.2 357H205V365H111Z" fill="#B58642"/>
+  <path d="M395 352H487L487.8 357H395Z" fill="#E5BD76"/>
+  <path d="M395 357H487.8L489 365H395Z" fill="#92642E"/>
+  <path d="M113 352.5H204M396 352.5H487" fill="none" stroke="#FFE8AF" stroke-width=".8" opacity=".7"/>
+  <path d="M111 364.5H205M395 364.5H489" fill="none" stroke="#6E4D27" stroke-width=".8"/>
+
+  <!-- Shallow curved threshold: a thin highlighted lip, not an added staircase. -->
+  <path d="M91 375C151 353 222 342 300 342C378 342 449 353 509 375C441 360 372 353 300 353C228 353 159 360 91 375Z" transform="translate(0 19)" fill="url(#temple30-threshold)"/>
+  <path d="M106 389.1C162 370 229 361 300 361C371 361 438 370 494 389.1" fill="none" stroke="#FFE0A0" stroke-width=".9" opacity=".72"/>
+</g>
+
+  <g id="papyrus-left">
+    <path d="M105 362L87 241L92 240L111 360Z"/>
+    <path d="M89 246C76 238 66 222 66 205C80 215 87 229 89 246Z"/>
+    <path d="M90 245C91 226 98 209 111 199C111 218 104 235 90 245Z"/>
+    <path d="M88 244C75 244 60 237 52 225C69 224 82 231 88 244Z"/>
+    <path d="M92 249C105 237 119 234 134 235C126 247 109 252 92 249Z"/>
+    <path d="M87 242C79 228 78 210 84 193C93 210 95 226 87 242Z"/>
+    <path d="M77 369L63 290L68 289L83 367Z"/>
+    <path d="M65 294C53 289 44 278 42 264C55 271 63 281 65 294Z"/>
+    <path d="M65 294C62 280 65 266 75 254C80 271 76 286 65 294Z"/>
+    <path d="M68 296C76 284 87 277 101 277C97 290 85 297 68 296Z"/>
+  </g>
+
+  <g id="papyrus-right" transform="translate(600 0) scale(-1 1)">
+    <path d="M105 362L87 241L92 240L111 360Z"/>
+    <path d="M89 246C76 238 66 222 66 205C80 215 87 229 89 246Z"/>
+    <path d="M90 245C91 226 98 209 111 199C111 218 104 235 90 245Z"/>
+    <path d="M88 244C75 244 60 237 52 225C69 224 82 231 88 244Z"/>
+    <path d="M92 249C105 237 119 234 134 235C126 247 109 252 92 249Z"/>
+    <path d="M87 242C79 228 78 210 84 193C93 210 95 226 87 242Z"/>
+    <path d="M77 369L63 290L68 289L83 367Z"/>
+    <path d="M65 294C53 289 44 278 42 264C55 271 63 281 65 294Z"/>
+    <path d="M65 294C62 280 65 266 75 254C80 271 76 286 65 294Z"/>
+    <path d="M68 296C76 284 87 277 101 277C97 290 85 297 68 296Z"/>
+  </g>
+<g fill="none" stroke="#0D1215" stroke-width="1.1" opacity=".3"><path d="M169 182v143M193 182v143M407 182v143M431 182v143M164 197h34M164 215h34M402 197h34M402 215h34"/><path d="m173 245 8-8 8 8-8 8ZM177 268h8v23h-8ZM411 245l8-8 8 8-8 8ZM415 268h8v23h-8Z"/></g></g></g></svg>
